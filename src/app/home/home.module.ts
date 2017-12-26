@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { ImageUploadModule } from 'angular2-image-upload';
 
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { HomeTableComponent } from './components/home-table/home-table.component';
@@ -57,8 +56,7 @@ export const COMPONENTS = [
 			}
 		]),
 		StoreModule.forFeature('home', reducers),
-		EffectsModule.forFeature([HomeEffects]),
-		ImageUploadModule.forRoot()
+		EffectsModule.forFeature([HomeEffects])
 	],
 	declarations: COMPONENTS,
 	exports: COMPONENTS,

@@ -69,9 +69,6 @@
 			</mat-grid-tile>
 			<mat-grid-tile>
 				<div *ngIf="isCreate">
-					<image-upload [max]="3" [maxFileSize]="9048576" [url]="uploadUrl" [headers]="imageUploadHeaders" [buttonCaption]="'Select Images'"
-					 [dropBoxMessage]="''" [extensions]="['jpg','png']" [class]="'customClass'" [style]="imageUploadStyle" (removed)="onRemoved($event)"
-					 (uploadFinished)="onUploadFinished($event)"></image-upload>
 				</div>
 				<img mat-card-sm-image *ngIf="thumbnail && !isCreate" [src]="thumbnail" />
 			</mat-grid-tile>

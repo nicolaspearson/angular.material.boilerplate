@@ -22,43 +22,11 @@ export class StockItemDetailComponent implements OnInit {
 	@Output() remove = new EventEmitter<StockItem>();
 	@Output() update = new EventEmitter<StockItem>();
 
-	imageUploadHeaders: { [name: string]: any };
-
 	isCreate: boolean;
 
 	form: FormGroup;
 
 	uploadUrl = `${environment.api.endpoint}/stockImages`;
-
-	imageUploadStyle = {
-		selectButton: {
-			'background-color': '#bf1e5b',
-			'border-radius': '4px',
-			color: '#FFF',
-			'box-shadow': 'none'
-		},
-		clearButton: {
-			'background-color': '#000',
-			'border-radius': '4px',
-			color: '#FFFFFF',
-			'margin-left': '10px',
-			'box-shadow': 'none'
-		},
-		layout: {
-			'align-items': 'center',
-			'justify-content': 'center',
-			'background-color': '#424242',
-			'border-radius': '25px',
-			color: '#FFF',
-			'font-size': '10px',
-			margin: '10px',
-			'padding-top': '5px'
-		},
-		previewPanel: {
-			'background-color': '#424242',
-			'border-radius': '0 0 25px 25px'
-		}
-	};
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -66,9 +34,7 @@ export class StockItemDetailComponent implements OnInit {
 	) {
 		const result = this.localStorageService.getItem(LS_USER_KEY);
 		if (result && result.user && result.user.token) {
-			this.imageUploadHeaders = {
-				Authorization: `Bearer ${result.user.token}`
-			};
+			// Do something with token
 		}
 	}
 
@@ -185,8 +151,13 @@ export class StockItemDetailComponent implements OnInit {
 	}
 
 	get thumbnail(): string | boolean {
-		if (this.stockItem.stockImages && this.stockItem.stockImages.length > 0) {
-			return 'data:image/png;base64,' + this.stockItem.stockImages[0].image;
+		if (
+			this.stockItem.stockImages &&
+			this.stockItem.stockImages.length > 0
+		) {
+			return (
+				'data:image/png;base64,' + this.stockItem.stockImages[0].image
+			);
 		}
 		return false;
 	}
