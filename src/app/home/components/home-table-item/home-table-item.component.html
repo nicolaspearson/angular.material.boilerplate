@@ -1,0 +1,11 @@
+<mat-card (click)="onItemClick()">
+	<mat-card-title>
+		{{ registrationNumber | appEllipsis:35 }}
+	</mat-card-title>
+	<mat-card-subtitle>
+		{{ make | appEllipsis:40 }} {{ model | appEllipsis }}
+	</mat-card-subtitle>
+	<mat-card-content>
+		<img mat-card-sm-image *ngIf="thumbnail" [src]="thumbnail" />
+	</mat-card-content>
+</mat-card>

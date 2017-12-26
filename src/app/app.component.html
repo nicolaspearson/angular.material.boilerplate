@@ -1,0 +1,24 @@
+<mat-sidenav-container>
+	<div class="app__main__container">
+		<mat-toolbar color="primary">
+			<span routerLink="/" class="title__container">
+				<img [src]="logo" />{{title}}
+			</span>
+
+			<button mat-button class="logout-button" *ngIf="isAuthenticated" (click)="onLogoutClick()">
+				LOGOUT
+			</button>
+
+			<span class="link">
+				<a matTooltip="Source" matTooltipPosition="below" mat-icon-button href="https://github.com/nicolaspearson/angular.material.boilerplate"
+				 target="_blank">
+					<i class="fa fa-github fa-2x"></i>
+				</a>
+			</span>
+
+		</mat-toolbar>
+		<div class="app__route__content">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</mat-sidenav-container>

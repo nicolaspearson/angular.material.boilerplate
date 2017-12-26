@@ -1,0 +1,25 @@
+<mat-card>
+	<mat-card-content>
+		<span class="login__logo__container">
+			<img [src]="logo" />
+		</span>
+		<form class="login__form" [formGroup]="form" (ngSubmit)="submit()">
+			<mat-form-field class="login__input">
+				<input matInput formControlName="username" placeholder="Username">
+			</mat-form-field>
+			<mat-form-field class="login__input">
+				<input matInput formControlName="password" placeholder="Password" type="password">
+			</mat-form-field>
+
+			<p *ngIf="errorMessage" class="login__error">
+				{{errorMessage}}
+			</p>
+
+			<p>
+				<button class="login__button" type="submit" mat-raised-button color="primary">
+					LOGIN
+				</button>
+			</p>
+		</form>
+	</mat-card-content>
+</mat-card>
