@@ -1,6 +1,15 @@
-<mat-sidenav-container>
-	<div class="app__main__container">
-		<mat-toolbar color="primary">
+<div myPreloader class="preloaderbar hide">
+	<span class="bar"></span>
+</div>
+<div class="app-main full-height" [ngClass]="{'fixed-header' : AppConfig.fixedHeader,
+				'nav-collapsed' : AppConfig.navCollapsed,
+				'nav-behind' : AppConfig.navBehind,
+				'layout-boxed' : AppConfig.layoutBoxed,
+				'theme-gray' : AppConfig.theme == 'gray',
+				'theme-dark' : AppConfig.theme == 'dark',
+				'sidebar-sm' : AppConfig.sidebarWidth == 'small',
+				'sidebar-lg' : AppConfig.sidebarWidth == 'large'}">
+	<!-- <mat-toolbar color="primary">
 			<span routerLink="/" class="title__container">
 				<img [src]="logo" />{{title}}
 			</span>
@@ -16,9 +25,6 @@
 				</a>
 			</span>
 
-		</mat-toolbar>
-		<div class="app__route__content">
-			<router-outlet></router-outlet>
-		</div>
-	</div>
-</mat-sidenav-container>
+		</mat-toolbar> -->
+	<router-outlet></router-outlet>
+</div>

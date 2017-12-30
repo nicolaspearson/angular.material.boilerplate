@@ -6,30 +6,30 @@
 		.controller('AppSidenavRightCtrl', ['$scope', AppSidenavRightCtrl]);
 
 	function AppSidenavRightCtrl($scope) {
-		var imagePath = 'assets/images/g1.jpg';
+		var imagePath = 'assets/images/avatar.png';
 		$scope.messages = [
 			{
-				face: 'assets/images-demo/avatars/1.jpg',
+				face: 'demo/assets/demo-images/avatars/1.jpg',
 				who: 'Jason Bourne',
 				notes: 'Hi there'
 			},
 			{
-				face: 'assets/images-demo/avatars/2.jpg',
+				face: 'demo/assets/demo-images/avatars/2.jpg',
 				who: 'Bella Doe',
 				notes: 'Hi there'
 			},
 			{
-				face: 'assets/images-demo/avatars/3.jpg',
+				face: 'demo/assets/demo-images/avatars/3.jpg',
 				who: 'Min Chan',
 				notes: 'Hi there'
 			},
 			{
-				face: 'assets/images-demo/avatars/4.jpg',
+				face: 'demo/assets/demo-images/avatars/4.jpg',
 				who: 'Sophia Doe',
 				notes: 'Hi there'
 			},
 			{
-				face: 'assets/images-demo/avatars/5.jpg',
+				face: 'demo/assets/demo-images/avatars/5.jpg',
 				who: 'Luna Doe',
 				notes: 'Hi there'
 			}

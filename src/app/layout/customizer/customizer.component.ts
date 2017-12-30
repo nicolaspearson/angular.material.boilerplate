@@ -8,8 +8,9 @@ import { LayoutService } from '../layout.service';
 	templateUrl: './customizer.component.html'
 })
 export class AppCustomizerComponent implements OnInit {
-	constructor(private layoutService: LayoutService) {}
 	public AppConfig: any;
+
+	constructor(private layoutService: LayoutService) {}
 
 	ngOnInit() {
 		this.AppConfig = AppConfig;

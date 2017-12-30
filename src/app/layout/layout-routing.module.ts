@@ -1,38 +1,52 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './layout.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { DashboardComponent } from '../../demo/dashboard/dashboard.component';
 
 const routes: Routes = [
 	{
 		path: 'app',
 		component: LayoutComponent,
 		children: [
-			{ path: '', redirectTo: '/app/dashboard', pathMatch: 'full' },
-			{ path: 'dashboard', component: DashboardComponent },
+			{
+				path: '',
+				redirectTo: '/app/dashboard',
+				pathMatch: 'full'
+			},
+			{
+				path: 'dashboard',
+				component: DashboardComponent
+			},
 			{
 				path: 'chart',
-				loadChildren: '../charts/charts.module#ChartsModule'
+				loadChildren: '../../demo/charts/charts.module#ChartsModule'
 			},
 			{
 				path: 'ecommerce',
-				loadChildren: '../ecommerce/ecommerce.module#ECommerceModule'
+				loadChildren:
+					'../../demo/ecommerce/ecommerce.module#ECommerceModule'
 			},
 			{
 				path: 'form',
-				loadChildren: '../forms/forms.module#MyFormsModule'
+				loadChildren: '../../demo/forms/forms.module#MyFormsModule'
 			},
-			{ path: 'page', loadChildren: '../pages/pages.module#PagesModule' },
+			{
+				path: 'page',
+				loadChildren: '../../demo/pages/pages.module#PagesModule'
+			},
 			{
 				path: 'pglayout',
 				loadChildren:
-					'../page-layouts/page-layouts.module#PageLayoutsModule'
+					'../../demo/page-layouts/page-layouts.module#PageLayoutsModule'
 			},
 			{
 				path: 'table',
-				loadChildren: '../tables/tables.module#MyTablesModule'
+				loadChildren: '../../demo/tables/tables.module#MyTablesModule'
 			},
-			{ path: 'ui', loadChildren: '../ui/ui.module#UIModule' }
+			{
+				path: 'ui',
+				loadChildren: '../../demo/ui/ui.module#UIModule'
+			}
 		]
 	}
 ];

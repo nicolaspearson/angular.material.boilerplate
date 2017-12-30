@@ -5,6 +5,7 @@ export class ToggleQuickviewDirective implements AfterViewInit {
 	@Input() appToggleQuickview: string;
 
 	el: ElementRef;
+
 	constructor(el: ElementRef) {
 		this.el = el;
 	}

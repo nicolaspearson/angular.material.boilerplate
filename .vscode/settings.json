@@ -28,6 +28,7 @@
 		"ngrx",
 		"ngtools",
 		"nospace",
+		"pglayout",
 		"polyfills",
 		"selectable",
 		"slimscroll",

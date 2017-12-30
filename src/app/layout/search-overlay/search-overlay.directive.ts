@@ -6,6 +6,11 @@ import { Subscription } from 'rxjs/Subscription';
 export class SearchOverlayDirective implements AfterViewInit, OnDestroy {
 	subscription: Subscription;
 
+	$el;
+	$body;
+	$searchInput;
+	$closeOverlayBtn;
+
 	constructor(private el: ElementRef, private layoutService: LayoutService) {
 		this.subscription = layoutService.searchOverlayState$.subscribe(
 			state => {
@@ -13,11 +18,6 @@ export class SearchOverlayDirective implements AfterViewInit, OnDestroy {
 			}
 		);
 	}
-
-	$el;
-	$body;
-	$searchInput;
-	$closeOverlayBtn;
 
 	ngAfterViewInit() {
 		this.$el = $(this.el.nativeElement);
@@ -27,7 +27,7 @@ export class SearchOverlayDirective implements AfterViewInit, OnDestroy {
 
 		this.$el.on('keyup', e => {
 			if (e.keyCode === 27) {
-				// when ESC is pressed
+				// When ESC is pressed
 				this.closeOverlay();
 			}
 		});

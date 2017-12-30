@@ -1,6 +1,6 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { AppConfig } from '../../config';
+import { AppConfig } from '../../../app/config';
 
 // Mobile only: automatically close sidebar on route change.
 @Directive({ selector: '[appAutoCloseMobileNav]' })
@@ -19,7 +19,6 @@ export class AutoCloseMobileNavDirective implements OnInit {
 			this.router.events.subscribe(event => {
 				if (event instanceof NavigationEnd) {
 					setTimeout(() => {
-						// console.log('NavigationEnd:', event);
 						$body.removeClass('sidebar-mobile-open');
 					}, 0);
 				}

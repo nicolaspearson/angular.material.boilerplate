@@ -13,17 +13,14 @@ export class LayoutService {
 	echartsState$ = this.echartsSource.asObservable();
 
 	updateSearchOverlayState(state: string) {
-		// console.log('overlay state: ' + state)
 		this.searchOverlaySource.next(state);
 	}
 
 	updatePreloaderState(state: string) {
-		// console.log('preloader state: ' + state)
 		this.preloaderStateSource.next(state);
 	}
 
 	updateEChartsState(state: boolean) {
-		// console.log('echarts state: ' + state)
 		this.echartsSource.next(state);
 	}
 }

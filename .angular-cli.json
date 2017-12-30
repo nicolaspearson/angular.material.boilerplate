@@ -7,7 +7,7 @@
 		{
 			"root": "src",
 			"outDir": "dist",
-			"assets": ["assets", "vendors", "favicon.ico"],
+			"assets": ["assets", "vendors", "favicon.ico", "demo/assets"],
 			"index": "index.html",
 			"main": "main.ts",
 			"polyfills": "polyfills.ts",
@@ -16,8 +16,6 @@
 			"testTsconfig": "tsconfig.spec.json",
 			"prefix": "app",
 			"styles": [
-				"styles/app/styles-app-loading.scss",
-				"styles/app/styles.scss",
 				"styles/app.scss",
 				"styles/bootstrap.scss",
 				"styles/font-awesome.scss",

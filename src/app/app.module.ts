@@ -53,8 +53,8 @@ import { SearchOverlayDirective } from './layout/search-overlay/search-overlay.d
 import { OpenSearchOverlayDirective } from './layout/search-overlay/open-search-overlay.directive';
 
 // Pages
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PageLayoutFullscreenComponent } from './page-layouts/fullscreen/fullscreen.component';
+import { DashboardComponent } from '../demo/dashboard/dashboard.component';
+import { PageLayoutFullscreenComponent } from '../demo/page-layouts/fullscreen/fullscreen.component';
 
 // Sub modules
 import { LayoutModule } from './layout/layout.module';

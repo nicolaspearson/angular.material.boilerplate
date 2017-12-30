@@ -20,10 +20,6 @@ import 'styles/theme.scss';
 import 'styles/ui.scss';
 import 'styles/app.scss';
 
-// App Styles
-import 'styles/app/styles-app-loading.scss';
-import 'styles/app/styles.scss';
-
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',

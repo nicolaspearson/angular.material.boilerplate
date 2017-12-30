@@ -4,7 +4,7 @@
 <head>
 	<base href="/">
 
-	<title>angular.material.boilerplate</title>
+	<title>Angular Material Boilerplate</title>
 
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta charset="utf-8">
@@ -31,76 +31,11 @@
 
 	<link rel="stylesheet" href="vendors/loader.css" rel="stylesheet">
 	<link rel="stylesheet" href="vendors/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
-
-
-	<style type="text/css">
-		body,
-		html {
-			height: 100%;
-			background-color: #303030;
-		}
-
-		.app-loading {
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100%;
-			background-color: #303030;
-		}
-
-		.app-loading .spinner {
-			height: 150px;
-			width: 150px;
-			animation: rotate 2s linear infinite;
-			transform-origin: center center;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			margin: auto;
-		}
-
-		.app-loading .spinner .path {
-			stroke-dasharray: 1, 200;
-			stroke-dashoffset: 0;
-			animation: dash 1.5s ease-in-out infinite;
-			stroke-linecap: round;
-			stroke: rgb(30, 60, 191);
-		}
-
-		@keyframes rotate {
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-
-		@keyframes dash {
-			0% {
-				stroke-dasharray: 1, 200;
-				stroke-dashoffset: 0;
-			}
-			50% {
-				stroke-dasharray: 89, 200;
-				stroke-dashoffset: -35px;
-			}
-			100% {
-				stroke-dasharray: 89, 200;
-				stroke-dashoffset: -124px;
-			}
-		}
-	</style>
 </head>
 
 <body id="body">
 	<app-root>
-		<div id="loader-container" class="app-loading">
-			<div class="logo"></div>
-			<svg class="spinner" viewBox="25 25 50 50">
-				<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-			</svg>
+		<div id="loader-container">
 		</div>
 	</app-root>
 </body>

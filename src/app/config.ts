@@ -12,7 +12,7 @@ function makeAppConfig() {
 		fixedHeader: true, // true, false
 		sidebarWidth: 'middle', // small, middle, large
 		theme: 'light', // light, gray, dark
-		colorOption: '34', // 11,12,13,14,15,16; 21,22,23,24,25,26; 31,32,33,34,35,36
+		colorOption: '22', // 11,12,13,14,15,16; 21,22,23,24,25,26; 31,32,33,34,35,36
 		AutoCloseMobileNav: true // true, false. Automatically close sidenav on route change (Mobile only)
 	};
 	return config;

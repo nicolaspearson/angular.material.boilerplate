@@ -72,9 +72,7 @@ export class PreloaderDirective implements AfterViewInit, OnDestroy {
 		}
 	}
 
-	//
 	updatePreloader(state) {
-		// console.log('change state')
 		if (state === 'active') {
 			this.active();
 		}
@@ -85,7 +83,7 @@ export class PreloaderDirective implements AfterViewInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		// prevent memory leak when component destroyed
+		// prevent memory leak when component is destroyed
 		this.subscription.unsubscribe();
 	}
 }
