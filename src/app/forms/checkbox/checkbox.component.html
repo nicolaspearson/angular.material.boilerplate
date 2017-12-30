@@ -1,0 +1,50 @@
+<!-- <section class="container-fluid with-maxwidth chapter"> -->
+
+<article class="article">
+	<h2 class="article-title">Material Checkbox</h2>
+
+	<div class="box box-default">
+		<div class="box-header">Basic Usage</div>
+		<div class="box-body">
+			<p>
+				<strong style="display: inline-block; width: 100px;">Checkbox</strong>
+				<mat-checkbox [checked]="true">True</mat-checkbox>
+				<span class="space space-md"></span>
+				<mat-checkbox [checked]="false">False</mat-checkbox>
+				<span class="space space-md"></span>
+				<mat-checkbox [checked]="false" [indeterminate]="true">Indeterminate (Mixed)</mat-checkbox>
+			</p>
+			<p>
+				<strong style="display: inline-block; width: 100px;">Disabled</strong>
+				<mat-checkbox disabled [checked]="true">True</mat-checkbox>
+				<span class="space space-md"></span>
+				<mat-checkbox disabled [checked]="false">False</mat-checkbox>
+				<span class="space space-md"></span>
+				<mat-checkbox disabled [checked]="false" [indeterminate]="true">Indeterminate (Mixed)</mat-checkbox>
+			</p>
+			<p>
+				<strong style="display: inline-block; width: 100px;">Colors</strong>
+				<mat-checkbox [checked]="true" color="primary">True</mat-checkbox>
+				<span class="space space-md"></span>
+				<mat-checkbox [checked]="true">True</mat-checkbox>
+				<span class="space space-md"></span>
+				<mat-checkbox [checked]="true" color="warn">True</mat-checkbox>
+			</p>
+		</div>
+	</div>
+
+	<div class="box box-default">
+		<div class="box-header">Alignment</div>
+		<div class="box-body">
+			<p>
+				<mat-checkbox [checked]="true"> I come before my label. </mat-checkbox>
+			</p>
+			<p>
+				<mat-checkbox [checked]="true" align="end"> I come after my label. </mat-checkbox>
+			</p>
+		</div>
+	</div>
+
+</article>
+
+<!-- </section> -->

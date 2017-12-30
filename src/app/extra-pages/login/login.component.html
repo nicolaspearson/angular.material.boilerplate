@@ -1,0 +1,38 @@
+<div class="page-auth">
+	<div class="main-body">
+		<div class="card card-white">
+			<div class="card-content">
+				<div class="logo">
+					<a [routerLink]="['/']">Login</a>
+				</div>
+
+				<form name="material_login_form" class="form-validation" ng-submit="submit()">
+					<fieldset>
+						<div class="form-group">
+							<mat-form-field class="full-width">
+								<input required matInput type="email" name="email" placeholder="Email">
+								<mat-icon matSuffix class="material-icons">mail_outline</mat-icon>
+							</mat-form-field>
+						</div>
+						<div class="form-group">
+							<mat-form-field class="full-width">
+								<input required matInput type="password" name="password" placeholder="Password">
+								<mat-icon matSuffix class="material-icons">lock_outline</mat-icon>
+							</mat-form-field>
+						</div>
+
+						<div class="divider divider-md"></div>
+						<button [routerLink]="['/']" mat-raised-button type="button" color="primary" class="float-right">Login</button>
+					</fieldset>
+				</form>
+
+				<div class="additional-info">
+					<a [routerLink]="['/extra/sign-up']">Sign up</a>
+					<span class="divider-h"></span>
+					<a [routerLink]="['/extra/forgot-password']">Forgot your password?</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

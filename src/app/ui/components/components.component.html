@@ -1,0 +1,451 @@
+<section class="container-fluid with-maxwidth chapter">
+
+
+	<article class="article">
+		<h2 class="article-title">Material Loader</h2>
+		<div class="box box-default">
+			<div class="box-body">
+
+				<button mat-raised-button color="accent" class="btn-w-md" (click)="activateLoader()">Start the loader</button>
+				<span class="space"></span>
+				<button mat-raised-button color="warn" class="btn-w-md" (click)="hideLoader()">Complete it</button>
+
+				<div class="callout callout-info no-margin-bottom">
+					The loading bar will show at the top of the page.
+				</div>
+
+			</div>
+		</div>
+	</article>
+
+
+	<article class="article">
+		<h2 class="article-title">Material Tooltips</h2>
+		<div class="box box-default">
+			<div class="box-body">
+
+				<div class="row">
+					<div class="col-xl-8 mx-auto">
+						<div>
+							<div class="text-center" style="padding-top: 40px;">
+								<span matTooltip="Tooltip!" matTooltipPosition="{{tooltipDirection}}">
+									<button mat-fab>
+										<mat-icon class="material-icons">insert_drive_file</mat-icon>
+									</button>
+								</span>
+							</div>
+
+							<div class="callout callout-info">The tooltip is visible when the button is hovered, focused, or touched. </div>
+							<div class="callout callout-success">
+								<p>
+									<code>matTooltipPosition</code> attribute can used to dynamically change the direction of the tooltip.
+									<br> Note: the direction default value is 'bottom'. </p>
+							</div>
+							<mat-radio-group class="ui-md-radio-group-inline" [(ngModel)]="tooltipDirection">
+								<mat-radio-button value="left">Left</mat-radio-button>
+								<span class="space"></span>
+								<mat-radio-button value="above">Above</mat-radio-button>
+								<span class="space"></span>
+								<mat-radio-button value="below">Below</mat-radio-button>
+								<span class="space"></span>
+								<mat-radio-button value="right">Right</mat-radio-button>
+							</mat-radio-group>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</article>
+
+
+
+	<article class="article">
+		<h2 class="article-title">Material Snackbar / Toast</h2>
+		<div class="box box-default">
+			<div class="box-header">Basic Usage</div>
+			<div class="box-body">
+
+				<mat-input-container>
+					<input matInput value="Disco party!" placeholder="Message" #message>
+				</mat-input-container>
+
+				<mat-input-container>
+					<input matInput value="Dance" placeholder="Action" #action>
+				</mat-input-container>
+
+				<span class="space space-md"></span>
+				<button mat-raised-button color="accent" class="btn-w-md" (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+
+				<div class="callout callout-info">
+					<p>Only one snack-bar can ever be opened at one time.</p>
+					<p>If a new snackbar is opened while a previous message is still showing, the older message will be automatically dismissed.</p>
+				</div>
+
+			</div>
+		</div>
+	</article>
+
+
+
+	<article class="article">
+		<h2 class="article-title">Material Dialog/Modal</h2>
+		<div class="box box-default">
+			<div class="box-body">
+
+				<div class="row">
+					<div class="col-xl-8 mx-auto">
+						<h6>Basic Usage</h6>
+						<button mat-raised-button color="primary" class="btn-w-md" (click)="openDialog()">Simple dialog</button>
+						<span class="space space-md"></span>
+						<button mat-raised-button color="accent" class="btn-w-md" (click)="openDialogWithAResult()">Dailog with a result</button>
+						<div class="callout callout-info">
+							<p>You chose: {{selectedOption}}</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</article>
+
+
+
+	<article class="article">
+		<h2 class="article-title">Material Toolbar</h2>
+		<div class="box box-default">
+			<div class="box-body">
+
+				<mat-toolbar class="rounded">
+					<span>Custom Toolbar</span>
+					<span style="flex: 1 1 auto;"></span>
+					<mat-icon class="material-icons">edit</mat-icon>
+					<span class="space"></span>
+					<mat-icon class="material-icons">favorite</mat-icon>
+					<span class="space"></span>
+					<mat-icon class="material-icons">delete</mat-icon>
+				</mat-toolbar>
+
+			</div>
+		</div>
+	</article>
+
+
+
+	<article class="article">
+		<h2 class="article-title">Material Tab</h2>
+		<div class="box box-default">
+			<div class="box-body">
+
+				<mat-tab-group>
+					<mat-tab label="One">
+						<section class="box box-transparent">
+							<div class="box-body">
+								<div class="article-title-style">Blank 1</div>
+							</div>
+						</section>
+					</mat-tab>
+					<mat-tab label="Two">
+						<section class="box box-transparent">
+							<div class="box-body">
+								<div class="article-title-style">Blank 2</div>
+							</div>
+						</section>
+					</mat-tab>
+					<mat-tab label="Three">
+						<section class="box box-transparent">
+							<div class="box-body">
+								<div class="article-title-style">Blank 3</div>
+							</div>
+						</section>
+					</mat-tab>
+				</mat-tab-group>
+
+			</div>
+		</div>
+	</article>
+
+
+
+
+	<article class="article">
+		<h2 class="article-title">Material Badges</h2>
+		<div class="row">
+			<div class="col-xl-6">
+				<div class="box box-default">
+					<div class="box-header">Number and Icon</div>
+					<div class="box-body text-center padding-lg">
+
+						<div class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">account_box</div>
+						<div class="space space-md"></div>
+						<div class="material-icons mdl-badge mdl-badge--overlap" data-badge="♥">account_box</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-6">
+				<div class="box box-default">
+					<div class="box-header">Number and Icon</div>
+					<div class="box-body text-center padding-lg">
+
+						<span class="mdl-badge" data-badge="4">Inbox</span>
+						<div class="space space-md"></div>
+						<span class="mdl-badge" data-badge="♥">Mood</span>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+
+
+	<article class="article">
+		<h2 class="article-title">Badges & Pill Badges</h2>
+		<div class="row text-center">
+			<div class="col-xl-6">
+				<div class="box box-default">
+					<div class="box-header">Badges</div>
+					<div class="box-body">
+						<p>
+							<span class="badge badge-light">7</span>
+							<span class="space"></span>
+							<span class="badge badge-primary">1</span>
+							<span class="space"></span>
+							<span class="badge badge-success">2</span>
+						</p>
+						<p>
+							<span class="badge badge-info">4</span>
+							<span class="space"></span>
+							<span class="badge badge-warning">8</span>
+							<span class="space"></span>
+							<span class="badge badge-danger">16</span>
+							<span class="space"></span>
+							<span class="badge badge-dark">7</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-6">
+				<div class="box box-default">
+					<div class="box-header">Pill Badges</div>
+					<div class="box-body">
+						<p>
+							<span class="badge badge-pill badge-light">Light</span>
+							<span class="space"></span>
+							<span class="badge badge-pill badge-primary">Primary</span>
+							<span class="space"></span>
+							<span class="badge badge-pill badge-success">Success</span>
+						</p>
+						<p>
+							<span class="badge badge-pill badge-info">Info</span>
+							<span class="space"></span>
+							<span class="badge badge-pill badge-warning">Warning</span>
+							<span class="space"></span>
+							<span class="badge badge-pill badge-danger">Danger</span>
+							<span class="space"></span>
+							<span class="badge badge-pill badge-dark">Dark</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</article>
+
+
+
+	<article class="article">
+		<h2 class="article-title">Material Progress Bar, Spinner</h2>
+		<div class="row">
+			<div class="col-xl-6">
+				<div class="box box-default">
+					<div class="box-header">Progress Bar</div>
+					<div class="box-body padding-lg">
+
+						<p>Determinate</p>
+						<div class="divider"></div>
+						<mat-progress-bar mode="determinate" [value]="determinateValue"></mat-progress-bar>
+						<div class="divider divider-lg divider-dashed"></div>
+						<p>Indeterminate</p>
+						<div class="divider"></div>
+						<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+						<div class="divider divider-lg divider-dashed"></div>
+						<p>Buffer</p>
+						<div class="divider"></div>
+						<mat-progress-bar color="warn" mode="buffer" [value]="determinateValue" [bufferValue]="determinateValue2"></mat-progress-bar>
+						<div class="divider divider-lg divider-dashed"></div>
+						<p>Query</p>
+						<div class="divider"></div>
+						<mat-progress-bar mode="query"></mat-progress-bar>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-6">
+				<div class="box box-default">
+					<div class="box-header">Progress Spinner</div>
+					<div class="box-body padding-lg">
+
+						<div class="row">
+							<div class="col-xl-6">
+								<p>Determinate</p>
+								<mat-progress-spinner mode="determinate" [value]="determinateValue"></mat-progress-spinner>
+							</div>
+							<div class="col-xl-6">
+								<p>Indeterminate</p>
+								<mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+							</div>
+						</div>
+						<div class="divider divider-lg divider-dashed"></div>
+
+						<p>Theming</p>
+						<div class="row">
+							<div class="col-md-4">
+								<mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+							</div>
+							<div class="col-md-4">
+								<mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
+							</div>
+							<div class="col-md-4">
+								<mat-progress-spinner mode="indeterminate" color="warn"></mat-progress-spinner>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+
+
+	<article class="article">
+		<h2 class="article-title">Callout</h2>
+		<div class="box box-default">
+			<div class="box-body">
+
+				<div class="callout callout-success">
+					<h4>Callout heading</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, alias, in accusantium totam adipisci vel et suscipit
+						quidem libero pariatur minus ratione quo doloremque error at nemo incidunt dicta quia?</p>
+				</div>
+				<div class="callout callout-info">
+					<h4>Callout heading</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, alias, in accusantium totam adipisci vel et suscipit
+						quidem libero pariatur minus ratione quo doloremque error at nemo incidunt dicta quia?</p>
+				</div>
+				<div class="callout callout-warning">
+					<h4>Callout heading</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, alias, in accusantium totam adipisci vel et suscipit
+						quidem libero pariatur minus ratione quo doloremque error at nemo incidunt dicta quia?</p>
+				</div>
+				<div class="callout callout-danger">
+					<h4>Callout heading</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, alias, in accusantium totam adipisci vel et suscipit
+						quidem libero pariatur minus ratione quo doloremque error at nemo incidunt dicta quia?</p>
+				</div>
+
+			</div>
+		</div>
+	</article>
+
+
+
+	<article class="article">
+		<h2 class="article-title">Ribbons</h2>
+
+		<div class="row">
+			<div class="col-xl-4">
+				<div class="box box-default ui-ribbon-container">
+					<div class="ui-ribbon-wrapper">
+						<div class="ui-ribbon">
+							30% Off
+						</div>
+					</div>
+					<div class="box-header">Ribbon</div>
+					<div class="box-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti rerum reprehenderit ipsam natus saepe. Recusandae,
+							itaque nulla in illum dolorum ea eveniet quaerat ipsa placeat magni commodi obcaecati mollitia necessitatibus?</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4">
+				<div class="box box-default ui-ribbon-container ui-ribbon-primary">
+					<div class="ui-ribbon-wrapper">
+						<div class="ui-ribbon">
+							30% Off
+						</div>
+					</div>
+					<div class="box-header">Ribbon-primary</div>
+					<div class="box-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti rerum reprehenderit ipsam natus saepe. Recusandae,
+							itaque nulla in illum dolorum ea eveniet quaerat ipsa placeat magni commodi obcaecati mollitia necessitatibus?</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4">
+				<div class="box box-default ui-ribbon-container ui-ribbon-success">
+					<div class="ui-ribbon-wrapper">
+						<div class="ui-ribbon">
+							30% Off
+						</div>
+					</div>
+					<div class="box-header">Ribbon-success</div>
+					<div class="box-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti rerum reprehenderit ipsam natus saepe. Recusandae,
+							itaque nulla in illum dolorum ea eveniet quaerat ipsa placeat magni commodi obcaecati mollitia necessitatibus?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xl-4">
+				<div class="box box-default ui-ribbon-container ui-ribbon-info">
+					<div class="ui-ribbon-wrapper">
+						<div class="ui-ribbon">
+							30% Off
+						</div>
+					</div>
+					<div class="box-header">Ribbon-info</div>
+					<div class="box-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti rerum reprehenderit ipsam natus saepe. Recusandae,
+							itaque nulla in illum dolorum ea eveniet quaerat ipsa placeat magni commodi obcaecati mollitia necessitatibus?</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4">
+				<div class="box box-default ui-ribbon-container ui-ribbon-warning">
+					<div class="ui-ribbon-wrapper">
+						<div class="ui-ribbon">
+							30% Off
+						</div>
+					</div>
+					<div class="box-header">Ribbon-warning</div>
+					<div class="box-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti rerum reprehenderit ipsam natus saepe. Recusandae,
+							itaque nulla in illum dolorum ea eveniet quaerat ipsa placeat magni commodi obcaecati mollitia necessitatibus?</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4">
+				<div class="box box-default ui-ribbon-container ui-ribbon-danger">
+					<div class="ui-ribbon-wrapper">
+						<div class="ui-ribbon">
+							30% Off
+						</div>
+					</div>
+					<div class="box-header">Ribbon-danger</div>
+					<div class="box-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti rerum reprehenderit ipsam natus saepe. Recusandae,
+							itaque nulla in illum dolorum ea eveniet quaerat ipsa placeat magni commodi obcaecati mollitia necessitatibus?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+
+
+</section>

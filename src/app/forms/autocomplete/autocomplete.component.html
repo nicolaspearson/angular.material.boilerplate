@@ -1,0 +1,22 @@
+<!-- <section class="container-fluid with-maxwidth chapter"> -->
+
+<article class="article">
+	<h2 class="article-title">Material Autocomplete</h2>
+
+	<div class="box box-default">
+		<div class="box-header">Basic autocomplete</div>
+		<div class="box-body">
+			<mat-input-container>
+				<input matInput placeholder="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+			</mat-input-container>
+
+			<mat-autocomplete #auto="matAutocomplete">
+				<mat-option *ngFor="let state of filteredStates | async" [value]="state">
+					{{ state }}
+				</mat-option>
+			</mat-autocomplete>
+		</div>
+	</div>
+</article>
+
+<!-- </section> -->

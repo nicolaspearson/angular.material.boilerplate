@@ -1,0 +1,145 @@
+
+// Including: Gradient text, Dropcap, Highlight, List, divider/space, background
+
+
+// Gradient text
+.gradient-text {
+  font-size: 150px;
+  font-weight: 300;
+  color: theme-color("primary"); // fallback
+  background: -webkit-linear-gradient(92deg, #fb83fa, #00aced);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-small { font-size: 12px; }
+.text-normal { font-size: $font-size-base; }
+.text-huge { font-size: 72px; }
+.text-large { font-size: 50px; }
+.text-thin { font-weight: 300; }
+.text-ultralight { font-weight: 100; }
+
+.bold {
+  font-weight: $headings-font-weight;
+}
+
+.color-primary,
+a.color-primary { 
+  color: theme-color("primary");
+  &:hover { color: theme-color("primary"); }
+}
+.color-success,
+a.color-success { 
+  color: theme-color("success");
+  &:hover { color: theme-color("success"); }
+}
+.color-info,
+a.color-info { 
+  color: theme-color("info");
+  &:hover { color: theme-color("info"); }
+}
+.color-warning,
+a.color-warning { 
+  color: theme-color("warning");
+  &:hover { color: theme-color("warning"); }
+}
+.color-danger,
+a.color-danger { 
+  color: theme-color("danger");
+  &:hover { color: theme-color("danger"); }
+}
+.color-dark,
+a.color-dark { 
+  color: $dark;
+  &:hover { color: $dark; }
+}
+.color-white,
+a.color-white { 
+  color: $white;
+  &:hover { color: $white; }
+}
+.color-gray-darker,
+a.color-gray-darker { 
+  color: $gray-200;
+  &:hover { color: $gray-200; }
+}
+.color-gray-dark,
+a.color-gray-dark { 
+  color: $gray-800;
+  &:hover { color: $gray-800; }
+}
+.color-gray,
+a.color-gray { 
+  color: $gray-700;
+  &:hover { color: $gray-700; }
+}
+.color-gray-light,
+a.color-gray-light { 
+  color: $gray-light;
+  &:hover { color: $gray-light; }
+}
+.color-gray-lighter,
+a.color-gray-lighter { 
+  color: $gray-200;
+  &:hover { color: $gray-200; }
+}
+
+
+// Dropcap
+.dropcap,
+.dropcap-square,
+.dropcap-circle {
+  display: block;
+  float: left;
+  font-weight: normal;
+  line-height: 36px;
+  margin-right: 6px;
+  text-shadow: none;    
+}
+
+.dropcap {
+  font-size: 3.1em;
+}
+
+.dropcap-square,
+.dropcap-circle {
+  background-color: $gray-200;
+  color: $body-color;
+  width: 36px;
+  text-align: center;
+}
+
+.dropcap-square {
+  border-radius: $border-radius;    
+  font-size: 2.3em;
+}
+
+.dropcap-circle {
+  border-radius: 50%;    
+  font-size: 1.78em;
+}
+
+.dropcap.colored {
+  color: theme-color("primary");
+}
+
+.dropcap-square.colored,
+.dropcap-circle.colored {
+  background-color: theme-color("primary");
+  color: $white;
+}
+
+
+// Hightlight
+.ui-highlight {
+  background-color: $dark;
+  color: $white;
+  border-radius: $border-radius;    
+  padding: 2px 5px;
+  &.colored {
+    background-color: theme-color("primary");
+  }
+}
+
+
+

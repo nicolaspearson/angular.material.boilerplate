@@ -1,0 +1,63 @@
+<section class="container-fluid with-maxwidth chapter">
+
+	<article class="article">
+		<h2 class="article-title">Constraints</h2>
+		<div class="box box-default">
+			<div class="box-body">
+
+				<form [formGroup]="validationForm" (ngSubmit)="onSubmit()">
+					<div class="form-group">
+						<mat-input-container class="full-width">
+							<input matInput formControlName="requiredInput" placeholder="Input required">
+						</mat-input-container>
+					</div>
+					<div class="form-group">
+						<mat-input-container class="full-width">
+							<textarea matInput formControlName="requiredTextarea" placeholder="Textarea Required"></textarea>
+						</mat-input-container>
+					</div>
+					<div class="form-group">
+						<mat-input-container class="full-width">
+							<input matInput formControlName="requiredMinLength" placeholder="Required. Min length 3">
+						</mat-input-container>
+					</div>
+					<div class="form-group">
+						<mat-input-container class="full-width">
+							<input matInput formControlName="requiredMaxLength" placeholder="Required. Max length 10">
+						</mat-input-container>
+					</div>
+					<div class="form-group">
+						<mat-input-container class="full-width">
+							<input matInput formControlName="requiredMinMaxLength" placeholder="Required. Min length 3, Max length 10">
+						</mat-input-container>
+					</div>
+					<div class="form-group">
+						<mat-input-container class="full-width">
+							<input matInput formControlName="requiredPatternFoo" placeholder="Required. Match a pattern, equal to 'foo'">
+						</mat-input-container>
+					</div>
+					<div class="form-group">
+						<mat-input-container class="full-width">
+							<input matInput formControlName="requiredPattern" placeholder="Required. Match a pattern, hex color code like #e5e5e5 or #fff">
+						</mat-input-container>
+					</div>
+
+					<div class="divider divider-md"></div>
+					<button mat-raised-button type="submit" class="btn-w-md" color="primary" [disabled]="!validationForm.valid">Submit</button>
+					<span class="space space-md"></span>
+					<button mat-raised-button type="button" class="btn-w-md" (click)="onResetForm()">Reset</button>
+				</form>
+
+				<div class="callout callout-info">
+					<p>Submit button will be active only when all fields are valid.</p>
+				</div>
+				<div *ngIf="formSubmitted">
+					<div class="callout callout-success">
+						<p>You have successfully submit the form :)</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</article>
+</section>

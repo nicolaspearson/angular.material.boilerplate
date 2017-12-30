@@ -1,0 +1,42 @@
+$zindex_dropdown_menu:    ($zindex-dropdown + 1); // larger than zindex of header, sidebar, quickview
+
+
+// for App Layouts
+.app-sidebar {
+  [mat-button], [mat-raised-button], [mat-fab], [mat-icon-button], [mat-mini-fab] {
+    font-weight: normal;
+    min-width: inherit; // for collapsed sidenav, overrides default 88px
+  }
+}
+.quickview-inner {
+  .mat-list-item .mat-list-item-content {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    > p {
+      flex: 1 1 auto;
+      margin: 0;
+    }
+    .mat-secondary {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      margin-right: 0;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.app-header {
+  .mat-button {
+    min-width: 60px;
+  }
+}
+
+// Select for Cutomizer
+body { // to override
+  .cdk-overlay-container {
+    z-index: $zindex_dropdown_menu;
+  }
+}

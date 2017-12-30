@@ -1,0 +1,128 @@
+<mat-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+	<div class="md-sidenav-inner">
+		<mat-tabs>
+			<mat-tab>
+				<mat-tab-label>
+					<i class="material-icons">people</i>
+				</mat-tab-label>
+				<mat-tab-body>
+					<!-- height must be set in order to make subheader work, "55px" is the height of md-tab-label -->
+					<mat-content style="height: calc(100vh - 55px);">
+						<section>
+							<mat-subheader class="color-primary">Tech</mat-subheader>
+							<mat-list class="md-dense">
+								<mat-list-item class="md-2-line" ng-repeat="message in messages" ng-click="null">
+									<img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+									<div class="md-list-item-text">
+										<h3>{{message.who}}</h3>
+										<p>{{message.notes}}</p>
+									</div>
+								</mat-list-item>
+							</mat-list>
+						</section>
+
+						<section>
+							<mat-subheader class="color-success">Support</mat-subheader>
+							<mat-list class="md-dense">
+								<mat-list-item class="md-2-line" ng-repeat="message in messages" ng-click="null">
+									<img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+									<div class="md-list-item-text">
+										<h3>{{message.who}}</h3>
+										<p>{{message.notes}}</p>
+									</div>
+								</mat-list-item>
+							</mat-list>
+						</section>
+
+						<section>
+							<mat-subheader class="color-info">Sales</mat-subheader>
+							<mat-list class="md-dense">
+								<mat-list-item class="md-2-line" ng-repeat="message in messages" ng-click="null">
+									<img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+									<div class="md-list-item-text">
+										<h3>{{message.who}}</h3>
+										<p>{{message.notes}}</p>
+									</div>
+								</mat-list-item>
+							</mat-list>
+						</section>
+
+						<section>
+							<mat-subheader class="color-danger">Marketing</mat-subheader>
+							<mat-list class="md-dense">
+								<mat-list-item class="md-2-line" ng-repeat="message in messages" ng-click="null">
+									<img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+									<div class="md-list-item-text">
+										<h3>{{message.who}}</h3>
+										<p>{{message.notes}}</p>
+									</div>
+								</mat-list-item>
+							</mat-list>
+						</section>
+					</mat-content>
+				</mat-tab-body>
+			</mat-tab>
+			<mat-tab>
+				<mat-tab-label>
+					<i class="material-icons">notifications</i>
+				</mat-tab-label>
+				<mat-tab-body>
+					<!-- height must be set in order to make subheader work, "55px" is the height of md-tab-label -->
+					<mat-content style="height: calc(100vh - 55px);">
+						<section>
+							<mat-subheader class="color-primary">Today</mat-subheader>
+							<mat-list class="ui-md-list">
+								<mat-list-item class="md-2-line" ng-repeat="notification in notifications" ng-click="null">
+									<mat-icon class="material-icons">{{notification.icon}}</mat-icon>
+									<div class="md-list-item-text">
+										<h3>{{notification.what}}</h3>
+										<p>{{notification.detail}}</p>
+									</div>
+								</mat-list-item>
+							</mat-list>
+						</section>
+
+						<section>
+							<mat-subheader class="color-success">Yesterday</mat-subheader>
+							<mat-list class="ui-md-list">
+								<mat-list-item class="md-2-line" ng-repeat="notification in notifications" ng-click="null">
+									<mat-icon class="material-icons">{{notification.icon}}</mat-icon>
+									<div class="md-list-item-text">
+										<h3>{{notification.what}}</h3>
+										<p>{{notification.detail}}</p>
+									</div>
+								</mat-list-item>
+							</mat-list>
+						</section>
+
+						<section>
+							<mat-subheader class="color-warning">2 days ago</mat-subheader>
+							<mat-list class="ui-md-list">
+								<mat-list-item class="md-2-line" ng-repeat="notification in notifications" ng-click="null">
+									<mat-icon class="material-icons">{{notification.icon}}</mat-icon>
+									<div class="md-list-item-text">
+										<h3>{{notification.what}}</h3>
+										<p>{{notification.detail}}</p>
+									</div>
+								</mat-list-item>
+							</mat-list>
+						</section>
+
+						<section>
+							<mat-subheader class="color-danger">3 days ago</mat-subheader>
+							<mat-list class="ui-md-list">
+								<mat-list-item class="md-2-line" ng-repeat="notification in notifications" ng-click="null">
+									<mat-icon class="material-icons">{{notification.icon}}</mat-icon>
+									<div class="md-list-item-text">
+										<h3>{{notification.what}}</h3>
+										<p>{{notification.detail}}</p>
+									</div>
+								</mat-list-item>
+							</mat-list>
+						</section>
+					</mat-content>
+				</mat-tab-body>
+			</mat-tab>
+		</mat-tabs>
+	</div>
+</mat-sidenav>

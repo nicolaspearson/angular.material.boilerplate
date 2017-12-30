@@ -1,0 +1,173 @@
+// shared 
+.theme-gray,
+.theme-dark {
+  // scaffolding
+  color: $theme_dark_text_color;
+  a {
+    &:hover,
+    &:focus {
+      color: $link-color;
+    }
+  }
+
+  // sidebar
+  .app-sidebar {
+    .sidebar-header {
+      color: #fff;
+      a {
+        color: #fff;
+      }
+      a.collapsednav-toggler {
+        color: #fff;
+        opacity: .5;
+      }
+    }
+  }
+
+  // overlay
+  .app-overlay {
+    background: rgba(0,0,0,.7);
+    color: $theme_dark_text_color;
+    input {
+      color: $theme_dark_text_color;
+    }
+
+    a.overlay-close {
+      color: $text-muted;
+    }
+  }
+
+  // sidebar
+  .app-sidebar {
+    .sidebar-header {
+      color: $sidebar_text_color;
+      a {
+        color: $sidebar_text_color !important;
+      }
+    }
+  }
+
+  .app-footer {
+    .brand {
+      color: $theme_dark_text_color;
+    }
+  }
+}
+
+// Gray
+// --------------------------------------------------
+.theme-gray {
+
+  // sidebar
+  .app-sidebar {
+    background-color: $theme_gray_sidebar_bg_color;
+
+    .sidebar-header {
+      background-color: $theme_gray_sidebar_bg_color;
+    }
+    .sidebar-footer {
+      background-color: $theme_gray_sidebar_bg_color;
+    }
+
+    // overrides light bg sidebar style
+    .nav {
+      color: $sidebar_text_color;
+      a {
+        color: $sidebar_text_color;
+      }
+    }
+  }
+
+  // page-container
+  .app-page-container {
+    .app-content-wrapper{
+      background-color: $theme_gray_page_bg;
+    }
+  }
+  @media only screen and (max-width: $l_screen_sm_max) {
+    .app-page-container {
+      background-color: $theme_gray_page_bg;
+    }
+  }
+
+  // header
+  .app-header-inner {
+    &.bg-color-light,
+    &.bg-color-dark,
+    &.bg-color-primary,
+    &.bg-color-success,
+    &.bg-color-info,
+    &.bg-color-warning,
+    &.bg-color-danger {
+      background-color: $theme_gray_header_bg_color;
+      color: $theme_gray_text_color;
+      a {
+        color: $theme_gray_text_color;
+      }
+    }
+  }
+
+}
+
+
+// Dark
+// --------------------------------------------------
+.theme-dark {
+
+  // sidebar
+  .app-sidebar {
+    background-color: $theme_dark_sidebar_bg_color;
+
+    .sidebar-header {
+      background-color: $theme_dark_sidebar_bg_color;
+    }
+    .sidebar-footer {
+      background-color: $theme_dark_sidebar_bg_color;
+    }
+
+    // overrides light bg sidebar style
+    .nav {
+      color: $sidebar_text_color;
+      a {
+        color: $sidebar_text_color;
+      }
+    }
+  }
+
+  // page-container
+  .app-page-container {
+    .app-content-wrapper{
+      background-color: $theme_dark_page_bg;
+    }
+  }
+  @media only screen and (max-width: $l_screen_sm_max) {
+    .app-page-container {
+      background-color: $theme_dark_page_bg;
+    }
+  }
+
+  // header
+  .app-header-inner {
+    &.bg-color-light,
+    &.bg-color-dark,
+    &.bg-color-primary,
+    &.bg-color-success,
+    &.bg-color-info,
+    &.bg-color-warning,
+    &.bg-color-danger {
+      background-color: $theme_dark_header_bg_color;
+      color: $theme_gray_text_color;
+      a {
+        color: $theme_gray_text_color;
+      }
+    }
+  }
+}
+
+// e.g. for pages like maintaince
+.theme-dark {
+  background-color: $theme_dark_page_bg;
+}
+.theme-gray {
+  background-color: $theme_gray_page_bg;
+}

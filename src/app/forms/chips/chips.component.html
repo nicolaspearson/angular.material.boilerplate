@@ -1,0 +1,37 @@
+<!-- <section class="container-fluid with-maxwidth chapter"> -->
+
+<article class="article">
+	<h2 class="article-title">Material Chips</h2>
+
+	<section class="box box-default">
+		<div class="box-header">Basic</div>
+		<div class="box-body">
+			<mat-chip-list>
+				<mat-chip>One fish</mat-chip>
+				<mat-chip>Two fish</mat-chip>
+				<mat-chip color="primary" selected="true">Primary fish</mat-chip>
+				<mat-chip color="accent" selected="true">Accent fish</mat-chip>
+				<mat-chip color="warn" selected="true">Warn fish</mat-chip>
+			</mat-chip-list>
+		</div>
+	</section>
+
+	<section class="box box-default">
+		<div class="box-header">Chips with input</div>
+		<div class="box-body">
+			<mat-form-field class="demo-chip-list full-width">
+				<mat-chip-list #chipList>
+					<mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable" (remove)="remove(fruit)">
+						{{fruit.name}}
+						<mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+					</mat-chip>
+					<input placeholder="New fruit..." class="full-width" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+					 [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" />
+				</mat-chip-list>
+			</mat-form-field>
+		</div>
+	</section>
+</article>
+
+<!-- </section> -->
+

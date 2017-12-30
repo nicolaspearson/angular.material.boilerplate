@@ -1,0 +1,82 @@
+
+
+:focus {
+  outline: none !important;
+}
+
+
+// default-contrast of Accent and Warm should be white text instead of dark, so manually overrides
+button,
+a {
+  &[mat-fab], &[mat-mini-fab], &[mat-raised-button] {
+    text-decoration: none;
+  }
+
+  &[mat-raised-button].mat-warn, &[mat-fab].mat-warn, &[mat-mini-fab].mat-warn,
+  &[mat-raised-button].mat-accent, &[mat-fab].mat-accent, &[mat-mini-fab].mat-accent {
+    color: $white;
+  }
+  &[mat-fab], &[mat-mini-fab] {
+    color: $white;
+  }
+
+  &.btn-lg {
+    // line-height: ensure even-numbered height of button next to large input
+    @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $font-size-lg, $line-height-lg, $btn-border-radius-lg);
+  }
+  &.btn-sm {
+    // line-height: ensure proper height of button next to small input
+    @include button-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+  }
+}
+
+// header dropdown
+.mat-menu-content {
+  a[mat-menu-item] {
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $body-color;
+    }
+  }
+}
+
+[mat-tab-nav-bar], .mat-tab-header {
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+[mdInput] {
+  width: 100%;
+}
+
+mat-input-container {
+  &.mat-icon-left {
+    position: relative;
+    padding-left: 36px;
+
+    .mat-input-wrapper {
+      position: relative;
+    }
+
+    .mat-input-infix > mat-icon {
+      position: absolute;
+      top: 0;
+      left: -32px;
+      right: auto;
+    }
+  }
+}
+.mat-input-container .mat-icon.material-icons {
+  font-size: 24px;
+}
+
+.mat-radio-group-spacing {
+  mat-radio-button {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+

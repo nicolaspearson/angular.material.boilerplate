@@ -1,0 +1,23 @@
+.page-with-tabs {
+  > .page-title {
+    background-color: rgba(#000, .05);
+    padding: 30px 15px 30px 39px;
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: $headings-font-weight;
+      color: theme-color("primary");
+    }
+  }
+
+  > mat-tab-group {
+    > mat-tab-header {
+      background-color: rgba(#000, .05);
+      border-bottom: 1px solid rgba(#000, .05);
+    }
+  }
+
+  .mat-tab-body-wrapper {}
+}

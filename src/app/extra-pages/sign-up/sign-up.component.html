@@ -1,0 +1,49 @@
+<div class="page-auth">
+	<div class="main-body">
+		<div class="card card-white">
+			<div class="card-content">
+				<div class="logo">
+					<a [routerLink]="['/']">Sign Up</a>
+				</div>
+
+				<form name="material_signup_form">
+					<fieldset>
+						<div class="form-group">
+							<mat-input-container class="full-width">
+								<input required matInput type="text" name="name" placeholder="Username">
+								<mat-icon matSuffix class="material-icons">perm_identity</mat-icon>
+							</mat-input-container>
+						</div>
+
+						<div class="form-group">
+							<mat-input-container class="full-width">
+								<input required matInput type="email" name="email" placeholder="Email">
+								<mat-icon matSuffix class="material-icons">mail_outline</mat-icon>
+							</mat-input-container>
+						</div>
+
+						<mat-input-container class="full-width no-margin-bottom">
+							<input required matInput type="password" name="password" placeholder="Password">
+							<mat-icon matSuffix class="material-icons">lock_outline</mat-icon>
+						</mat-input-container>
+						<p class="text-small no-margin">By clicking on sign up, you agree to
+							<a href="javascript:;">
+								<i>terms</i>
+							</a> and
+							<a href="javascript:;">
+								<i>privacy policy</i>
+							</a>
+						</p>
+
+						<div class="divider divider-md"></div>
+						<button [routerLink]="['/']" mat-raised-button type="button" color="primary" class="float-right">Sign Up</button>
+					</fieldset>
+				</form>
+
+				<div class="additional-info">
+					<a [routerLink]="['/extra/login']">Login</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

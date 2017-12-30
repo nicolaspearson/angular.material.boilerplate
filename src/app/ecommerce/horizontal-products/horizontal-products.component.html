@@ -1,0 +1,21 @@
+<section class="container-fluid with-maxwidth-lg no-breadcrumbs chapter">
+	<div class="item-card card__horizontal" *ngFor="let product of products">
+		<div class="card__image">
+			<a href="javascript:;">
+				<img alt="product" [src]="product.img" />
+			</a>
+		</div>
+		<div class="card__body card-white">
+			<div class="card__title">
+				<h4>{{product.name}}</h4>
+				<h6>Accessories</h6>
+			</div>
+			<div class="card__price">
+				<span class="type--strikethrough">$699.99</span>
+				<span>R649.99</span>
+			</div>
+			<div class="divider divider-solid divider-lg"></div>
+			<p class="card__desc">From the way it works to the way it looks, Watch isn’t just something you wear. It’s an essential part of who you are.</p>
+		</div>
+	</div>
+</section>

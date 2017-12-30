@@ -1,0 +1,21 @@
+
+// validation
+mat-input-container:not(.ng-pristine) {
+  &.ng-invalid {
+    .mat-input-underline {
+      border-color: theme-color("danger");
+      .mat-input-ripple {
+        background-color: theme-color("danger");
+      }
+    }
+  }
+  &.ng-valid {
+    .mat-input-underline {
+      border-color: theme-color("success");
+      .mat-input-ripple {
+        background-color: theme-color("success");
+      }
+    }
+  }
+}
+

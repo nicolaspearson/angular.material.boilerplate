@@ -1,0 +1,26 @@
+<!-- <section class="container-fluid with-maxwidth chapter"> -->
+
+<article class="article">
+	<h2 class="article-title">Material Select</h2>
+
+	<div class="box box-default">
+		<div class="box-header">Basic Usage</div>
+		<div class="box-body">
+			<form>
+				<mat-form-field>
+					<mat-select placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
+						<mat-option *ngFor="let food of foods" [value]="food.value">
+							{{food.viewValue}}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<div class="callout callout-info">
+					<p>Selected value: {{selectedValue}}</p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</article>
+
+<!-- </section> -->

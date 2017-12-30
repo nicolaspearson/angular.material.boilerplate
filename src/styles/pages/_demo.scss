@@ -1,0 +1,138 @@
+// = Just for demo =
+
+// ui/typography
+.typo-styles dt {
+  display: block;
+  float: left;
+  color: #fff;
+  background-color: rgba(0,0,0,.24);
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.typo-styles dd {
+  display: block;
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+.typo-styles .typo-styles__demo {
+  margin-bottom: 8px;
+}
+
+// ui/icons
+.page-icons {
+  .card {
+    .fa,
+    .material-icons,
+    .wi {
+      color: rgba(#000, .5);
+    }
+
+    .fa,
+    .wi {
+      font-size: 20px;
+      margin: 5px;
+    }
+  }
+}
+// dark theme
+.theme-gray,
+.theme-dark {
+  .page-icons {
+    .card {
+      .fa,
+      .material-icons,
+      .wi {
+        color: $theme_dark_text_color;
+        opacity: .7;
+      }
+    }
+  }
+}
+
+
+
+
+// ui/grids
+.page-grids .grid-structure .row {
+  margin-top: .8rem;
+
+  .widget-container {
+    margin-top: 5px;
+    background: rgba(#000, .1);
+    padding: 10px 15px 12px;
+    font-size: $font-size-sm;
+    min-height: 0;
+    border-radius: $border-radius;
+  }
+
+}
+
+
+// 
+.color-palette {
+  color: rgba(255,255,255,0.87);
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 60px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .dark {
+    color: rgba(0,0,0,0.87);
+  }
+
+  .color-group {
+    padding-bottom: 40px;
+  }
+
+  .color-group:first-child, 
+  .color-group:nth-of-type(3n+1), 
+  .color-group:last-child:first-child, 
+  .color-group:last-child:nth-of-type(3n+1) {
+    clear: left;
+    margin-left: 0;
+  }
+
+  .color-group li.divide,
+  .color-group:last-child li.divide {
+    border-top: 4px solid #fafafa;
+  }
+
+  .color-group li.color,
+  .color-group:last-child li.color {
+    padding: 15px;
+  }
+
+  .color-group li,
+  .color-group:last-child li {
+    list-style-type: none;
+  }
+
+  .color-group li.main-color,
+  .color-group:last-child li.main-color {
+    border-bottom: 4px solid #fafafa;
+  }
+
+  .color-group li.main-color .name,
+  .color-group:last-child li.main-color .name {
+    display: block;
+    margin-bottom: 60px;
+  }
+
+  .color-group li.color .hex,
+  .color-group:last-child li.color .hex {
+    float: right;
+    text-transform: uppercase;
+  }
+}
+
+

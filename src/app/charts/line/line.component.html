@@ -1,0 +1,49 @@
+<section class="container-fluid no-breadcrumbs">
+
+	<div class="row">
+		<div class="col-xl-6">
+
+			<div class="box box-default">
+				<div class="box-header">Base Line</div>
+				<div class="box-body">
+					<div appECharts [EChartsOptions]="line1" style="height: 350px;"></div>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-xl-6">
+
+			<div class="box box-default">
+				<div class="box-header">Stacked Line</div>
+				<div class="box-body">
+					<div appECharts [EChartsOptions]="line2" style="height: 350px;"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xl-6">
+
+			<div class="box box-default">
+				<div class="box-header">Base Area</div>
+				<div class="box-body">
+					<div appECharts [EChartsOptions]="line3" style="height: 350px;"></div>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-xl-6">
+
+			<div class="box box-default">
+				<div class="box-header">Stacked Area</div>
+				<div class="box-body">
+					<div appECharts [EChartsOptions]="line4" style="height: 350px;"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</section>

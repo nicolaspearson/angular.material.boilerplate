@@ -1,0 +1,56 @@
+<section class="container-fluid with-maxwidth chapter">
+
+	<article class="article">
+		<h2 class="article-title">Basic Testimonials</h2>
+		<div class="row">
+			<div class="col-xl-4" *ngFor="let testimonial of testimonials">
+				<div class="testimonial">
+					<span class="testimonial__quote">
+						<i class="material-icons">format_quote</i>
+					</span>
+					<blockquote>
+						{{testimonial.content}}
+					</blockquote>
+					<img alt="avatar" class="avatar" [src]="testimonial.avatar" />
+					<h5>{{testimonial.name}}</h5>
+					<span class="title">{{testimonial.title}}</span>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<article class="article">
+		<h2 class="article-title">Alternative Style</h2>
+		<div class="row">
+			<div class="col-xl-4" *ngFor="let testimonial of testimonials">
+				<div class="testimonial testimonial-alt">
+					<img alt="avatar" class="avatar" [src]="testimonial.avatar" />
+					<blockquote>
+						{{testimonial.content}}
+					</blockquote>
+					<p class="citation">{{testimonial.name}}, {{testimonial.title}}</p>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<article class="article">
+		<h2 class="article-title">Boxed</h2>
+		<div class="row">
+			<div class="col-xl-4" *ngFor="let testimonial of testimonials">
+				<div class="box box-default">
+					<div class="box-body padding-lg-v">
+						<div class="testimonial testimonial-alt">
+							<img alt="avatar" class="avatar" [src]="testimonial.avatar" />
+							<blockquote>
+								{{testimonial.content}}
+							</blockquote>
+							<p class="citation">{{testimonial.name}}, {{testimonial.title}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+</section>

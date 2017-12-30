@@ -1,0 +1,93 @@
+.ui-ribbon-container {
+  position: relative;
+  .ui-ribbon-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 85px;
+    height: 88px;
+    top: -3px;
+    right: -3px;
+  }
+
+  .ui-ribbon {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    // font-weight: bold;
+    color: $white;
+    transform: rotate(45deg);
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    line-height: 20px;
+    background-color: $gray-700;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    &:before,
+    &:after {
+      position: absolute;
+      content: " ";
+      line-height: 0;
+      border-top: 2px solid $gray-700;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+      bottom: -2px;
+    }
+    &:before {
+      left: 0;
+      bottom: -1px;
+    }
+    &:after {
+      right: 0;
+    }
+    }
+
+  // color
+  &.ui-ribbon-primary {
+    .ui-ribbon {
+      background-color: theme-color("primary");
+      &:before,
+      &:after {
+        border-top: 2px solid theme-color("primary");
+      }
+    }
+  }
+  &.ui-ribbon-success {
+    .ui-ribbon {
+      background-color: theme-color("success");
+      &:before,
+      &:after {
+        border-top: 2px solid theme-color("success");
+      }
+    }
+  }
+  &.ui-ribbon-info {
+    .ui-ribbon {
+      background-color: theme-color("info");
+      &:before,
+      &:after {
+        border-top: 2px solid theme-color("info");
+      }
+    }
+  }
+  &.ui-ribbon-warning {
+    .ui-ribbon {
+      background-color: theme-color("warning");
+      &:before,
+      &:after {
+        border-top: 2px solid theme-color("warning");
+      }
+    }
+  }
+  &.ui-ribbon-danger {
+    .ui-ribbon {
+      background-color: theme-color("danger");
+      &:before,
+      &:after {
+        border-top: 2px solid theme-color("danger");
+      }
+    }
+  }
+
+}

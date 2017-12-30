@@ -1,0 +1,21 @@
+<section class="container-fluid with-maxwidth no-breadcrumbs chapter">
+	<div class="row">
+		<div class="col-xl-3 col-lg-6" *ngFor="let product of products">
+			<a href="javascript:;" class="item-card">
+				<div class="card__image">
+					<img alt="product" [src]="product.img" />
+				</div>
+				<div class="card__body card-white">
+					<div class="card__title">
+						<h6>Accessories</h6>
+						<h4>{{product.name}}</h4>
+					</div>
+					<div class="card__price">
+						<span class="type--strikethrough">$699.99</span>
+						<span>$649.99</span>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>

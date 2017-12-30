@@ -1,0 +1,14 @@
+<article class="article">
+	<h2 class="article-title">Material Datepicker</h2>
+
+	<div class="box box-default">
+		<div class="box-header">Basic Datepicker</div>
+		<div class="box-body">
+			<mat-form-field>
+				<input matInput [matDatepicker]="picker" placeholder="Choose a date">
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+		</div>
+	</div>
+</article>

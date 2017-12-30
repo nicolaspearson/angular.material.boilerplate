@@ -1,0 +1,67 @@
+<section class="chapter">
+
+	<article class="article">
+		<section class="hero">
+			<div class="hero-content">
+				<h1 class="hero-title">How can we help you?</h1>
+			</div>
+			<p class="hero-tagline">Feel free to contact us if you have any questions</p>
+		</section>
+	</article>
+
+	<article class="article article-dark">
+		<h2 class="article-title text-center no-margin-top">Contact Us</h2>
+		<div class="container-fluid with-maxwidth">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="box box-transparent">
+						<div class="box-body padding-lg-h">
+							<h4>Get In Touch</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consectetur necessitatibus ea possimus est quis cumque
+								vel saepe. Eum, quas, ducimus.</p>
+							<div class="divider divider-solid"></div>
+							<p>123 Mountain View
+								<br> Santa Clara, C.A.
+								<br> USA</p>
+							<div class="divider divider-solid"></div>
+							<p>
+								<strong>E:</strong> mail@site.com
+								<br>
+								<strong>P:</strong> +1 234 56789
+								<br>
+								<strong>S:</strong> www.site.com
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6">
+					<div class="box box-transparent">
+						<div class="box-body padding-lg-h">
+							<h4>Contact</h4>
+							<form name="contactForm" (ngSubmit)="onSubmit()">
+								<div class="form-group">
+									<mat-input-container class="full-width">
+										<input matInput placeholder="Name">
+									</mat-input-container>
+								</div>
+								<div class="form-group">
+									<mat-input-container class="full-width">
+										<input matInput placeholder="Email" type="email">
+									</mat-input-container>
+								</div>
+								<div class="form-group">
+									<mat-input-container class="full-width">
+										<textarea matInput placeholder="Message" mat-maxlength="150" rows="4"></textarea>
+									</mat-input-container>
+								</div>
+								<div class="divider"></div>
+								<button mat-raised-button color="primary" class="btn-w-md" type="button">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+</section>

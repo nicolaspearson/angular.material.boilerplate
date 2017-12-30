@@ -1,0 +1,22 @@
+<section class="page-blog container-fluid no-breadcrumbs with-maxwidth-md chapter">
+	<article class="blog-item" *ngFor="let post of posts">
+		<h2>
+			<a href="javascript:;">{{post.title}}</a>
+		</h2>
+		<div class="blog-info">
+			<span>
+				<img [src]="post.avatar" alt="avatar" class="avatar">
+			</span>
+			<span>
+				<a href="javascript:;" class="author">{{post.author}}</a>
+			</span>
+			<span class="date">10 June</span>
+			<span class="category">
+				<a href="javascript:;">{{post.category}}</a>
+			</span>
+		</div>
+		<p class="desc">Consequuntur hic eum ab consequatur, veniam laudantium placeat pariatur numquam quo voluptatem velit, labore voluptas tempore
+			temporibus vitae tenetur porro eligendi exercitationem fugiat ipsum in ullam. Necessitatibus laboriosam enim ea eos, eveniet
+			corporis impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	</article>
+</section>

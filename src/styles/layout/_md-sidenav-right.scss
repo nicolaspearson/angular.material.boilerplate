@@ -1,0 +1,30 @@
+md-backdrop.md-sidenav-backdrop,
+.md-sidenav-right {
+  z-index: $l_zindex_sidebar;
+}
+
+.md-sidenav-right {
+  .md-sidenav-inner {
+    height: 100%;
+
+    > md-tabs {
+      height: 100%;
+    }
+  }
+
+  md-tabs-canvas {
+    > md-pagination-wrapper {
+      // background-color: $gray-200;
+      width: 100% !important;
+
+      > md-tab-item {
+        width: 50%;
+      }
+
+      md-ink-bar {
+        color: theme-color("primary");
+        background: theme-color("primary");
+      }
+    }
+  }
+}
