@@ -13,6 +13,7 @@ export const environment = {
 		accessToken: 'SecretAccessToken'
 	},
 	envName: 'DEV',
+	hmr: false,
 	production: false,
 	versions: {
 		app: packageJson.version,

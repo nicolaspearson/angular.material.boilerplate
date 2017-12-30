@@ -2,6 +2,11 @@
 /dist
 /tmp
 /out-tsc
+/build
+/Release
+/dll
+.tmp
+documentation/*.html
 
 # dependencies
 /node_modules
@@ -19,10 +24,12 @@
 /.sass-cache
 /connect.lock
 /coverage
-/libpeerconnection.log
-npm-debug.log
-testem.log
 /typings
+
+# Logs
+logs
+*.log
+npm-debug.log
 
 # e2e
 /e2e/*.js

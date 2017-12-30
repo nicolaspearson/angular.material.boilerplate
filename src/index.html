@@ -3,14 +3,35 @@
 
 <head>
 	<base href="/">
+
 	<title>angular.material.boilerplate</title>
 
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
 
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+	<!-- google fonts -->
+	<script type="text/javascript">
+		WebFontConfig = {
+			google: { families: ['Roboto:100,300,400,400italic,500,700:latin'] }
+		};
+		(function () {
+			var wf = document.createElement('script');
+			wf.src = 'vendors/webfontloader/webfontloader.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
+
+	<link rel="stylesheet" href="vendors/loader.css" rel="stylesheet">
+	<link rel="stylesheet" href="vendors/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
+
 
 	<style type="text/css">
 		body,
@@ -47,7 +68,7 @@
 			stroke-dashoffset: 0;
 			animation: dash 1.5s ease-in-out infinite;
 			stroke-linecap: round;
-			stroke: rgb(191, 30, 91);
+			stroke: rgb(30, 60, 191);
 		}
 
 		@keyframes rotate {
@@ -73,9 +94,9 @@
 	</style>
 </head>
 
-<body>
+<body id="body">
 	<app-root>
-		<div class="app-loading">
+		<div id="loader-container" class="app-loading">
 			<div class="logo"></div>
 			<svg class="spinner" viewBox="25 25 50 50">
 				<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />

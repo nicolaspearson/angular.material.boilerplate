@@ -1,16 +1,37 @@
-import { Component } from '@angular/core';
+import * as jQuery from 'jquery';
+import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { Store } from '@ngrx/store';
 
 import * as Auth from './auth/actions/auth.actions';
 import * as fromAuth from './auth/reducers';
 
+import { AppConfig } from './config';
+import { LayoutService } from './layout/layout.service';
+
+// 3rd Party Styles
+import 'styles/material2-theme.scss';
+import 'styles/bootstrap.scss';
+
+// Custom Styles
+import 'styles/layout.scss';
+import 'styles/theme.scss';
+import 'styles/ui.scss';
+import 'styles/app.scss';
+
+// App Styles
+import 'styles/app/styles-app-loading.scss';
+import 'styles/app/styles.scss';
+
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+	styleUrls: ['./app.component.scss'],
+	providers: [LayoutService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+	public AppConfig: any;
 	title = 'Angular Material Boilerplate';
 	logo = require('../assets/logo.png');
 	isAuthenticated;
@@ -25,16 +46,23 @@ export class AppComponent {
 		} else {
 			this.isAuthenticated = true;
 		}
+	}
 
-		// Listen for route changes
-		router.events.subscribe(val => {
-			if (val instanceof NavigationEnd) {
-				if (val.url === '/login') {
+	ngOnInit() {
+		this.AppConfig = AppConfig;
+
+		// Scroll to top on route change
+		this.router.events.subscribe(evt => {
+			if (!(evt instanceof NavigationEnd)) {
+				return;
+			} else if (evt instanceof NavigationEnd) {
+				if (evt.url === '/login') {
 					this.isAuthenticated = false;
 				} else {
 					this.isAuthenticated = true;
 				}
 			}
+			window.scrollTo(0, 0);
 		});
 	}
 

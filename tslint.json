@@ -101,7 +101,6 @@
 		"use-pipe-transform-interface": true,
 		"component-class-suffix": true,
 		"directive-class-suffix": true,
-		"invoke-injectable": true,
 		"trailing-comma": false,
 		"no-internal-module": true,
 		"jsdoc-format": true
