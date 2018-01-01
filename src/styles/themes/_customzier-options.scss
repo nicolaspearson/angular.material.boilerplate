@@ -5,12 +5,15 @@ $theme_option_item_height: 60px;
 .color-option-check {
 	position: relative;
 	display: block;
+
 	input[type='radio'] {
 		display: none;
 	}
+
 	input[type='radio'] + span:hover {
 		cursor: pointer;
 	}
+
 	input[type='radio'] + span {
 		position: relative;
 		> .overlay {
@@ -28,13 +31,13 @@ $theme_option_item_height: 60px;
 			color: #fff;
 		}
 	}
+
 	input[type='radio']:checked + span {
 		> .overlay {
 			display: block;
 		}
 	}
 
-	//
 	.color-option-item {
 		overflow: hidden;
 		display: block;
@@ -54,7 +57,7 @@ $theme_option_item_height: 60px;
 	}
 }
 
-// to make it more distinguishable from white color
+// To make it more distinguishable from white color
 .color-option-check {
 	.bg-color-page {
 		background-color: #f1f1f1;
@@ -67,17 +70,21 @@ $theme_option_item_height: 60px;
 		padding: 0;
 	}
 }
+
 .theme-option-check {
 	position: relative;
 	display: block;
 	margin: 0;
 	font-weight: normal;
+
 	input[type='radio'] {
 		display: none;
 	}
+
 	input[type='radio'] + span:hover {
 		cursor: pointer;
 	}
+
 	input[type='radio'] + span {
 		position: relative;
 		> .overlay {
@@ -99,13 +106,13 @@ $theme_option_item_height: 60px;
 			}
 		}
 	}
+
 	input[type='radio']:checked + span {
 		> .overlay {
 			display: block;
 		}
 	}
 
-	//
 	.theme-option-item {
 		overflow: hidden;
 		display: block;

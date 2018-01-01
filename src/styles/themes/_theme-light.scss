@@ -1,18 +1,27 @@
-// default light theme
+// Default light theme
 
-// for boxed-layout
+// For boxed-layout
 html,
 body,
 .app-header {
-  background-color: $body-bg;
+	background-color: $body-bg;
 }
 
 .app-page-container .app-content-wrapper {
-  background-color: $page_bg;
-}
-@media only screen and (max-width: $l_screen_sm_max) {
-  .app-page-container {
-    background-color: $page_bg;
-  }
+	background-color: $page_bg;
 }
 
+@media only screen and (max-width: $l_screen_sm_max) {
+	.app-page-container {
+		background-color: $page_bg;
+	}
+}
+
+.app-footer {
+	// Use a dark footer
+	background-color: $dark;
+
+	.brand {
+		color: #fff;
+	}
+}
