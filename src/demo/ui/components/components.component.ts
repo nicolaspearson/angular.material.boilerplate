@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar, MatDialog } from '@angular/material';
-import { LayoutService } from '../../../app/layout/layout.service';
+import { DemoLayoutService } from '../../demo-layout/services/demo-layout.service';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog.component';
 import { DialogResultExampleDialogComponent } from './dialog-result-example-dialog.component';
 
@@ -22,14 +22,14 @@ export class UIComponentsComponent {
 	constructor(
 		public snackBar: MatSnackBar,
 		public dialog: MatDialog,
-		private layoutService: LayoutService
+		private demoLayoutService: DemoLayoutService
 	) {}
 
 	activateLoader() {
-		this.layoutService.updatePreloaderState('active');
+		this.demoLayoutService.updatePreloaderState('active');
 	}
 	hideLoader() {
-		this.layoutService.updatePreloaderState('hide');
+		this.demoLayoutService.updatePreloaderState('hide');
 	}
 
 	// SnackBar

@@ -6,7 +6,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { NgsRevealConfig } from 'ng-scrollreveal';
 
 import { AppConfig } from './config';
-import { LayoutService } from './layout/layout.service';
+import { DemoLayoutService } from '../demo/demo-layout/services/demo-layout.service';
 
 // 3rd Party Styles
 import 'styles/material2-theme.scss';
@@ -21,7 +21,7 @@ import 'styles/ui.scss';
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	providers: [LayoutService]
+	providers: [DemoLayoutService]
 })
 export class AppComponent implements OnInit {
 	public AppConfig: any;

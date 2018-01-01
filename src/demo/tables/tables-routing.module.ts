@@ -11,7 +11,7 @@ export const TablesRoutes: Routes = [
 		path: '',
 		component: TablesComponent,
 		children: [
-			{ path: '', redirectTo: '/app/dashboard', pathMatch: 'full' },
+			{ path: '', redirectTo: '/demo/dashboard', pathMatch: 'full' },
 			{ path: 'responsive', component: TableResponsiveComponent },
 			{ path: 'static', component: TableStaticComponent },
 			{ path: 'data-table', component: TableDataTableComponent }

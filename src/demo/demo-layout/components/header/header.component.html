@@ -1,0 +1,75 @@
+<section class="app-header">
+	<div class="app-header-inner" [ngClass]="{'bg-color-light': ['11','12','13','14','15','16','21'].indexOf(AppConfig.colorOption) >= 0,
+                 'bg-color-dark': AppConfig.colorOption === '31',
+                 'bg-color-primary': ['22','32'].indexOf(AppConfig.colorOption) >= 0,
+                 'bg-color-success': ['23','33'].indexOf(AppConfig.colorOption) >= 0,
+                 'bg-color-info': ['24','34'].indexOf(AppConfig.colorOption) >= 0,
+                 'bg-color-warning': ['25','35'].indexOf(AppConfig.colorOption) >= 0,
+                 'bg-color-danger': ['26','36'].indexOf(AppConfig.colorOption) >= 0}">
+
+		<div class="d-lg-none d-xl-none float-left">
+			<button mat-button appDemoToggleOffcanvasNav class="md-button header-icon toggle-sidebar-btn">
+				<i class="material-icons">menu</i>
+			</button>
+		</div>
+
+
+		<div class="brand d-none d-lg-inline-block d-xl-inline-block">
+			<h2>
+				<a [routerLink]="['/']">{{AppConfig.brand}}</a>
+			</h2>
+		</div>
+
+		<div class="top-nav-left d-none d-lg-inline-block d-xl-inline-block">
+			<ul class="list-unstyled list-inline">
+				<li class="list-inline-item">
+					<button mat-button class="md-button header-btn" appDemoOpenSearchOverlay>
+						<i class="material-icons">search</i>
+					</button>
+				</li>
+				<li class="list-inline-item">
+					<button mat-button class="md-button header-btn" [matMenuTriggerFor]="appNotification">
+						<i class="material-icons">notifications_none</i>
+						<span class="badge">3</span>
+					</button>
+					<mat-menu #appNotification="matMenu" x-position="after" y-position="below" overlapTrigger="false">
+						<mat-list dense>
+							<mat-list-item>
+								<mat-icon mat-list-avatar>mail_outline</mat-icon>
+								<h4 mat-line>New mail from David</h4>
+								<p mat-line class="text-muted">5 minutes ago</p>
+							</mat-list-item>
+							<mat-list-item>
+								<mat-icon mat-list-avatar>chat_bubble_outline</mat-icon>
+								<h4 mat-line>Message from Jane</h4>
+								<p mat-line class="text-muted">15 minutes ago</p>
+							</mat-list-item>
+							<mat-list-item>
+								<mat-icon mat-list-avatar>person_outline</mat-icon>
+								<h4 mat-line>New member John joined</h4>
+								<p mat-line class="text-muted">1 hour ago</p>
+							</mat-list-item>
+						</mat-list>
+					</mat-menu>
+				</li>
+			</ul>
+		</div>
+
+		<div class="top-nav-right">
+			<ul class="list-unstyled float-right">
+				<li>
+					<button mat-button class="md-button header-btn" [routerLink]="['/demo/page/about']">
+						<img src="assets/images/avatar.png" alt="" class="rounded img30_30">
+					</button>
+				</li>
+				<li>
+					<button mat-button class="md-button header-btn d-lg-none d-xl-none" appDemoOpenSearchOverlay>
+						<i class="material-icons">search</i>
+					</button>
+				</li>
+				<!-- <li><button mat-button class="md-button header-btn"><i class="material-icons">more_vert</i></button></li> -->
+			</ul>
+		</div>
+
+	</div>
+</section>

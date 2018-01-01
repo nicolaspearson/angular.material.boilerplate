@@ -8,11 +8,11 @@ import { PageLayoutWidthTabsComponent } from './with-tabs/with-tabs.component';
 
 export const PageLayoutsRoutes: Routes = [
 	{
-		// pglayout instead of "page-layout", otherwise appHighlightActiveItems will also highlights /page routes
+		// pglayout instead of "page-layout", otherwise appDemoHighlightActiveItems will also highlights /page routes
 		path: '',
 		component: PageLayoutsComponent,
 		children: [
-			{ path: '', redirectTo: '/app/dashboard', pathMatch: 'full' },
+			{ path: '', redirectTo: '/demo/dashboard', pathMatch: 'full' },
 			{ path: 'centered', component: PageLayoutCenteredComponent },
 			{ path: 'full-width', component: PageLayoutFullWidthComponent },
 			{ path: 'with-tabs', component: PageLayoutWidthTabsComponent }

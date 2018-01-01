@@ -1,4 +1,4 @@
-<div class="login__page__main__container">
+<div class="login__page__main__container" style="background: url(assets/images/background/5.png) repeat-y 0 0 fixed; background-size: cover;">
 	<app-login-form (submitted)="onSubmit($event)" [pending]="pending$ | async" [errorMessage]="error$ | async"></app-login-form>
 	<div class="login__page__version__container">
 		<p>v. {{version}}</p>

@@ -15,7 +15,7 @@ export const PagesRoutes: Routes = [
 		path: '',
 		component: PagesComponent,
 		children: [
-			{ path: '', redirectTo: '/app/dashboard', pathMatch: 'full' },
+			{ path: '', redirectTo: '/demo/dashboard', pathMatch: 'full' },
 			{ path: 'about', component: PageAboutComponent },
 			{ path: 'blog', component: PageBlogComponent },
 			{ path: 'careers', component: PageCareersComponent },

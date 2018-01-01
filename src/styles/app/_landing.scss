@@ -1,4 +1,4 @@
-.app-landing {
+.app-landing-page {
 	display: block;
 	position: relative;
 	z-index: $a_zindex_navbar;
@@ -7,7 +7,7 @@
 	height: 100%;
 	background-color: $a_white;
 
-	.app-landing-inner {
+	.app-landing-page-inner {
 		.landing-toolbar {
 			position: fixed;
 			z-index: 100;
@@ -316,7 +316,7 @@
 		}
 	}
 
-	.action-call {
+	.call-to-action {
 		padding: 4em 1em;
 		background-color: $primary;
 		text-transform: uppercase;

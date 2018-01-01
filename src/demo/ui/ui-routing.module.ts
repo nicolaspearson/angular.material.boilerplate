@@ -25,7 +25,7 @@ export const UIRoutes: Routes = [
 		path: '',
 		component: UIComponent,
 		children: [
-			{ path: '', redirectTo: '/app/dashboard', pathMatch: 'full' },
+			{ path: '', redirectTo: '/demo/dashboard', pathMatch: 'full' },
 			{ path: 'boxes', component: UIBoxesComponent },
 			{ path: 'buttons', component: UIButtonsComponent },
 			{ path: 'call-to-actions', component: UICallToActionsComponent },

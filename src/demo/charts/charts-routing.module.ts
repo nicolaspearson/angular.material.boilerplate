@@ -16,7 +16,7 @@ export const ChartsRoutes: Routes = [
 		path: '',
 		component: ChartsComponent,
 		children: [
-			{ path: '', redirectTo: '/app/dashboard', pathMatch: 'full' },
+			{ path: '', redirectTo: '/demo/dashboard', pathMatch: 'full' },
 			{ path: 'bar', component: ChartBarComponent },
 			{ path: 'funnel', component: ChartFunnelComponent },
 			{ path: 'gauge', component: ChartGaugeComponent },

@@ -11,7 +11,7 @@ export const ECommerceRoutes: Routes = [
 		path: '',
 		component: ECommerceComponent,
 		children: [
-			{ path: '', redirectTo: '/app/dashboard', pathMatch: 'full' },
+			{ path: '', redirectTo: '/demo/dashboard', pathMatch: 'full' },
 			{
 				path: 'horizontal-products',
 				component: ECommerceHorizontalProductsComponent
