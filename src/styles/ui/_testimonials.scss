@@ -1,54 +1,53 @@
 .testimonial {
-  text-align: center;
+	text-align: center;
 
-  .testimonial__quote {
-    display: block;
-    text-align: center;
-    .material-icons {
-      font-size: 3.5em;
-      line-height: 1em;
-      // margin-bottom: 0.55em;
-    }
-  }
+	.testimonial__quote {
+		display: block;
+		text-align: center;
+		.material-icons {
+			font-size: 3.5em;
+			line-height: 1em;
+			// margin-bottom: 0.55em;
+		}
+	}
 
-  blockquote {
-    &:before,
-    &:after {
-      content: none;
-    }
-  }
+	blockquote {
+		&:before,
+		&:after {
+			content: none;
+		}
+	}
 
-  .avatar {
-    border-radius: 50%;
-    max-width: 80px;
-  }
+	.avatar {
+		border-radius: 50%;
+		max-width: 80px;
+	}
 
-  h5 {
-    font-size: $font-size-base;
-    margin-bottom: .4em;
-  }
+	h5 {
+		font-size: $font-size-base;
+		margin-bottom: 0.4em;
+	}
 
-  .title {
-    opacity: .54;
-  }
+	.title {
+		opacity: 0.54;
+	}
 }
 
 .testimonial-alt {
-  .avatar {
-    max-width: 100px;
-    margin-bottom: 1rem;
-  }
+	.avatar {
+		max-width: 100px;
+		margin-bottom: 1rem;
+	}
 
-  blockquote {
-    margin: 0;
-    font-size: $font-size-lg;
-    opacity: .9;
-    border-left: 0;
-  }
+	blockquote {
+		margin: 0;
+		font-size: $font-size-lg;
+		opacity: 0.9;
+		border-left: 0;
+	}
 
-  .citation {
-    font-size: $font-size-base;
-    opacity: .54;
-  }
-
+	.citation {
+		font-size: $font-size-base;
+		opacity: 0.54;
+	}
 }

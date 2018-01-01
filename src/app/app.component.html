@@ -9,22 +9,5 @@
 				'theme-dark' : AppConfig.theme == 'dark',
 				'sidebar-sm' : AppConfig.sidebarWidth == 'small',
 				'sidebar-lg' : AppConfig.sidebarWidth == 'large'}">
-	<!-- <mat-toolbar color="primary">
-			<span routerLink="/" class="title__container">
-				<img [src]="logo" />{{title}}
-			</span>
-
-			<button mat-button class="logout-button" *ngIf="isAuthenticated" (click)="onLogoutClick()">
-				LOGOUT
-			</button>
-
-			<span class="link">
-				<a matTooltip="Source" matTooltipPosition="below" mat-icon-button href="https://github.com/nicolaspearson/angular.material.boilerplate"
-				 target="_blank">
-					<i class="fa fa-github fa-2x"></i>
-				</a>
-			</span>
-
-		</mat-toolbar> -->
 	<router-outlet></router-outlet>
 </div>

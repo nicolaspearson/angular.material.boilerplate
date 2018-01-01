@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { EChartsDirective } from './echarts.directive';
@@ -45,6 +45,7 @@ import {
 	imports: [
 		CommonModule,
 		FormsModule,
+		ReactiveFormsModule,
 		HttpModule,
 		MatAutocompleteModule,
 		MatButtonModule,
@@ -83,6 +84,7 @@ import {
 	exports: [
 		CommonModule,
 		FormsModule,
+		ReactiveFormsModule,
 		HttpModule,
 		EChartsDirective,
 		SlimScrollDirective,

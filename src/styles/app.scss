@@ -1,15 +1,23 @@
-@import "variables";
+@import 'variables';
 
-@import "vendors/material2/material2";
+@import 'vendors/material2/material2';
 
-@import "pages/demo";
-@import "pages/auth";
-@import "pages/error";
-@import "pages/lock-screen";
-@import "pages/profile";
-@import "pages/invoice";
-@import "pages/dashboard";
-@import "pages/maintenance";
-@import "pages/about";
-@import "pages/terms";
-@import "pages/blog";
+@import 'pages/demo';
+@import 'pages/auth';
+@import 'pages/error';
+@import 'pages/lock-screen';
+@import 'pages/profile';
+@import 'pages/invoice';
+@import 'pages/dashboard';
+@import 'pages/maintenance';
+@import 'pages/about';
+@import 'pages/terms';
+@import 'pages/blog';
+
+@import 'app/landing';
+
+@import './styles-reset';
+@import './styles-reset.scss-theme';
+@mixin custom-components-theme($theme) {
+	@include app-styles-reset-theme($theme);
+}

@@ -1,30 +1,30 @@
 @import '../../../../styles/app/styles-variables';
 img {
-    width: 300px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	width: 300px;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 mat-card {
-    width: 350px;
-    height: auto;
-    margin: 20px;
-    mat-card-title {
-        position: relative;
-    }
-    mat-card-subtitle {
-        min-height: 30px;
-    }
-    @media (max-width: map-get($grid-breakpoints, sm)) {
-        mat-card-subtitle {
-            min-height: auto;
-        }
-    }
+	width: 350px;
+	height: auto;
+	margin: 20px;
+	mat-card-title {
+		position: relative;
+	}
+	mat-card-subtitle {
+		min-height: 30px;
+	}
+	@media (max-width: map-get($grid-breakpoints, sm)) {
+		mat-card-subtitle {
+			min-height: auto;
+		}
+	}
 }
 
 mat-card:hover {
-    cursor: pointer;
-    box-shadow: 3px 3px 14px -1px rgb(0, 0, 0);
+	cursor: pointer;
+	box-shadow: 3px 3px 14px -1px rgb(0, 0, 0);
 }

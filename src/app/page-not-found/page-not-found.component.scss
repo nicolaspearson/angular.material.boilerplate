@@ -1,31 +1,31 @@
 @import '../../styles/app/styles-variables';
 .page__not__found__main__container {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    height: 100%;
-    min-height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.2;
-    margin: 72px auto;
-    text-align: center;
-    mat-card {
-        vertical-align: middle;
-        margin-top: 1em;
-        padding: 4em;
-        mat-card-title {
-            color: $color-page-not-found-title;
-        }
-        mat-card-content {
-            p {
-                margin-top: 1em;
-                color: $color-page-not-found-detail;
-            }
-        }
-        mat-card-actions {
-            margin-top: 2em;
-        }
-    }
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	line-height: 1.2;
+	margin: 72px auto;
+	text-align: center;
+	mat-card {
+		vertical-align: middle;
+		margin-top: 1em;
+		padding: 4em;
+		mat-card-title {
+			color: $color-page-not-found-title;
+		}
+		mat-card-content {
+			p {
+				margin-top: 1em;
+				color: $color-page-not-found-detail;
+			}
+		}
+		mat-card-actions {
+			margin-top: 2em;
+		}
+	}
 }

@@ -3,6 +3,7 @@ function makeAppConfig() {
 	const year = date.getFullYear();
 
 	const config = {
+		isAuthenticated: false,
 		brand: 'Material',
 		user: 'Tester',
 		year,

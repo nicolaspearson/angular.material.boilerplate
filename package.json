@@ -18,12 +18,10 @@
 		"lint-fix": "npm run lint \"src/**/*.ts --fix\"",
 		"e2e": "ng e2e",
 		"watch": "ng test --browsers ChromeHeadless --reporters spec",
-		"build:prod":
-			"ng build --target production --build-optimizer --vendor-chunk --stats-json",
+		"build:prod": "ng build --target production --build-optimizer --vendor-chunk --stats-json",
 		"clean": "rimraf node_modules",
 		"clean-all": "rimraf node_modules dist dll",
-		"reinstall":
-			"rimraf node_modules && rm -f package-lock.json && npm install",
+		"reinstall": "rimraf node_modules && rm -f package-lock.json && npm install",
 		"server": "cd dist && http-server",
 		"prod": "npm run clean && npm run build:prod && npm run server"
 	},
@@ -51,9 +49,11 @@
 		"hammerjs": "~2.0.8",
 		"jquery": "~3.2.1",
 		"jquery-slimscroll": "~1.3.8",
+		"ng-scrollreveal": "~2.2.0",
 		"ngrx-store-freeze": "~0.2.0",
 		"reflect-metadata": "~0.1.10",
 		"rxjs": "~5.5.6",
+		"scrollreveal": "~3.3.6",
 		"web-animations-js": "~2.3.1",
 		"webfontloader": "~1.6.28",
 		"zone.js": "~0.8.19"
@@ -70,6 +70,7 @@
 		"@types/jasminewd2": "~2.0.2",
 		"@types/jquery": "^3.2.16",
 		"@types/node": "^8.0.52",
+		"@types/scrollreveal": "0.0.3",
 		"add-asset-html-webpack-plugin": "^2.1.2",
 		"angular-router-loader": "^0.7.0",
 		"angular2-template-loader": "^0.6.2",

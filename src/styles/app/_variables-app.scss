@@ -1,0 +1,43 @@
+// map Bootstrap variables here so that Bootstrap is not required for essential layout
+// prefix with `a_`
+// Note: '_' and '-' are identical, e.g. if bootstrap _var.scss is loaded, $body_bg will be compiled with value of $body-bg
+
+// color
+$a_body_bg: $body-bg;
+$a_white: #fff; // for app-page-container, quickview, header
+$a_gray_dark: $gray-800; // for nav
+
+// screen
+$a_screen_md_min: map-get($grid-breakpoints, lg);
+$a_screen_sm_max: (map-get($grid-breakpoints, lg) - 1);
+
+// zindex
+$a_zindex_page_container_mobile: 100;
+$a_zindex_sidebar_mobile: ($a_zindex_page_container_mobile - 1);
+$a_zindex_navbar: 1000;
+$a_zindex_sidebar: ($a_zindex_navbar + 1);
+$a_zindex_quickview: ($a_zindex_navbar + 1);
+$a_zindex_overlay: $zindex-modal-backdrop;
+
+// Layout
+$a_header_height: 60px;
+$a_mobile_header_height: 48px;
+
+$a_sidebar_width_collapsed: 64px; // Desktop only: collpased sidebar
+$a_sidebar_width: 250px; // Desktop: sidebar; Mobile: off-canvas sidebar
+
+$a_right_quickview_width: 300px;
+
+$a_layout_boxed_max_width: 1200px;
+
+// Motion
+// https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
+$a_transition_bezier: 0.05, 0.74, 0.27, 0.99; // for nav, quickview
+
+$a_transition_ease: cubic-bezier(0.4, 0, 0.2, 1);
+$a_transition_ease_out: cubic-bezier(0, 0, 0.2, 1); // Used on sidebar related
+$a_transition_ease_in: cubic-bezier(0.4, 0, 1, 1);
+
+// $a_transition_ease_out_sidebar:   cubic-bezier(.25,.75,.25,.99);
+$a_sidebar_collpase_duration: 0.3s;
+$a_transition_ease_out_quickview: cubic-bezier(0.05, 0.74, 0.2, 0.99);

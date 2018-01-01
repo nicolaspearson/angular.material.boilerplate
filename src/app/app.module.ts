@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
+import { NgsRevealModule } from 'ng-scrollreveal';
+
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {
@@ -19,6 +21,7 @@ import { CoreModule } from '@app/core';
 import { CustomRouterStateSerializer } from './shared/utils';
 import { reducers, metaReducers } from './reducers';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LandingComponent } from './landing/landing.component';
 
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
@@ -67,6 +70,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 	declarations: [
 		AppComponent,
 		PageNotFoundComponent,
+		LandingComponent,
 		// Layout
 		LayoutComponent,
 		PreloaderDirective,
@@ -92,7 +96,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 		// Dashboard
 		DashboardComponent,
 		// Pages
-		PageLayoutFullscreenComponent
+		PageLayoutFullscreenComponent,
+		LandingComponent
 	],
 	imports: [
 		// Angular
@@ -101,8 +106,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 		CommonModule,
 		HttpClientModule,
 		RouterModule.forRoot(routes, {
-			enableTracing: !environment.production,
-			useHash: true
+			enableTracing: !environment.production
 		}),
 		/**
 		 * StoreModule.forRoot is imported once in the root module, accepting a reducer
@@ -127,7 +131,9 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 		AuthModule.forRoot(),
 		// Sub modules
 		LayoutModule,
-		SharedModule
+		SharedModule,
+		// Scroll Reveal
+		NgsRevealModule.forRoot()
 	],
 	providers: [
 		/**

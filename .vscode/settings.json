@@ -30,6 +30,7 @@
 		"nospace",
 		"pglayout",
 		"polyfills",
+		"scrollreveal",
 		"selectable",
 		"slimscroll",
 		"tslib",

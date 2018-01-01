@@ -2,10 +2,8 @@ import * as jQuery from 'jquery';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
-import { Store } from '@ngrx/store';
 
-import * as Auth from './auth/actions/auth.actions';
-import * as fromAuth from './auth/reducers';
+import { NgsRevealConfig } from 'ng-scrollreveal';
 
 import { AppConfig } from './config';
 import { LayoutService } from './layout/layout.service';
@@ -15,56 +13,48 @@ import 'styles/material2-theme.scss';
 import 'styles/bootstrap.scss';
 
 // Custom Styles
+import 'styles/app.scss';
 import 'styles/layout.scss';
 import 'styles/theme.scss';
 import 'styles/ui.scss';
-import 'styles/app.scss';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
 	providers: [LayoutService]
 })
 export class AppComponent implements OnInit {
 	public AppConfig: any;
-	title = 'Angular Material Boilerplate';
-	logo = require('../assets/logo.png');
-	isAuthenticated;
 
-	constructor(
-		private router: Router,
-		private authStore: Store<fromAuth.State>
-	) {
-		const currentRoute = router.url;
-		if (currentRoute === '/login') {
-			this.isAuthenticated = false;
-		} else {
-			this.isAuthenticated = true;
-		}
+	constructor(private router: Router, ngsRevealConfig: NgsRevealConfig) {
+		// Customize default values of ng-scrollreveal directives used by this component tree
+		ngsRevealConfig.duration = 500;
+		ngsRevealConfig.easing = 'cubic-bezier(0.645, 0.045, 0.355, 1)';
 	}
 
 	ngOnInit() {
 		this.AppConfig = AppConfig;
 
+		const currentRoute = this.router.url;
+
+		if (currentRoute === '/login' || currentRoute === '/') {
+			this.AppConfig.isAuthenticated = false;
+		} else {
+			this.AppConfig.isAuthenticated = true;
+		}
+
 		// Scroll to top on route change
-		this.router.events.subscribe(evt => {
-			if (!(evt instanceof NavigationEnd)) {
+		this.router.events.subscribe(event => {
+			if (!(event instanceof NavigationEnd)) {
 				return;
-			} else if (evt instanceof NavigationEnd) {
-				if (evt.url === '/login') {
-					this.isAuthenticated = false;
+			} else if (event instanceof NavigationEnd) {
+				if (event.url === '/login' || event.url === '/') {
+					this.AppConfig.isAuthenticated = false;
 				} else {
-					this.isAuthenticated = true;
+					this.AppConfig.isAuthenticated = true;
 				}
 			}
 			window.scrollTo(0, 0);
 		});
-	}
-
-	onLogoutClick() {
-		// Dispatch a logout event in order to clear
-		// state and storage credentials correctly
-		this.authStore.dispatch(new Auth.LoginRedirect());
 	}
 }
