@@ -1,13 +1,11 @@
 @import 'bootstrap/functions';
 
 // Variables
-//
+
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-//
 // Color system
-//
 
 // stylelint-disable
 $white: #fff !default;
@@ -101,7 +99,7 @@ $theme-colors: map-merge(
 $theme-color-interval: 8% !default;
 
 // Options
-//
+
 // Quickly modify global styling by enabling or disabling optional features.
 
 $enable-caret: true !default;
@@ -114,7 +112,7 @@ $enable-grid-classes: true !default;
 $enable-print-styles: true !default;
 
 // Spacing
-//
+
 // Control the default styling of most Bootstrap elements by modifying these
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.

@@ -5,6 +5,11 @@ import { Router, NavigationEnd } from '@angular/router';
 
 import { NgsRevealConfig } from 'ng-scrollreveal';
 
+import { Store } from '@ngrx/store';
+
+import * as Auth from './auth/actions/auth.actions';
+import * as fromAuth from './auth/reducers';
+
 import { AppConfig } from './config';
 import { DemoLayoutService } from '../demo/demo-layout/services/demo-layout.service';
 
@@ -26,7 +31,15 @@ import 'styles/ui.scss';
 export class AppComponent implements OnInit {
 	public AppConfig: any;
 
-	constructor(private router: Router, ngsRevealConfig: NgsRevealConfig) {
+	isAuthenticated: boolean;
+
+	showToolbar: boolean;
+
+	constructor(
+		private router: Router,
+		private ngsRevealConfig: NgsRevealConfig,
+		private authStore: Store<fromAuth.State>
+	) {
 		// Customize default values of ng-scrollreveal directives used by this component tree
 		ngsRevealConfig.duration = 500;
 		ngsRevealConfig.easing = 'cubic-bezier(0.645, 0.045, 0.355, 1)';
@@ -34,8 +47,18 @@ export class AppComponent implements OnInit {
 
 	ngOnInit() {
 		this.AppConfig = AppConfig;
+		this.isAuthenticated = AppConfig.isAuthenticated;
 
 		const currentRoute = this.router.url;
+
+		if (
+			currentRoute.startsWith('/demo') ||
+			currentRoute.startsWith('/app')
+		) {
+			this.showToolbar = false;
+		} else {
+			this.showToolbar = true;
+		}
 
 		if (currentRoute === '/login' || currentRoute === '/') {
 			this.AppConfig.isAuthenticated = false;
@@ -48,6 +71,15 @@ export class AppComponent implements OnInit {
 			if (!(event instanceof NavigationEnd)) {
 				return;
 			} else if (event instanceof NavigationEnd) {
+				if (
+					event.url.startsWith('/demo') ||
+					event.url.startsWith('/app')
+				) {
+					this.showToolbar = false;
+				} else {
+					this.showToolbar = true;
+				}
+
 				if (event.url === '/login' || event.url === '/') {
 					this.AppConfig.isAuthenticated = false;
 				} else {
@@ -56,5 +88,19 @@ export class AppComponent implements OnInit {
 			}
 			window.scrollTo(0, 0);
 		});
+	}
+
+	onDemoClick() {
+		this.router.navigateByUrl('/demo/dashboard');
+	}
+
+	onLoginClick() {
+		this.router.navigateByUrl('/login');
+	}
+
+	onLogoutClick() {
+		// Dispatch a logout event in order to clear
+		// state and storage credentials correctly
+		this.authStore.dispatch(new Auth.LoginRedirect());
 	}
 }

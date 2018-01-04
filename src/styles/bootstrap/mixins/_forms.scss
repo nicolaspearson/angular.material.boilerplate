@@ -11,98 +11,96 @@
 // Example usage: change the default blue border and shadow to white for better
 // contrast against a dark gray background.
 @mixin form-control-focus() {
-  &:focus {
-    color: $input-focus-color;
-    background-color: $input-focus-bg;
-    border-color: $input-focus-border-color;
-    outline: none;
-    // Avoid using mixin so we can pass custom focus shadow properly
-    @if $enable-shadows {
-      box-shadow: $input-box-shadow, $input-btn-focus-box-shadow;
-    } @else {
-      box-shadow: $input-btn-focus-box-shadow;
-    }
-  }
+	&:focus {
+		color: $input-focus-color;
+		background-color: $input-focus-bg;
+		border-color: $input-focus-border-color;
+		outline: none;
+		// Avoid using mixin so we can pass custom focus shadow properly
+		@if $enable-shadows {
+			box-shadow: $input-box-shadow, $input-btn-focus-box-shadow;
+		} @else {
+			box-shadow: $input-btn-focus-box-shadow;
+		}
+	}
 }
 
-
 @mixin form-validation-state($state, $color) {
+	.#{$state}-feedback {
+		display: none;
+		margin-top: 0.25rem;
+		font-size: 0.875rem;
+		color: $color;
+	}
 
-  .#{$state}-feedback {
-    display: none;
-    margin-top: .25rem;
-    font-size: .875rem;
-    color: $color;
-  }
+	.#{$state}-tooltip {
+		position: absolute;
+		top: 100%;
+		z-index: 5;
+		display: none;
+		width: 250px;
+		padding: 0.5rem;
+		margin-top: 0.1rem;
+		font-size: 0.875rem;
+		line-height: 1;
+		color: #fff;
+		background-color: rgba($color, 0.8);
+		border-radius: 0.2rem;
+	}
 
-  .#{$state}-tooltip {
-    position: absolute;
-    top: 100%;
-    z-index: 5;
-    display: none;
-    width: 250px;
-    padding: .5rem;
-    margin-top: .1rem;
-    font-size: .875rem;
-    line-height: 1;
-    color: #fff;
-    background-color: rgba($color,.8);
-    border-radius: .2rem;
-  }
+	.form-control,
+	.custom-select {
+		.was-validated &:#{$state},
+		&.is-#{$state} {
+			border-color: $color;
 
-  .form-control,
-  .custom-select {
-    .was-validated &:#{$state},
-    &.is-#{$state} {
-      border-color: $color;
+			&:focus {
+				box-shadow: 0 0 0 0.2rem rgba($color, 0.25);
+			}
 
-      &:focus {
-        box-shadow: 0 0 0 .2rem rgba($color,.25);
-      }
+			~ .#{$state}-feedback,
+			~ .#{$state}-tooltip {
+				display: block;
+			}
+		}
+	}
 
-      ~ .#{$state}-feedback,
-      ~ .#{$state}-tooltip {
-        display: block;
-      }
-    }
-  }
+	.form-check-input {
+		.was-validated &:#{$state},
+		&.is-#{$state} {
+			+ .form-check-label {
+				color: $color;
+			}
+		}
+	}
 
+	// custom radios and checks
+	.custom-control-input {
+		.was-validated &:#{$state},
+		&.is-#{$state} {
+			~ .custom-control-indicator {
+				background-color: rgba($color, 0.25);
+			}
+			~ .custom-control-description {
+				color: $color;
+			}
+		}
+	}
 
-  // TODO: redo check markup lol crap
-  .form-check-input {
-    .was-validated &:#{$state},
-    &.is-#{$state} {
-      + .form-check-label {
-        color: $color;
-      }
-    }
-  }
+	// custom file
+	.custom-file-input {
+		.was-validated &:#{$state},
+		&.is-#{$state} {
+			~ .custom-file-control {
+				border-color: $color;
 
-  // custom radios and checks
-  .custom-control-input {
-    .was-validated &:#{$state},
-    &.is-#{$state} {
-      ~ .custom-control-indicator {
-        background-color: rgba($color, .25);
-      }
-      ~ .custom-control-description {
-        color: $color;
-      }
-    }
-  }
-
-  // custom file
-  .custom-file-input {
-    .was-validated &:#{$state},
-    &.is-#{$state} {
-      ~ .custom-file-control {
-        border-color: $color;
-
-        &::before { border-color: inherit; }
-      }
-      &:focus {
-        box-shadow: 0 0 0 .2rem rgba($color,.25);
-      }
-    }
-  }
+				&::before {
+					border-color: inherit;
+				}
+			}
+			&:focus {
+				box-shadow: 0 0 0 0.2rem rgba($color, 0.25);
+			}
+		}
+	}
 }

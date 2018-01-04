@@ -4,12 +4,15 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class DemoLayoutService {
 	private preloaderStateSource = new Subject<string>();
+
 	preloaderState$ = this.preloaderStateSource.asObservable();
 
 	private searchOverlaySource = new Subject<string>();
+
 	searchOverlayState$ = this.searchOverlaySource.asObservable();
 
 	private echartsSource = new Subject<boolean>();
+
 	echartsState$ = this.echartsSource.asObservable();
 
 	updateSearchOverlayState(state: string) {

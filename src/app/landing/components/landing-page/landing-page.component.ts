@@ -1,13 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
-
-import * as Auth from '../../../auth/actions/auth.actions';
-import * as fromAuth from '../../../auth/reducers';
 
 import { AppConfig } from '../../../config';
-import { AppComponent } from '@app/app.component';
 
 @Component({
 	selector: 'app-landing-page',
@@ -21,19 +16,15 @@ export class LandingPageComponent implements OnInit {
 
 	form: FormGroup;
 
-	isAuthenticated;
-
 	testimonials;
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private router: Router,
-		private authStore: Store<fromAuth.State>
+		private router: Router
 	) {}
 
 	ngOnInit() {
 		this.AppConfig = AppConfig;
-		this.isAuthenticated = AppConfig.isAuthenticated;
 
 		this.newForm = {
 			email: ''
@@ -54,16 +45,6 @@ export class LandingPageComponent implements OnInit {
 		if (this.form.valid) {
 			const newForm: any = this.form.value;
 		}
-	}
-
-	onDemoClick() {
-		this.router.navigateByUrl('/demo/dashboard');
-	}
-
-	onLogoutClick() {
-		// Dispatch a logout event in order to clear
-		// state and storage credentials correctly
-		this.authStore.dispatch(new Auth.LoginRedirect());
 	}
 
 	getTestimonials() {

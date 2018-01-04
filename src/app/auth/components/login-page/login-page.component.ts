@@ -10,7 +10,7 @@ import { environment as env } from '@env/environment';
 @Component({
 	selector: 'app-login-page',
 	templateUrl: './login-page.component.html',
-	styleUrls: ['./login-page.component.scss'],
+	styleUrls: [],
 	animations: [routerTransition]
 })
 export class LoginPageComponent implements OnInit {

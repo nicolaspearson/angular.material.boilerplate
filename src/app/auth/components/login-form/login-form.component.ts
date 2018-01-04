@@ -6,12 +6,10 @@ import { routerTransition } from '@app/core';
 @Component({
 	selector: 'app-login-form',
 	templateUrl: './login-form.component.html',
-	styleUrls: ['./login-form.component.scss'],
+	styleUrls: [],
 	animations: [routerTransition]
 })
 export class LoginFormComponent implements OnInit {
-	logo = require('../../../../assets/logo.png');
-
 	@Input()
 	set pending(isPending: boolean) {
 		if (isPending) {

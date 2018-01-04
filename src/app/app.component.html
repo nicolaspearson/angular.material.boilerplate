@@ -1,13 +1,64 @@
-<div myPreloader class="preloaderbar hide">
+<div appDemoPreloader class="preloaderbar hide">
 	<span class="bar"></span>
 </div>
-<div class="app-main full-height" [ngClass]="{'fixed-header' : AppConfig.fixedHeader,
-				'nav-collapsed' : AppConfig.navCollapsed,
-				'nav-behind' : AppConfig.navBehind,
-				'layout-boxed' : AppConfig.layoutBoxed,
-				'theme-gray' : AppConfig.theme == 'gray',
-				'theme-dark' : AppConfig.theme == 'dark',
-				'sidebar-sm' : AppConfig.sidebarWidth == 'small',
-				'sidebar-lg' : AppConfig.sidebarWidth == 'large'}">
-	<router-outlet></router-outlet>
+
+<div class="app-main full-height" [ngClass]="{
+	'fixed-header' : AppConfig.fixedHeader,
+	'nav-collapsed' : AppConfig.navCollapsed,
+	'nav-behind' : AppConfig.navBehind,
+	'layout-boxed' : AppConfig.layoutBoxed,
+	'theme-gray' : AppConfig.theme == 'gray',
+	'theme-dark' : AppConfig.theme == 'dark',
+	'sidebar-sm' : AppConfig.sidebarWidth == 'small',
+	'sidebar-lg' : AppConfig.sidebarWidth == 'large'}">
+
+	<div>
+		<mat-toolbar *ngIf="showToolbar" class="app-main-toolbar mat-elevation-z6" color="primary" [ngClass]="{
+				'bg-color-light': ['11','12','13','14','15','16','21'].indexOf(AppConfig.colorOption) >= 0,
+				'bg-color-dark': AppConfig.colorOption === '31',
+				'bg-color-primary': ['22','32'].indexOf(AppConfig.colorOption) >= 0,
+				'bg-color-success': ['23','33'].indexOf(AppConfig.colorOption) >= 0,
+				'bg-color-info': ['24','34'].indexOf(AppConfig.colorOption) >= 0,
+				'bg-color-warning': ['25','35'].indexOf(AppConfig.colorOption) >= 0,
+				'bg-color-danger': ['26','36'].indexOf(AppConfig.colorOption) >= 0}">
+
+			<div routerLink="/" class="app-main-title-container">
+
+				<app-logo></app-logo>
+
+				<div class="brand">
+					<h2>
+						<a class='title' [routerLink]="['/']">{{AppConfig.brand}}</a>
+					</h2>
+				</div>
+
+			</div>
+
+			<button mat-button class="plain-button" *ngIf="!isAuthenticated" (click)="onLoginClick()">
+				LOGIN
+			</button>
+
+			<button mat-button class="plain-button" *ngIf="isAuthenticated" (click)="onLogoutClick()">
+				LOGOUT
+			</button>
+
+			<button mat-button class="outline-button" (click)="onDemoClick()">
+				DEMO
+			</button>
+
+			<span class="github-link">
+				<a matTooltip="Source" matTooltipPosition="below" mat-icon-button href="https://github.com/nicolaspearson/angular.material.boilerplate"
+				 target="_blank">
+					<i class="fa fa-github fa-2x"></i>
+				</a>
+			</span>
+
+		</mat-toolbar>
+
+	</div>
+
+	<div class="app-main-router-container full-height" [class.app-toolbar-spacer]="showToolbar">
+		<router-outlet></router-outlet>
+	</div>
+
 </div>

@@ -1,0 +1,66 @@
+.app-main {
+	.app-main-toolbar {
+		position: fixed;
+		z-index: $a_zindex_navbar;
+
+		.app-main-title-container {
+			cursor: pointer;
+			flex: 1 1 auto;
+			align-content: center;
+			padding: 0 2px;
+
+			.logo-img {
+				.st0 {
+					fill: #fff;
+				}
+				text-align: center;
+				font-size: 24px;
+			}
+
+			.brand {
+				display: inline-block;
+				width: $a_sidebar_width;
+				transition: padding 0.25s $a_transition_ease_out;
+				padding: 0 12px;
+				text-align: left;
+
+				a {
+					font-weight: normal;
+					font-size: 23px;
+					line-height: $a_header_height;
+					text-decoration: none;
+				}
+			}
+
+			.title {
+				color: $a_white;
+			}
+		}
+
+		.plain-button {
+			line-height: 35px;
+			margin-right: 10px;
+			color: $a_white;
+			font-size: 0.625em;
+		}
+
+		.outline-button {
+			line-height: 35px;
+			margin-right: 10px;
+			color: $a_white;
+			font-family: 'Roboto-Light';
+			font-size: 0.625em;
+			border: 1px solid $a_white;
+		}
+
+		.github-link {
+			a {
+				color: $a_white;
+			}
+		}
+	}
+
+	.app-toolbar-spacer {
+		padding-top: $a_header_height;
+	}
+}

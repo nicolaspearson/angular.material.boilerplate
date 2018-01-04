@@ -23,6 +23,10 @@ import { HighlightActiveItemsDirective } from './directives/highlight-active-ite
 import { CustomizerComponent } from './components/customizer/customizer.component';
 import { ToggleQuickviewDirective } from './directives/toggle-quickview.directive';
 
+// Demo Pages
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { PageLayoutFullscreenComponent } from '../page-layouts/fullscreen/fullscreen.component';
+
 // Footer
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -48,6 +52,9 @@ export const COMPONENTS = [
 	// Customizer
 	CustomizerComponent,
 	ToggleQuickviewDirective,
+	// Demo Pages
+	DashboardComponent,
+	PageLayoutFullscreenComponent,
 	// Footer
 	FooterComponent,
 	// Search overlay

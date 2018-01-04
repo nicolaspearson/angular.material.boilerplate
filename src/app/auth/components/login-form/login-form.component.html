@@ -1,25 +1,40 @@
-<mat-card>
-	<mat-card-content>
-		<span class="login__logo__container">
-			<img [src]="logo" />
-		</span>
-		<form class="login__form" [formGroup]="form" (ngSubmit)="submit()">
-			<mat-form-field class="login__input">
-				<input matInput formControlName="username" placeholder="Username">
-			</mat-form-field>
-			<mat-form-field class="login__input">
-				<input matInput formControlName="password" placeholder="Password" type="password">
-			</mat-form-field>
+<div class="app-login-main-container">
+	<mat-card class="app-login-card">
 
-			<p *ngIf="errorMessage" class="login__error">
-				{{errorMessage}}
-			</p>
+		<div class="app-login-header">
+			<div class="app-login-logo-container">
+				<app-logo></app-logo>
+			</div>
+		</div>
 
-			<p>
-				<button class="login__button" type="submit" mat-raised-button color="primary">
-					LOGIN
-				</button>
-			</p>
-		</form>
-	</mat-card-content>
-</mat-card>
+		<mat-card-content class="app-login-card-content">
+			<form class="app-login-form" [formGroup]="form" (ngSubmit)="submit()">
+				<mat-form-field class="app-login-input">
+					<input matInput formControlName="username" placeholder="Username">
+				</mat-form-field>
+				<mat-form-field class="app-login-input">
+					<input matInput formControlName="password" placeholder="Password" type="password">
+				</mat-form-field>
+
+				<p *ngIf="errorMessage" class="app-login-error">
+					{{errorMessage}}
+				</p>
+
+				<p>
+					<button class="app-login-button" type="submit" mat-raised-button color="primary">
+						LOGIN
+					</button>
+				</p>
+
+				<div class="app-login-form-forgot-password">
+					<a>Forgot your password?</a>
+				</div>
+			</form>
+		</mat-card-content>
+
+		<div class="additional-info">
+			<a>Don't have an account yet? Sign Up</a>
+		</div>
+
+	</mat-card>
+</div>

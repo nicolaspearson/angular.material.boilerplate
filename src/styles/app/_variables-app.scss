@@ -1,17 +1,20 @@
-// map Bootstrap variables here so that Bootstrap is not required for essential layout
+// Map Bootstrap variables here so that Bootstrap is not required for essential layout
 // prefix with `a_`
 // Note: '_' and '-' are identical, e.g. if bootstrap _var.scss is loaded, $body_bg will be compiled with value of $body-bg
 
-// color
+// Colors
+$transparent: rgba(0, 0, 0, 0);
 $a_body_bg: $body-bg;
 $a_white: #fff; // for app-page-container, quickview, header
 $a_gray_dark: $gray-800; // for nav
+$grey_ef: #efefef;
+$grey_b9: #b9b9b9;
 
-// screen
+// Screens
 $a_screen_md_min: map-get($grid-breakpoints, lg);
 $a_screen_sm_max: (map-get($grid-breakpoints, lg) - 1);
 
-// zindex
+// Z-Index
 $a_zindex_page_container_mobile: 100;
 $a_zindex_sidebar_mobile: ($a_zindex_page_container_mobile - 1);
 $a_zindex_navbar: 1000;
@@ -20,7 +23,7 @@ $a_zindex_quickview: ($a_zindex_navbar + 1);
 $a_zindex_overlay: $zindex-modal-backdrop;
 
 // Layout
-$a_header_height: 60px;
+$a_header_height: 64px;
 $a_mobile_header_height: 48px;
 
 $a_sidebar_width_collapsed: 64px; // Desktop only: collpased sidebar
@@ -38,6 +41,6 @@ $a_transition_ease: cubic-bezier(0.4, 0, 0.2, 1);
 $a_transition_ease_out: cubic-bezier(0, 0, 0.2, 1); // Used on sidebar related
 $a_transition_ease_in: cubic-bezier(0.4, 0, 1, 1);
 
-// $a_transition_ease_out_sidebar:   cubic-bezier(.25,.75,.25,.99);
+$a_transition_ease_out_sidebar: cubic-bezier(0.25, 0.75, 0.25, 0.99);
 $a_sidebar_collpase_duration: 0.3s;
 $a_transition_ease_out_quickview: cubic-bezier(0.05, 0.74, 0.2, 0.99);

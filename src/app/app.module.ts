@@ -28,10 +28,6 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LandingPageComponent } from './landing/components/landing-page/landing-page.component';
 
-// Demo Pages
-import { DashboardComponent } from '../demo/dashboard/dashboard.component';
-import { PageLayoutFullscreenComponent } from '../demo/page-layouts/fullscreen/fullscreen.component';
-
 // Sub Modules
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
@@ -47,10 +43,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 		AppComponent,
 		// Pages
 		PageNotFoundComponent,
-		LandingPageComponent,
-		// Demo Pages
-		DashboardComponent,
-		PageLayoutFullscreenComponent
+		LandingPageComponent
 	],
 	imports: [
 		// Angular

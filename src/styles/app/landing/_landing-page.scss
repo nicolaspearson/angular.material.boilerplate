@@ -1,70 +1,8 @@
 .app-landing-page {
-	display: block;
-	position: relative;
 	z-index: $a_zindex_navbar;
-	height: $a_header_height;
-	width: 100%;
-	height: 100%;
 	background-color: $a_white;
 
-	.app-landing-page-inner {
-		.landing-toolbar {
-			position: fixed;
-			z-index: 100;
-			box-shadow: 1px 0 2px rgba(0, 0, 0, 0.15);
-		}
-
-		.landing-title-container {
-			cursor: pointer;
-			flex: 1 1 auto;
-			align-content: center;
-			padding: 0 2px;
-
-			.logo-img {
-				.st0 {
-					fill: #fff;
-				}
-				text-align: center;
-				font-size: 24px;
-			}
-
-			.brand {
-				display: inline-block;
-				width: $a_sidebar_width;
-				transition: padding 0.25s $a_transition_ease_out;
-				padding: 0 12px;
-				text-align: left;
-
-				a {
-					font-weight: normal;
-					font-size: 23px;
-					line-height: $a_header_height;
-					text-decoration: none;
-				}
-			}
-
-			.landing-title {
-				color: $a_white;
-			}
-		}
-	}
-
-	.outline-button {
-		line-height: 35px;
-		margin-right: 10px;
-		color: $a_white;
-		font-family: 'Roboto-Light';
-		font-size: 0.625em;
-		border: 1px solid $a_white;
-	}
-
-	.github-link {
-		a {
-			color: $a_white;
-		}
-	}
-
-	.main-content {
+	.app-landing-page-main-content {
 		overflow: hidden;
 	}
 
@@ -74,10 +12,10 @@
 		color: $a_white;
 		background-color: rgba(255, 255, 255, 0.8);
 		text-align: center;
-		padding: 80px 0 0;
+		padding: 40px 0 0;
 
 		.container {
-			padding-top: 80px;
+			padding-top: 40px;
 			padding-bottom: 210px;
 		}
 
