@@ -40,6 +40,13 @@ a.color-primary {
 		color: theme-color('primary');
 	}
 }
+.color-accent,
+a.color-accent {
+	color: theme-color('accent');
+	&:hover {
+		color: theme-color('accent');
+	}
+}
 .color-success,
 a.color-success {
 	color: theme-color('success');
