@@ -20,7 +20,7 @@
 		"watch": "ng test --browsers ChromeHeadless --reporters spec",
 		"build:prod": "ng build --target production --build-optimizer --vendor-chunk --stats-json",
 		"clean": "rimraf node_modules",
-		"clean-all": "rimraf node_modules dist dll",
+		"clean-all": "rimraf node_modules dist",
 		"reinstall": "rimraf node_modules && rm -f package-lock.json && npm install",
 		"server": "cd dist && http-server",
 		"prod": "npm run clean && npm run build:prod && npm run server"
@@ -76,7 +76,7 @@
 		"angular2-template-loader": "^0.6.2",
 		"autoprefixer": "^7.1.6",
 		"awesome-typescript-loader": "^3.3.0",
-		"bootstrap": "~4.0.0-beta.3",
+		"bootstrap": "4.0.0-beta.2",
 		"codelyzer": "~4.0.1",
 		"copy-webpack-plugin": "^4.2.0",
 		"css-loader": "^0.28.7",

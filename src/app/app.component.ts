@@ -15,7 +15,6 @@ import { DemoLayoutService } from '../demo/demo-layout/services/demo-layout.serv
 
 // 3rd Party Styles
 import 'styles/material2-theme.scss';
-import 'styles/bootstrap.scss';
 
 // Custom Styles
 import 'styles/app.scss';
