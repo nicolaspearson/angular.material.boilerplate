@@ -21,6 +21,7 @@
 				"styles/font-awesome.scss",
 				"styles/layout.scss",
 				"styles/loader.scss",
+				"styles/material-design-lite.scss",
 				"styles/material2-theme.scss",
 				"styles/theme.scss",
 				"styles/ui.scss"

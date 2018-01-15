@@ -3,8 +3,8 @@ $padding-for-icon: 40px;
 .page-auth {
 	background-color: $gray-200;
 	min-height: 100%;
-	background: url('#{$image_path}background/2.png') no-repeat center center
-		fixed;
+	background: url('#{$local_image_path}background/2.png') no-repeat center
+		center fixed;
 	background-size: cover;
 	padding: 0 10px;
 

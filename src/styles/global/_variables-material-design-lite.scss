@@ -1,0 +1,23 @@
+// Overrides
+address {
+	line-height: $line-height-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: $headings-line-height;
+}
+
+// Badge
+$badge-font-size: 10px !default;
+$badge-color: #fff !default;
+$badge-color-inverse: theme-color('info') !default;
+$badge-background: theme-color('danger') !default;
+$badge-background-inverse: #999 !default;
+$badge-size: 18px !default;
+$badge-padding: -10px !default;
+$badge-overlap: 10px !default;

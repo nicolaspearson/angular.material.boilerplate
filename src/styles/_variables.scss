@@ -1,8 +1,10 @@
-// global variables
+// Global variables
 @import 'global/variables-bootstrap';
 @import 'global/variables-extra';
-@import 'material-design-lite/src/variables';
+@import 'global/variables-material-design-lite';
+
 @import 'app/variables-app';
 @import 'layout/variables-layout';
 @import 'themes/variables-theme';
+
 @import '../../node_modules/bootstrap/scss/mixins';

@@ -2,6 +2,13 @@
 
 @import 'vendors/material2/material2';
 
+@import 'app/app';
+@import 'app/landing/landing-page';
+@import 'app/logo/logo';
+@import 'app/auth/login-form';
+@import 'app/auth/login-page';
+@import 'app/page-not-found/_page-not-found';
+
 @import 'pages/demo';
 @import 'pages/auth';
 @import 'pages/error';
@@ -13,12 +20,6 @@
 @import 'pages/about';
 @import 'pages/terms';
 @import 'pages/blog';
-
-@import 'app/app';
-@import 'app/landing/landing-page';
-@import 'app/auth/login-form';
-@import 'app/auth/login-page';
-@import 'app/page-not-found/_page-not-found';
 
 @import './styles-reset';
 @import './styles-reset.scss-theme';
