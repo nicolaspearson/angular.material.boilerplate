@@ -32,8 +32,9 @@ import { LandingPageComponent } from './landing/components/landing-page/landing-
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { CoreModule } from '@app/core';
-import { DemoLayoutModule } from '../demo/demo-layout/demo-layout.module';
 import { SharedModule } from './shared/shared.module';
+import { LayoutModule } from './internal/layout/layout.module';
+import { DemoLayoutModule } from '../demo/demo-layout/demo-layout.module';
 
 // Hot Module Reload (HMR)
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -76,8 +77,9 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 		// Features
 		AuthModule.forRoot(),
 		// Sub Modules
-		DemoLayoutModule,
 		SharedModule,
+		LayoutModule,
+		DemoLayoutModule,
 		// Scroll Reveal
 		NgsRevealModule.forRoot()
 	],

@@ -43,6 +43,10 @@ a {
 			color: $body-color;
 		}
 	}
+
+	button[mat-menu-item] {
+		font-size: 14px;
+	}
 }
 
 [mat-tab-nav-bar],

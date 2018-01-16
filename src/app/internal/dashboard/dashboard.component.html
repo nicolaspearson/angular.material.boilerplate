@@ -1,0 +1,137 @@
+<div class="container-fluid no-breadcrumbs page-dashboard">
+
+	<div class="box box-default">
+		<div class="box-body">
+			<div appECharts [EChartsOptions]="trafficChart" style="height: 450px;"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<!-- Stats -->
+		<div class="col-xl-3 col-sm-6">
+			<div class="box box-default">
+				<div class="box-top">
+					<i class="material-icons color-success">airplanemode_active</i>
+				</div>
+				<div class="box-info">
+					<span>Growth</span>
+				</div>
+				<div class="box-bottom">
+					<span>35
+						<span class="size-h4">%</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-sm-6">
+			<div class="box box-default">
+				<div class="box-top">
+					<i class="material-icons color-info">supervisor_account</i>
+				</div>
+				<div class="box-info">
+					<span>New Users</span>
+				</div>
+				<div class="box-bottom">
+					<span>42
+						<span class="size-h4">%</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-sm-6">
+			<div class="box box-default">
+				<div class="box-top">
+					<i class="material-icons color-warning">attach_money</i>
+				</div>
+				<div class="box-info">
+					<span>Profit</span>
+				</div>
+				<div class="box-bottom">
+					<span>37
+						<span class="size-h4">k</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-sm-6">
+			<div class="box box-default">
+				<div class="box-top">
+					<i class="material-icons color-danger">shopping_cart</i>
+				</div>
+				<div class="box-info">
+					<span>Sales</span>
+				</div>
+				<div class="box-bottom">
+					<span>25
+						<span class="size-h4">k</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- end stats -->
+	</div>
+
+
+	<div class="box box-default">
+		<div class="box-body padding-lg">
+			<div class="row">
+				<div class="col-xl-4">
+					<div class="box box-transparent">
+						<div class="box-heading">Platform</div>
+						<div class="divider divider-md"></div>
+						<div class="box-body">
+							<div class="vprogressbar-container brand-success">
+								<ul class="vprogressbar clearfix">
+									<li>
+										<span class="vprogressbar-percent bg-color-info-alt" style="height: 65%; opacity: 0.85;"></span>
+									</li>
+									<li>
+										<span class="vprogressbar-percent bg-color-success" style="height: 50%; opacity: 0.85;"></span>
+									</li>
+									<li>
+										<span class="vprogressbar-percent bg-color-warning" style="height: 40%; opacity: 0.85;"></span>
+									</li>
+									<li>
+										<span class="vprogressbar-percent bg-color-primary" style="height: 80%; opacity: 0.85;"></span>
+									</li>
+								</ul>
+								<ul class="vprogressbar-legend">
+									<li>
+										<span class="vpointer bg-color-info-alt"></span> Direct</li>
+									<li>
+										<span class="vpointer bg-color-success"></span> Instagram</li>
+									<li>
+										<span class="vpointer bg-color-warning"></span> Twitter</li>
+									<li>
+										<span class="vpointer bg-color-primary"></span> Facebook</li>
+								</ul>
+								<div class="vprogressbar-info">
+									<span>Source of Acquisition</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4">
+					<div class="box box-transparent">
+						<div class="box-heading">Nationality</div>
+						<div class="divider divider-md"></div>
+						<div class="box-body">
+							<div appECharts [EChartsOptions]="donutChart" style="height: 300px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4">
+					<section class="box box-transparent">
+						<div class="box-heading">Budget vs Spending</div>
+						<div class="divider divider-md"></div>
+						<div class="box-body">
+							<div appECharts [EChartsOptions]="radarChart" style="height: 300px;"></div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

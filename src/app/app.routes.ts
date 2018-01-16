@@ -7,12 +7,16 @@ import { AuthGuard } from './auth/services/auth-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LandingPageComponent } from './landing/components/landing-page/landing-page.component';
 
-// Demo Layouts
+// Layout
+import { LayoutComponent } from './internal/layout/components/layout/layout.component';
+
+// Demo
 import { DemoLayoutComponent } from '../demo/demo-layout/components/demo-layout/demo-layout.component';
 import { PageLayoutFullscreenComponent } from '../demo/page-layouts/fullscreen/fullscreen.component';
 
 export const routes: Routes = [
 	{ path: '', component: LandingPageComponent },
+	{ path: 'internal', component: LayoutComponent },
 	{ path: 'demo', component: DemoLayoutComponent },
 	{
 		path: 'extra',

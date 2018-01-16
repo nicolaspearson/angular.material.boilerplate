@@ -1,4 +1,4 @@
-// layout
+// Layout
 .app-header {
 	display: block;
 	position: relative;
@@ -20,7 +20,8 @@
 		right: 0;
 	}
 }
-// desktop
+
+// Desktop
 @media only screen and (min-width: $l_screen_md_min) {
 	.app-header {
 		.toggle-sidebar-btn {

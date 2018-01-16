@@ -10,14 +10,29 @@ import { Subscription } from 'rxjs/Subscription';
 import echarts from 'echarts';
 import 'echarts/theme/macarons';
 
+// Internal
+import { LayoutService } from '../internal/layout/services/layout.service';
+
+// Demo
 import { DemoLayoutService } from '../../demo/demo-layout/services/demo-layout.service';
 
 @Directive({ selector: '[appECharts]' })
 export class EChartsDirective implements AfterViewInit, OnDestroy {
 	el: ElementRef;
 	subscription: Subscription;
-	constructor(el: ElementRef, private demoLayoutService: DemoLayoutService) {
+	constructor(
+		el: ElementRef,
+		private layoutService: LayoutService,
+		private demoLayoutService: DemoLayoutService
+	) {
 		this.el = el;
+
+		// Internal
+		this.subscription = layoutService.echartsState$.subscribe(state => {
+			this.resizeChart(state);
+		});
+
+		// Demo
 		this.subscription = demoLayoutService.echartsState$.subscribe(state => {
 			this.resizeChart(state);
 		});

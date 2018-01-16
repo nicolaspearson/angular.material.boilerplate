@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('app.demo.layout')
+		.module('app.layout')
 		.controller('AppSidenavRightCtrl', ['$scope', AppSidenavRightCtrl]);
 
 	function AppSidenavRightCtrl($scope) {

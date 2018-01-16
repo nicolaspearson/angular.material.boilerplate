@@ -11,6 +11,11 @@ import * as Auth from './auth/actions/auth.actions';
 import * as fromAuth from './auth/reducers';
 
 import { AppConfig } from './config';
+
+// Internal
+import { LayoutService } from './internal/layout/services/layout.service';
+
+// Demo
 import { DemoLayoutService } from '../demo/demo-layout/services/demo-layout.service';
 
 // 3rd Party Styles
@@ -25,7 +30,7 @@ import 'styles/ui.scss';
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	providers: [DemoLayoutService]
+	providers: [LayoutService, DemoLayoutService]
 })
 export class AppComponent implements OnInit {
 	public AppConfig: any;
@@ -52,7 +57,7 @@ export class AppComponent implements OnInit {
 
 		if (
 			currentRoute.startsWith('/demo') ||
-			currentRoute.startsWith('/app')
+			currentRoute.startsWith('/internal')
 		) {
 			this.showToolbar = false;
 		} else {
@@ -72,7 +77,7 @@ export class AppComponent implements OnInit {
 			} else if (event instanceof NavigationEnd) {
 				if (
 					event.url.startsWith('/demo') ||
-					event.url.startsWith('/app')
+					event.url.startsWith('/internal')
 				) {
 					this.showToolbar = false;
 				} else {
