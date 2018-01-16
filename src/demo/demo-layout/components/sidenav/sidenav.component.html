@@ -2,32 +2,18 @@
                'bg-color-dark': ['31','32','33','34','35','36'].indexOf(AppConfig.colorOption) < 0 }">
 
 	<section class="sidebar-header" [ngClass]="{'bg-color-dark': ['11','31'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-light': AppConfig.colorOption === '21',
-                   'bg-color-primary': ['12','22','32'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-success': ['13','23','33'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-info': ['14','24','34'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-warning': ['15','25','35'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-danger': ['16','26','36'].indexOf(AppConfig.colorOption) >= 0}">
-		<!-- <span class="logo-icon material-icons">view_compact</span> -->
-		<svg class="logo-img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-		 x="0px" y="0px" viewBox="0 0 250 250" style="enable-background:new 0 0 250 250;" xml:space="preserve">
-			<g>
-				<g>
-					<polygon class="st0" points="125,153.4 100.3,153.4 88.6,182.6 88.6,182.6 66.9,182.6 66.8,182.6 125,52.1 125,52.2 125,52.2
-            125,30 125,30 31.9,63.2 46.1,186.3 125,230 125,230 125,153.4    " />
-					<polygon class="st0" points="108,135.4 125,135.4 125,135.4 125,94.5     " />
-				</g>
-				<g class="st1">
-					<polygon class="st0" points="125,153.4 149.7,153.4 161.4,182.6 161.4,182.6 183.1,182.6 183.2,182.6 125,52.1 125,52.2 125,52.2
-            125,30 125,30 218.1,63.2 203.9,186.3 125,230 125,230 125,153.4    " />
-					<polygon class="st0" points="142,135.4 125,135.4 125,135.4 125,94.5     " />
-				</g>
-			</g>
-		</svg>
+					'bg-color-light': AppConfig.colorOption === '21',
+					'bg-color-primary': ['12','22','32'].indexOf(AppConfig.colorOption) >= 0,
+					'bg-color-success': ['13','23','33'].indexOf(AppConfig.colorOption) >= 0,
+					'bg-color-info': ['14','24','34'].indexOf(AppConfig.colorOption) >= 0,
+					'bg-color-warning': ['15','25','35'].indexOf(AppConfig.colorOption) >= 0,
+					'bg-color-danger': ['16','26','36'].indexOf(AppConfig.colorOption) >= 0}">
+
+		<app-logo></app-logo>
 		<a [routerLink]="['/']" class="brand">{{AppConfig.brand}}</a>
 		<a href="javascript:;" class="collapsednav-toggler" (click)="toggleCollapsedNav()">
-			<i class="material-icons" *ngIf="this.AppConfig.navCollapsed">radio_button_unchecked</i>
-			<i class="material-icons" *ngIf="!this.AppConfig.navCollapsed">radio_button_checked</i>
+			<mat-icon svgIcon="pin-off" *ngIf="this.AppConfig.navCollapsed"></mat-icon>
+			<mat-icon svgIcon="pin" *ngIf="!this.AppConfig.navCollapsed"></mat-icon>
 		</a>
 	</section>
 

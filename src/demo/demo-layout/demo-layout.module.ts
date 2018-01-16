@@ -13,7 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 // Sidenav
 import { SidenavMenuComponent } from './components/sidenav-menu/sidenav-menu.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { ToggleOffcanvasNavDirective } from './directives/toggle-offcanvas-nav.directive';
+import { ToggleOffCanvasNavDirective } from './directives/toggle-offcanvas-nav.directive';
 import { AutoCloseMobileNavDirective } from './directives/auto-close-mobile-nav.directive';
 import { AccordionNavDirective } from './directives/accordion-nav.directive';
 import { AppendSubmenuIconDirective } from './directives/append-submenu-icon.directive';
@@ -43,7 +43,7 @@ export const COMPONENTS = [
 	HeaderComponent,
 	// Sidenav
 	SidenavComponent,
-	ToggleOffcanvasNavDirective,
+	ToggleOffCanvasNavDirective,
 	AutoCloseMobileNavDirective,
 	SidenavMenuComponent,
 	AccordionNavDirective,

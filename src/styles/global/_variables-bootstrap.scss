@@ -1,13 +1,6 @@
 @import '../../../node_modules/bootstrap/scss/functions';
+@import 'variables-color';
 
-// Variables
-
-// Variables should follow the `$component-state-property-size` formula for
-// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
-
-// Color system
-
-// stylelint-disable
 $white: #fff;
 $gray-100: #f8f9fa; // $gray-lightest
 $gray-200: #e9ecef; // $gray-lighter
@@ -69,8 +62,8 @@ $colors: map-merge(
 	$colors
 );
 
-$primary: $purple;
-$accent: $pink;
+$primary: map-get(app-palette($app-primary, 500), 'default');
+$accent: map-get(app-palette($app-accent, 500), 'default');
 $secondary: $gray-600;
 $success: $green;
 $info: $cyan;
@@ -84,6 +77,7 @@ $theme-colors: map-merge(
 
 	(
 		'primary': $primary,
+		'accent': $accent,
 		'secondary': $secondary,
 		'success': $success,
 		'info': $info,

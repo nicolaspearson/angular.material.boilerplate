@@ -22,9 +22,12 @@
 		float: left; // becasue of alignment problem with md-button in .top-nav-left
 
 		h2 {
-			font-size: 30px;
+			display: inline-block;
+			font-weight: normal;
+			font-size: 24px;
 			margin: 0;
 			line-height: $l_header_height;
+			text-decoration: none;
 		}
 	}
 

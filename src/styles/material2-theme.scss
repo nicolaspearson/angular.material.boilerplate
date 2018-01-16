@@ -1,4 +1,5 @@
 @import '~@angular/material/theming';
+@import './global/variables-color';
 
 // Plus imports for other components in your app.
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -9,10 +10,10 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$light-app-primary: mat-palette($mat-deep-purple, 400);
-$light-app-accent: mat-palette($mat-pink, 400);
+$light-app-primary: mat-palette($app-primary, 500);
+$light-app-accent: mat-palette($app-accent, 500);
 // The warn palette is optional (defaults to red).
-$light-app-warn: mat-palette($mat-red, 400);
+$light-app-warn: mat-palette($mat-red, 500);
 // Create the theme object (a Sass map containing all of the palettes).
 $light-app-theme: mat-light-theme(
 	$light-app-primary,
@@ -25,9 +26,9 @@ $light-app-theme: mat-light-theme(
 // that you are using.
 @include angular-material-theme($light-app-theme);
 // Define an alternate dark theme.
-$dark-primary: mat-palette($mat-deep-purple);
-$dark-accent: mat-palette($mat-pink, 400);
-$dark-warn: mat-palette($mat-red, 400);
+$dark-primary: mat-palette($app-primary, 500);
+$dark-accent: mat-palette($app-accent, 500);
+$dark-warn: mat-palette($mat-red, 500);
 $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 // Include the alternative theme styles inside of a block with a CSS class. You can make this
 // CSS class whatever you want. In this example, any component inside of an element with

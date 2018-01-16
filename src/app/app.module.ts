@@ -1,9 +1,10 @@
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { MatIconRegistry } from '@angular/material';
 
 import { NgsRevealModule } from 'ng-scrollreveal';
 
@@ -97,7 +98,26 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 	bootstrap: [AppComponent]
 })
 export class AppModule {
-	constructor(public appRef: ApplicationRef) {}
+	constructor(
+		public appRef: ApplicationRef,
+		matIconRegistry: MatIconRegistry,
+		domSanitizer: DomSanitizer
+	) {
+		matIconRegistry
+			.addSvgIcon(
+				'pin',
+				domSanitizer.bypassSecurityTrustResourceUrl(
+					'../assets/images/svg/pin.svg'
+				)
+			)
+			.addSvgIcon(
+				'pin-off',
+				domSanitizer.bypassSecurityTrustResourceUrl(
+					'../assets/images/svg/pin-off.svg'
+				)
+			);
+	}
+
 	hmrOnInit(store) {
 		console.log('HMR store', store);
 	}

@@ -1,12 +1,25 @@
+@import 'variables-color';
+
 // Images
 $image_path: '../../node_modules/material-design-lite/src/images/' !default; // material-design-lite
 $local_image_path: '../assets/images/' !default;
 $local_image_path_demo: '../demo/assets/demo-images/' !default;
 
+button.mat-menu-item {
+	line-height: 24px !important;
+}
+a.mat-menu-item > mat-icon {
+	margin-bottom: 14px;
+}
+.mat-icon svg {
+	height: 24px;
+	width: 24px;
+}
+
 // Themes
-$skin: theme-color('primary');
+$skin: map-get(app-palette($app-primary, 500), 'default');
 $skin-light: #42a5f5 !default; // Blue 400
-$dark: #333c44 !default; // darken Blue 100 > #343E46
+$dark: #333c44 !default; // darken
 $dark-light: lighten($dark, 5%) !default;
 $grayscale-dark-light: #484848;
 $bright: #fafafa !default;

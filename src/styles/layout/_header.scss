@@ -31,7 +31,7 @@
 		.brand {
 			display: inline-block;
 			width: $l_sidebar_width;
-			padding: 0 0 0 $l_sidebar_width_collapsed;
+			padding: 0 0 0 0;
 			transition: padding 0.25s $l_transition_ease_out;
 			a {
 				text-decoration: none;

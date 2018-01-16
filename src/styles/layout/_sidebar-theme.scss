@@ -2,8 +2,8 @@
 	width: 24px;
 	height: 24px;
 	text-align: center;
-	vertical-align: text-bottom;
-	margin-bottom: -3px;
+	vertical-align: bottom;
+
 	// .st0 { fill: #fff; }
 	.st1 {
 		opacity: 0.9;
@@ -34,13 +34,15 @@
 	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.15);
 	.sidebar-header {
 		line-height: $l_header_height;
-		padding: 0 18px; // 16px + 2
+		padding-right: 18px;
+		padding-left: 0px;
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 
 		// Ideally, don't use material-icons:dashboard, hard to position, affect sibling text
 		.logo-icon {
 			text-align: center;
 			font-size: 24px;
+
 			&.material-icons {
 				line-height: $l_header_height;
 				height: $l_header_height;
@@ -48,10 +50,18 @@
 			}
 		}
 
+		mat-icon {
+			svg {
+				width: 18px;
+				height: 18x;
+				margin: 0px 0px 0px 0px;
+			}
+		}
+
 		a.brand {
 			display: inline-block;
 			font-weight: normal;
-			font-size: 23px;
+			font-size: 24px;
 			line-height: $l_header_height;
 			text-decoration: none;
 		}

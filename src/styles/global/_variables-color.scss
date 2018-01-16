@@ -1,0 +1,128 @@
+/// @deprecated renamed to $dark-primary-text.
+$black-87-opacity: rgba(black, 0.87);
+/// @deprecated renamed to $light-primary-text.
+$white-87-opacity: rgba(white, 0.87);
+/// @deprecated use $dark-[secondary-text,disabled-text,dividers,focused] instead.
+$black-12-opacity: rgba(black, 0.12);
+/// @deprecated use $light-[secondary-text,disabled-text,dividers,focused] instead.
+$white-12-opacity: rgba(white, 0.12);
+/// @deprecated use $dark-[secondary-text,disabled-text,dividers,focused] instead.
+$black-6-opacity: rgba(black, 0.06);
+/// @deprecated use $light-[secondary-text,disabled-text,dividers,focused] instead.
+$white-6-opacity: rgba(white, 0.06);
+
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.54);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.12);
+$dark-focused: rgba(black, 0.12);
+$light-primary-text: white;
+$light-secondary-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
+
+// For a given hue in a palette, return the contrast color from the map of contrast palettes.
+// @param $color-map
+// @param $hue
+@function app-contrast($palette, $hue) {
+	@return map-get(map-get($palette, contrast), $hue);
+}
+
+// Creates a map of hues to colors for a theme. This is used to define a theme palette in terms
+// of the Material Design hues.
+// @param $color-map
+// @param $primary
+// @param $lighter
+@function app-palette($base-palette, $default: 500, $lighter: 100, $darker: 700) {
+	$result: map_merge(
+		$base-palette,
+
+		(
+			default: map-get($base-palette, $default),
+			lighter: map-get($base-palette, $lighter),
+			darker: map-get($base-palette, $darker),
+			default-contrast: app-contrast($base-palette, $default),
+			lighter-contrast: app-contrast($base-palette, $lighter),
+			darker-contrast: app-contrast($base-palette, $darker)
+		)
+	);
+
+	// For each hue in the palette, add a "-contrast" color to the map.
+	@each $hue, $color in $base-palette {
+		$result: map_merge(
+			$result,
+			 ('#{$hue}-contrast': app-contrast($base-palette, $hue))
+		);
+	}
+
+	@return $result;
+}
+
+$app-primary: (
+	50: #fdebe7,
+	100: #facec4,
+	200: #f6ad9c,
+	300: #f28c74,
+	400: #f07457,
+	500: #ed5b39,
+	600: #eb5333,
+	700: #e8492c,
+	800: #e54024,
+	900: #e02f17,
+	A100: #ffffff,
+	A200: #ffe2df,
+	A400: #ffb4ac,
+	A700: #ff9d92,
+	contrast:
+		(
+			50: $dark-primary-text,
+			100: $dark-primary-text,
+			200: $dark-primary-text,
+			300: $dark-primary-text,
+			400: $dark-primary-text,
+			500: $light-primary-text,
+			600: $light-primary-text,
+			700: $light-primary-text,
+			800: $light-primary-text,
+			900: $light-primary-text,
+			A100: $dark-primary-text,
+			A200: $light-primary-text,
+			A400: $light-primary-text,
+			A700: $light-primary-text
+		)
+);
+
+$app-accent: (
+	50 : #e2e2e2,
+	100 : #b8b8b8,
+	200 : #888888,
+	300 : #585858,
+	400 : #353535,
+	500 : #111111,
+	600 : #0f0f0f,
+	700 : #0c0c0c,
+	800 : #0a0a0a,
+	900 : #050505,
+	A100 : #ff4e4e,
+	A200 : #ff1b1b,
+	A400 : #e70000,
+	A700 : #ce0000,
+	contrast:
+		(
+			50: $dark-primary-text,
+			100: $dark-primary-text,
+			200: $dark-primary-text,
+			300: $dark-primary-text,
+			400: $dark-primary-text,
+			500: $light-primary-text,
+			600: $light-primary-text,
+			700: $light-primary-text,
+			800: $light-primary-text,
+			900: $light-primary-text,
+			A100: $dark-primary-text,
+			A200: $light-primary-text,
+			A400: $light-primary-text,
+			A700: $light-primary-text
+		)
+);

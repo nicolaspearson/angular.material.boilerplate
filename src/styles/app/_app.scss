@@ -4,6 +4,7 @@
 		z-index: $a_zindex_navbar;
 
 		.app-main-title-container {
+			height: $a_header_height;
 			cursor: pointer;
 			flex: 1 1 auto;
 			align-content: center;
@@ -14,7 +15,10 @@
 				height: 24px;
 				text-align: center;
 				vertical-align: text-bottom;
-				margin-bottom: -3px;
+
+				svg {
+					margin: 20px 0px 20px 20px;
+				}
 			}
 
 			.brand {
@@ -26,7 +30,7 @@
 
 				a {
 					font-weight: normal;
-					font-size: 23px;
+					font-size: 24px;
 					line-height: $a_header_height;
 					text-decoration: none;
 				}

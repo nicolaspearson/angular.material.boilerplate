@@ -8,7 +8,7 @@
                  'bg-color-danger': ['26','36'].indexOf(AppConfig.colorOption) >= 0}">
 
 		<div class="d-lg-none d-xl-none float-left">
-			<button mat-button appDemoToggleOffcanvasNav class="md-button header-icon toggle-sidebar-btn">
+			<button mat-button appDemoToggleOffCanvasNav class="md-button header-icon toggle-sidebar-btn">
 				<i class="material-icons">menu</i>
 			</button>
 		</div>
@@ -58,16 +58,14 @@
 		<div class="top-nav-right">
 			<ul class="list-unstyled float-right">
 				<li>
-					<button mat-button class="md-button header-btn" [routerLink]="['/demo/page/about']">
-						<img src="assets/images/avatar.png" alt="" class="rounded img30_30">
+					<button mat-button class="md-button header-btn" [matMenuTriggerFor]="appProfile">
+						<img src="assets/images/avatar.png" class="rounded img30_30">
 					</button>
+					<mat-menu #appProfile="matMenu" x-position="after" y-position="below" overlapTrigger="false">
+						<button mat-menu-item>Profile</button>
+						<button mat-menu-item>Logout</button>
+					</mat-menu>
 				</li>
-				<li>
-					<button mat-button class="md-button header-btn d-lg-none d-xl-none" appDemoOpenSearchOverlay>
-						<i class="material-icons">search</i>
-					</button>
-				</li>
-				<!-- <li><button mat-button class="md-button header-btn"><i class="material-icons">more_vert</i></button></li> -->
 			</ul>
 		</div>
 
