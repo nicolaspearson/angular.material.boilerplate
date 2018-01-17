@@ -1,5 +1,9 @@
 .app-login-page-main-container {
+	display: flex;
+	flex: 1;
 	height: 100%;
+	align-items: center;
+	justify-content: center;
 }
 
 .app-login-page-version-container {
