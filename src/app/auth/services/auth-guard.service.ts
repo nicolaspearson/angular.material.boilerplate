@@ -22,9 +22,9 @@ export class AuthGuard implements CanActivate {
 		return this.store
 			.select(fromAuth.getLoggedIn)
 			.map(authed => {
-				if (!authed) {
-					// Check local storage
-					const result = this.localStorageService.getItem(LS_USER_KEY);
+				// Check local storage
+				const result = this.localStorageService.getItem(LS_USER_KEY);
+				if (!authed || !result || !result.user) {
 					if (result && result.user && result.user.token) {
 						return true;
 					}

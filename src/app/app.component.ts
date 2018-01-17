@@ -7,13 +7,13 @@ import { NgsRevealConfig } from 'ng-scrollreveal';
 
 import { Store } from '@ngrx/store';
 
-import * as Auth from './auth/actions/auth.actions';
-import * as fromAuth from './auth/reducers';
+import * as Auth from '@app/auth/actions/auth.actions';
+import * as fromAuth from '@app/auth/reducers';
 
-import { AppConfig } from './config';
+import { AppConfig } from '@app/config';
 
 // Internal
-import { LayoutService } from './internal/layout/services/layout.service';
+import { LayoutService } from '@app/internal/layout/services/layout.service';
 
 // Demo
 import { DemoLayoutService } from '../demo/demo-layout/services/demo-layout.service';

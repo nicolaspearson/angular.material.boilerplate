@@ -62,7 +62,7 @@
 					</button>
 					<mat-menu #appProfile="matMenu" x-position="after" y-position="below" overlapTrigger="false">
 						<button mat-menu-item>Profile</button>
-						<button mat-menu-item>Logout</button>
+						<button mat-menu-item (click)="onLogoutClick()">Logout</button>
 					</mat-menu>
 				</li>
 			</ul>
