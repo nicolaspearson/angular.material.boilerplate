@@ -44,12 +44,3 @@ $a_transition_ease_in: cubic-bezier(0.4, 0, 1, 1);
 $a_transition_ease_out_sidebar: cubic-bezier(0.25, 0.75, 0.25, 0.99);
 $a_sidebar_collpase_duration: 0.3s;
 $a_transition_ease_out_quickview: cubic-bezier(0.05, 0.74, 0.2, 0.99);
-
-// Grids
-$a_grid-breakpoints: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px
-);

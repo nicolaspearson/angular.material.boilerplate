@@ -31,16 +31,27 @@
 			color: rgba(255, 255, 255, 0.6);
 			margin: 0;
 			font-weight: 300;
-			font-size: 28px;
+			font-size: 18px;
 			text-transform: uppercase;
 			@media (min-width: map-get($grid-breakpoints, md)) {
-				font-size: 36px;
+				font-size: 20px;
 			}
 		}
 	}
 
 	.err-body {
 		padding: 20px 10px;
+
+		.btn-cta {
+			margin: 3rem 0 0;
+			letter-spacing: 0.8px;
+			font-size: 14px;
+			min-width: 220px;
+			padding: 1em;
+			text-transform: uppercase;
+			color: #f5f5f5;
+			color: rgba(255, 255, 255, 0.85);
+		}
 	}
 
 	.btn-goback {

@@ -16,16 +16,16 @@
 			"testTsconfig": "tsconfig.spec.json",
 			"prefix": "app",
 			"styles": [
-				"styles/app.scss",
 				"styles/bootstrap.scss",
 				"styles/font-awesome.scss",
 				"styles/loader.scss",
+				"styles/material-design-lite.scss",
+				"styles/material2-theme.scss",
 				"styles/demo/pages.scss",
 				"styles/demo/layout.scss",
 				"styles/demo/ui.scss",
-				"styles/material-design-lite.scss",
-				"styles/material2-theme.scss",
-				"styles/theme.scss"
+				"styles/theme.scss",
+				"styles/app.scss"
 			],
 			"scripts": [
 				"../node_modules/jquery/dist/jquery.min.js",

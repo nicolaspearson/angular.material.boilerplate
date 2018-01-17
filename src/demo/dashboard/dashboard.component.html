@@ -75,7 +75,27 @@
 	<div class="box box-default">
 		<div class="box-body padding-lg">
 			<div class="row">
-				<div class="col-xl-4">
+				<div class="col-xl-6">
+					<div class="box box-transparent">
+						<div class="box-heading">Nationality</div>
+						<div class="divider divider-md"></div>
+						<div class="box-body">
+							<div appECharts [EChartsOptions]="donutChart" style="height: 300px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6">
+					<section class="box box-transparent">
+						<div class="box-heading">Budget vs Spending</div>
+						<div class="divider divider-md"></div>
+						<div class="box-body">
+							<div appECharts [EChartsOptions]="radarChart" style="height: 300px;"></div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-12">
 					<div class="box box-transparent">
 						<div class="box-heading">Platform</div>
 						<div class="divider divider-md"></div>
@@ -111,24 +131,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-4">
-					<div class="box box-transparent">
-						<div class="box-heading">Nationality</div>
-						<div class="divider divider-md"></div>
-						<div class="box-body">
-							<div appECharts [EChartsOptions]="donutChart" style="height: 300px;"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4">
-					<section class="box box-transparent">
-						<div class="box-heading">Budget vs Spending</div>
-						<div class="divider divider-md"></div>
-						<div class="box-body">
-							<div appECharts [EChartsOptions]="radarChart" style="height: 300px;"></div>
-						</div>
-					</section>
 				</div>
 			</div>
 		</div>
