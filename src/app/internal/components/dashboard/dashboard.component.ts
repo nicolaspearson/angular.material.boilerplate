@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartConfig } from '../charts/charts.config';
+import { ChartConfig } from '../../charts/charts.config';
 
 @Component({
 	selector: 'app-dashboard',

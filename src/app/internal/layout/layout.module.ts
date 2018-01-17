@@ -24,7 +24,7 @@ import { CustomizerComponent } from './components/customizer/customizer.componen
 import { ToggleQuickviewDirective } from './directives/toggle-quickview.directive';
 
 // Pages
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
 
 // Footer
 import { FooterComponent } from './components/footer/footer.component';

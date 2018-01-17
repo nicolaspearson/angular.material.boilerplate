@@ -5,4 +5,11 @@ export interface Authenticate {
 
 export interface User {
 	token: string;
+	user: {
+		id: number;
+		username: string;
+		emailAddress: string;
+		enabled: boolean;
+		lastLoggedInAt: string;
+	};
 }

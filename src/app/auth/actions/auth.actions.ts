@@ -1,6 +1,8 @@
 import { Action } from '@ngrx/store';
-import { User, Authenticate } from '../models/user';
+import { User, Authenticate } from '@app/auth/models/user';
+import { SignUp } from '@app/auth/models/sign-up';
 
+// Login / Logout
 export const LOGIN = 'AUTH/LOGIN';
 export const LOGOUT = 'AUTH/LOGOUT';
 export const LOGIN_SUCCESS = 'AUTH/LOGIN_SUCCESS';
@@ -33,9 +35,41 @@ export class Logout implements Action {
 	readonly type = LOGOUT;
 }
 
+// Sign Up
+export const SIGN_UP = 'AUTH/SIGN_UP';
+export const SIGN_UP_SUCCESS = 'AUTH/SIGN_UP_SUCCESS';
+export const SIGN_UP_FAILURE = 'AUTH/SIGN_UP_FAILURE';
+export const SIGN_UP_REDIRECT = 'AUTH/SIGN_UP_REDIRECT';
+
+export class NewSignUp implements Action {
+	readonly type = SIGN_UP;
+
+	constructor(public payload: SignUp) {}
+}
+
+export class SignUpSuccess implements Action {
+	readonly type = SIGN_UP_SUCCESS;
+
+	constructor(public payload: { user: User }) {}
+}
+
+export class SignUpFailure implements Action {
+	readonly type = SIGN_UP_FAILURE;
+
+	constructor(public payload: any) {}
+}
+
+export class SignUpRedirect implements Action {
+	readonly type = SIGN_UP_REDIRECT;
+}
+
 export type Actions =
 	| Login
 	| LoginSuccess
 	| LoginFailure
 	| LoginRedirect
-	| Logout;
+	| Logout
+	| NewSignUp
+	| SignUpSuccess
+	| SignUpFailure
+	| SignUpRedirect;

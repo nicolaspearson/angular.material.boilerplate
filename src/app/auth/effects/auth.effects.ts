@@ -22,6 +22,7 @@ export class AuthEffects {
 		private localStorageService: LocalStorageService
 	) {}
 
+	// Login
 	@Effect()
 	login$ = this.actions$
 		.ofType(Auth.LOGIN)
@@ -41,7 +42,7 @@ export class AuthEffects {
 	@Effect({ dispatch: false })
 	loginSuccess$ = this.actions$
 		.ofType(Auth.LOGIN_SUCCESS)
-		.do(() => this.router.navigate(['/']));
+		.do(() => this.router.navigate(['/internal']));
 
 	@Effect({ dispatch: false })
 	loginRedirect$ = this.actions$
@@ -50,4 +51,32 @@ export class AuthEffects {
 			this.localStorageService.setItem(LS_USER_KEY, { user: null });
 			this.router.navigate(['/login']);
 		});
+
+	// Sign Up
+	@Effect()
+	signUp$ = this.actions$
+		.ofType(Auth.SIGN_UP)
+		.map((action: Auth.NewSignUp) => action.payload)
+		.exhaustMap(newUser =>
+			this.authService
+				.signUp(newUser)
+				.map(user => {
+					this.localStorageService.setItem(LS_USER_KEY, {
+						user
+					});
+					return new Auth.SignUpSuccess({ user });
+				})
+				.catch(error => of(new Auth.SignUpFailure(error)))
+		);
+
+	@Effect({ dispatch: false })
+	signUpSuccess$ = this.actions$
+		.ofType(Auth.SIGN_UP_SUCCESS)
+		.do(() => this.router.navigate(['/internal']));
+
+	@Effect({ dispatch: false })
+	signUpRedirect$ = this.actions$.ofType(Auth.SIGN_UP_REDIRECT).do(authed => {
+		this.localStorageService.setItem(LS_USER_KEY, { user: null });
+		this.router.navigate(['/sign-up']);
+	});
 }

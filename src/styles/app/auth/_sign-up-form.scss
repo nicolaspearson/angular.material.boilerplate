@@ -1,11 +1,11 @@
-.app-login-main-container {
+.app-sign-up-main-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	padding-top: 72px;
 
-	.app-login-header {
+	.app-sign-up-header {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -15,7 +15,7 @@
 		padding: 10px 6px;
 	}
 
-	.app-login-logo-container {
+	.app-sign-up-logo-container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -36,18 +36,18 @@
 		}
 	}
 
-	.app-login-card {
+	.app-sign-up-card {
 		padding: 0px 0px 0px 0px;
 	}
 
-	.app-login-card-content {
+	.app-sign-up-card-content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		padding: 0px 24px 24px 24px;
 
-		.app-login-form {
+		.app-sign-up-form {
 			display: flex;
 			flex-direction: column;
 			width: 350px;
@@ -56,18 +56,18 @@
 			margin-top: 2em;
 		}
 
-		.app-login-input {
+		.app-sign-up-input {
 			margin-top: 0.625em;
 			width: 300px;
 		}
 
-		.app-login-error {
+		.app-sign-up-error {
 			margin-top: 1em;
 			width: 300px;
 			color: $danger;
 		}
 
-		.app-login-button {
+		.app-sign-up-button {
 			margin-top: 1em;
 			margin-bottom: 1em;
 			padding: 0.625em;
@@ -75,7 +75,7 @@
 			align-items: center;
 		}
 
-		.app-login-form-forgot-password {
+		.app-sign-up-form-forgot-password {
 			padding-bottom: 28px;
 
 			a {
@@ -87,7 +87,7 @@
 		}
 	}
 
-	.app-login-additional-info {
+	.app-sign-up-additional-info {
 		color: $text-muted;
 		background-color: rgba(#000, 0.04);
 		padding: 16px 6px;

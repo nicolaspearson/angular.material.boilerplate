@@ -9,7 +9,7 @@ export const environment = {
 	appName: 'angular.material.boilerplate',
 	appStoragePrefix: 'AMB-PROD-APP-',
 	api: {
-		endpoint: 'http://lupinemoon.co.za/api/v1',
+		endpoint: 'http://localhost:3000/api/v1',
 		accessToken: 'SecretAccessToken'
 	},
 	envName: 'PROD',

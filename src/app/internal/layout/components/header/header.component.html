@@ -21,6 +21,10 @@
 		</div>
 
 		<div class="top-nav-left d-none d-lg-inline-block d-xl-inline-block">
+
+		</div>
+
+		<div class="top-nav-right">
 			<ul class="list-unstyled list-inline">
 				<li class="list-inline-item">
 					<button mat-button class="md-button header-btn" appOpenSearchOverlay>
@@ -52,14 +56,9 @@
 						</mat-list>
 					</mat-menu>
 				</li>
-			</ul>
-		</div>
-
-		<div class="top-nav-right">
-			<ul class="list-unstyled float-right">
 				<li>
 					<button mat-button class="md-button header-btn" [matMenuTriggerFor]="appProfile">
-						<img src="assets/images/avatar.png" class="rounded img30_30">
+						<i class="material-icons">perm_identity</i>
 					</button>
 					<mat-menu #appProfile="matMenu" x-position="after" y-position="below" overlapTrigger="false">
 						<button mat-menu-item>Profile</button>

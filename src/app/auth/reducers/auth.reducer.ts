@@ -13,7 +13,8 @@ export const initialState: State = {
 
 export function reducer(state = initialState, action: auth.Actions): State {
 	switch (action.type) {
-		case auth.LOGIN_SUCCESS: {
+		case auth.LOGIN_SUCCESS:
+		case auth.SIGN_UP_SUCCESS: {
 			return {
 				...state,
 				loggedIn: true,
@@ -22,6 +23,7 @@ export function reducer(state = initialState, action: auth.Actions): State {
 		}
 
 		case auth.LOGIN_REDIRECT:
+		case auth.SIGN_UP_REDIRECT:
 		case auth.LOGOUT: {
 			return initialState;
 		}
