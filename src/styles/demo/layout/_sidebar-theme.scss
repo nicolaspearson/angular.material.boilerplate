@@ -1,4 +1,4 @@
-.logo-img {
+.app-brand-logo {
 	width: 24px;
 	height: 24px;
 	text-align: center;
@@ -21,7 +21,7 @@
 .bg-color-info,
 .bg-color-danger,
 .bg-color-success {
-	> .logo-img {
+	> .app-brand-logo {
 		.st0 {
 			fill: #fff;
 		}
@@ -29,7 +29,7 @@
 }
 .bg-color-warning,
 .bg-color-light {
-	> .logo-img {
+	> .app-brand-logo {
 		.st0 {
 			fill: $body-color;
 		}

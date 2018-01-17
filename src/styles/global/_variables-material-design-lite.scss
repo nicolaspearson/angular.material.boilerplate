@@ -478,14 +478,23 @@ $animation-curve-default: $animation-curve-fast-out-slow-in !default;
 $bar-height: 4px !default;
 
 /* BADGE */
-$badge-font-size: 10px !default;
+// $badge-font-size: 10px !default;
+// $badge-color: #fff !default;
+// $badge-color-inverse: theme-color('info') !default;
+// $badge-background: theme-color('accent') !default;
+// $badge-background-inverse: #999 !default;
+// $badge-size: 18px !default;
+// $badge-padding: -10px !default;
+// $badge-overlap: 10px !default;
+
+$badge-font-size: 12px !default;
 $badge-color: #fff !default;
-$badge-color-inverse: theme-color('info') !default;
+$badge-color-inverse: theme-color('primary') !default;
 $badge-background: theme-color('accent') !default;
 $badge-background-inverse: #999 !default;
-$badge-size: 18px !default;
-$badge-padding: -10px !default;
-$badge-overlap: 10px !default;
+$badge-size: 22px !default;
+$badge-padding: -2px !default;
+$badge-overlap: 4px !default;
 
 /* SHADOWS */
 $shadow-key-umbra-opacity: 0.2 !default;
