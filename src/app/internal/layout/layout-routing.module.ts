@@ -20,14 +20,6 @@ const routes: Routes = [
 			{
 				path: 'table',
 				loadChildren: '../menu-items/tables/tables.module#TablesModule'
-			},
-			{
-				path: 'form',
-				loadChildren: '../../../demo/forms/forms.module#MyFormsModule'
-			},
-			{
-				path: 'page',
-				loadChildren: '../../../demo/pages/pages.module#PagesModule'
 			}
 		]
 	}
