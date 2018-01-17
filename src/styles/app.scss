@@ -11,17 +11,26 @@
 @import 'app/auth/sign-up-page';
 @import 'app/page-not-found/_page-not-found';
 
-@import 'pages/demo';
-@import 'pages/auth';
-@import 'pages/error';
-@import 'pages/lock-screen';
-@import 'pages/profile';
-@import 'pages/invoice';
-@import 'pages/dashboard';
-@import 'pages/maintenance';
-@import 'pages/about';
-@import 'pages/terms';
-@import 'pages/blog';
+@import 'app/layout/base';
+@import 'app/layout/header';
+@import 'app/layout/sidebar';
+@import 'app/layout/page-container';
+@import 'app/layout/footer';
+@import 'app/layout/quickview';
+@import 'app/layout/overlay';
+@import 'app/layout/boxed';
+@import 'app/layout/sidebar-removed';
+@import 'app/layout/sidebar-addons';
+@import 'app/layout/sidebar-collapsed';
+@import 'app/layout/sidebar-behind';
+@import 'app/layout/sidebar-width';
+@import 'app/layout/header-theme';
+@import 'app/layout/sidebar-theme';
+@import 'app/layout/page-container-theme';
+@import 'app/layout/overlay-theme';
+@import 'app/layout/quickview-app';
+@import 'app/layout/quickview-customizer';
+@import 'app/layout/md';
 
 @import './styles-reset';
 @import './styles-reset.scss-theme';

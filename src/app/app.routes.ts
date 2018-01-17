@@ -16,18 +16,13 @@ import { PageLayoutFullscreenComponent } from '../demo/page-layouts/fullscreen/f
 
 export const routes: Routes = [
 	{ path: '', component: LandingPageComponent },
-	{ path: 'internal', component: LayoutComponent },
+	{ path: 'internal', component: LayoutComponent, canActivate: [AuthGuard] },
 	{ path: 'demo', component: DemoLayoutComponent },
 	{
 		path: 'extra',
 		loadChildren: '../demo/extra-pages/extra-pages.module#ExtraPagesModule'
 	},
 	{ path: 'fullscreen', component: PageLayoutFullscreenComponent },
-	{
-		path: 'items',
-		loadChildren: './home/home.module#HomeModule',
-		canActivate: [AuthGuard]
-	},
 	{
 		path: '**',
 		component: PageNotFoundComponent

@@ -31,7 +31,6 @@ import { LandingPageComponent } from './landing/components/landing-page/landing-
 
 // Sub Modules
 import { AuthModule } from './auth/auth.module';
-import { HomeModule } from './home/home.module';
 import { CoreModule } from '@app/core';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './internal/layout/layout.module';
