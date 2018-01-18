@@ -38,7 +38,7 @@ export class TablesService {
 			options.headers.set('Authorization', `Bearer ${user.token}`);
 			return (
 				this.http
-					.get(`${environment.api.endpoint}/stock-items`, options)
+					.get(`${environment.api.endpoint}/stockItems`, options)
 					// If successful, dispatch success action with result
 					.map(res => {
 						if (res && res.status === 200 && res.text()) {
@@ -74,7 +74,7 @@ export class TablesService {
 			return (
 				this.http
 					.get(
-						`${environment.api.endpoint}/stock-items/${id}`,
+						`${environment.api.endpoint}/stockItems/${id}`,
 						options
 					)
 					// If successful, dispatch success action with result
@@ -109,7 +109,7 @@ export class TablesService {
 			return (
 				this.http
 					.post(
-						`${environment.api.endpoint}/stock-items`,
+						`${environment.api.endpoint}/stockItems`,
 						stockItem,
 						options
 					)
@@ -148,7 +148,7 @@ export class TablesService {
 			return (
 				this.http
 					.put(
-						`${environment.api.endpoint}/stock-items/${
+						`${environment.api.endpoint}/stockItems/${
 							stockItem.stockItemId
 						}`,
 						stockItem,
@@ -189,7 +189,7 @@ export class TablesService {
 			return (
 				this.http
 					.delete(
-						`${environment.api.endpoint}/stock-items/${
+						`${environment.api.endpoint}/stockItems/${
 							stockItem.stockItemId
 						}`,
 						options

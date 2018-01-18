@@ -10,7 +10,9 @@ import { PipesModule } from '@app/shared/pipes';
 
 // Components
 import { TablesComponent } from './tables.component';
-import { TableDataTableComponent } from './components/data-table/data-table.component';
+import { DataTablePageComponent } from './components/data-table-page/data-table-page.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
+import { DataTableItemComponent } from './components/data-table-item/data-table-item.component';
 
 import { TablesRoutingModule } from './tables-routing.module';
 import { TablesService } from './services/tables.service';
@@ -19,7 +21,12 @@ import { reducers } from './reducers';
 
 import { StockItemExistsGuard } from './services/stock-item-guard.service';
 
-export const COMPONENTS = [TablesComponent, TableDataTableComponent];
+export const COMPONENTS = [
+	TablesComponent,
+	DataTablePageComponent,
+	DataTableComponent,
+	DataTableItemComponent
+];
 
 @NgModule({
 	imports: [

@@ -1,0 +1,18 @@
+div {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: left;
+}
+
+button {
+	z-index: 100;
+	position: fixed;
+	bottom: 50px;
+	right: 0px;
+	margin: 25px;
+}
+
+mat-icon {
+	color: #fff;
+}
