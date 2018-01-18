@@ -11,10 +11,10 @@ import echarts from 'echarts';
 import 'echarts/theme/macarons';
 
 // Internal
-import { LayoutService } from '../internal/layout/services/layout.service';
+import { LayoutService } from '@app/internal/layout/services/layout.service';
 
 // Demo
-import { DemoLayoutService } from '../../demo/demo-layout/services/demo-layout.service';
+import { DemoLayoutService } from 'demo/demo-layout/services/demo-layout.service';
 
 @Directive({ selector: '[appECharts]' })
 export class EChartsDirective implements AfterViewInit, OnDestroy {

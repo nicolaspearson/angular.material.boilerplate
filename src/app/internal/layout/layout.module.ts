@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { LayoutRoutingModule } from './layout-routing.module';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 // Layout
 import { LayoutComponent } from './components/layout/layout.component';
@@ -24,7 +24,7 @@ import { CustomizerComponent } from './components/customizer/customizer.componen
 import { ToggleQuickviewDirective } from './directives/toggle-quickview.directive';
 
 // Pages
-import { DashboardComponent } from '../menu-items/dashboard/dashboard.component';
+import { DashboardComponent } from '@app/internal/menu-items/dashboard/dashboard.component';
 
 // Footer
 import { FooterComponent } from './components/footer/footer.component';

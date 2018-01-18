@@ -13,7 +13,11 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
 import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
 
-import { SharedModule } from '../shared/shared.module';
+// Forgot Password
+import { ForgotPasswordPageComponent } from './components/forgot-password-page/forgot-password-page.component';
+import { ForgotPasswordFormComponent } from './components/forgot-password-form/forgot-password-form.component';
+
+import { SharedModule } from '@app/shared/shared.module';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
@@ -24,7 +28,9 @@ export const COMPONENTS = [
 	LoginPageComponent,
 	LoginFormComponent,
 	SignUpPageComponent,
-	SignUpFormComponent
+	SignUpFormComponent,
+	ForgotPasswordPageComponent,
+	ForgotPasswordFormComponent
 ];
 
 @NgModule({
@@ -46,7 +52,8 @@ export class AuthModule {
 		AuthModule,
 		RouterModule.forChild([
 			{ path: 'login', component: LoginPageComponent },
-			{ path: 'sign-up', component: SignUpPageComponent }
+			{ path: 'sign-up', component: SignUpPageComponent },
+			{ path: 'forgot-password', component: ForgotPasswordPageComponent }
 		]),
 		StoreModule.forFeature('auth', reducers),
 		EffectsModule.forFeature([AuthEffects])

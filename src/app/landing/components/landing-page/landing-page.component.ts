@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { AppConfig } from '../../../config';
+import { AppConfig } from '@app/config';
 
 @Component({
 	selector: 'app-landing-page',
@@ -18,10 +18,7 @@ export class LandingPageComponent implements OnInit {
 
 	testimonials;
 
-	constructor(
-		private formBuilder: FormBuilder,
-		private router: Router
-	) {}
+	constructor(private formBuilder: FormBuilder, private router: Router) {}
 
 	ngOnInit() {
 		this.AppConfig = AppConfig;

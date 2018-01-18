@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AppConfig } from '../../../../app/config';
-import { DemoLayoutService } from '../../services/demo-layout.service';
+import { AppConfig } from '@app/config';
+import { DemoLayoutService } from 'demo/demo-layout/services/demo-layout.service';
 
 @Component({
 	selector: 'app-demo-customizer',

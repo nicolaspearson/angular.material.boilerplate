@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar, MatDialog } from '@angular/material';
-import { DemoLayoutService } from '../../demo-layout/services/demo-layout.service';
+import { DemoLayoutService } from 'demo/demo-layout/services/demo-layout.service';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog.component';
 import { DialogResultExampleDialogComponent } from './dialog-result-example-dialog.component';
 

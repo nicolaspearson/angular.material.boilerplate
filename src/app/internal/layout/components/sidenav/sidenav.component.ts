@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AppConfig } from '../../../../config';
+import { AppConfig } from '@app/config';
 
 @Component({
 	selector: 'app-sidenav',

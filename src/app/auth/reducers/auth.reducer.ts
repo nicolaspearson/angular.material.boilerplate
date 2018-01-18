@@ -1,5 +1,5 @@
-import * as auth from '../actions/auth.actions';
-import { User } from '../models/user';
+import * as auth from '@app/auth/actions/auth.actions';
+import { User } from '@app/auth/models/user';
 
 export interface State {
 	loggedIn: boolean;
@@ -22,8 +22,17 @@ export function reducer(state = initialState, action: auth.Actions): State {
 			};
 		}
 
+		case auth.FORGOT_PASSWORD_SUCCESS: {
+			return {
+				...state,
+				loggedIn: false,
+				user: action.payload.user
+			};
+		}
+
 		case auth.LOGIN_REDIRECT:
 		case auth.SIGN_UP_REDIRECT:
+		case auth.FORGOT_PASSWORD_REDIRECT:
 		case auth.LOGOUT: {
 			return initialState;
 		}

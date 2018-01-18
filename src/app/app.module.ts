@@ -20,7 +20,7 @@ import { CustomRouterStateSerializer } from './shared/utils';
 import { reducers, metaReducers } from './reducers';
 
 import { routes } from './app.routes';
-import { environment } from '../environments/environment';
+import { environment } from 'environments/environment';
 
 // App Component
 import { AppComponent } from './app.component';
@@ -34,7 +34,7 @@ import { AuthModule } from './auth/auth.module';
 import { CoreModule } from '@app/core';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './internal/layout/layout.module';
-import { DemoLayoutModule } from '../demo/demo-layout/demo-layout.module';
+import { DemoLayoutModule } from 'demo/demo-layout/demo-layout.module';
 
 // Hot Module Reload (HMR)
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -106,13 +106,13 @@ export class AppModule {
 			.addSvgIcon(
 				'pin',
 				domSanitizer.bypassSecurityTrustResourceUrl(
-					'../assets/images/svg/pin.svg'
+					'assets/images/svg/pin.svg'
 				)
 			)
 			.addSvgIcon(
 				'pin-off',
 				domSanitizer.bypassSecurityTrustResourceUrl(
-					'../assets/images/svg/pin-off.svg'
+					'assets/images/svg/pin-off.svg'
 				)
 			);
 	}

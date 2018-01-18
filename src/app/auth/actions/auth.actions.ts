@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { User, Authenticate } from '@app/auth/models/user';
+import { User, Authenticate, ResetPassword } from '@app/auth/models/user';
 import { SignUp } from '@app/auth/models/sign-up';
 
 // Login / Logout
@@ -63,6 +63,34 @@ export class SignUpRedirect implements Action {
 	readonly type = SIGN_UP_REDIRECT;
 }
 
+// Forgot Password
+export const FORGOT_PASSWORD = 'AUTH/FORGOT_PASSWORD';
+export const FORGOT_PASSWORD_SUCCESS = 'AUTH/FORGOT_PASSWORD_SUCCESS';
+export const FORGOT_PASSWORD_FAILURE = 'AUTH/FORGOT_PASSWORD_FAILURE';
+export const FORGOT_PASSWORD_REDIRECT = 'AUTH/FORGOT_PASSWORD_REDIRECT';
+
+export class SubmitForgotPassword implements Action {
+	readonly type = FORGOT_PASSWORD;
+
+	constructor(public payload: ResetPassword) {}
+}
+
+export class ForgotPasswordSuccess implements Action {
+	readonly type = FORGOT_PASSWORD_SUCCESS;
+
+	constructor(public payload: { user: User }) {}
+}
+
+export class ForgotPasswordFailure implements Action {
+	readonly type = FORGOT_PASSWORD_FAILURE;
+
+	constructor(public payload: any) {}
+}
+
+export class ForgotPasswordRedirect implements Action {
+	readonly type = FORGOT_PASSWORD_REDIRECT;
+}
+
 export type Actions =
 	| Login
 	| LoginSuccess
@@ -72,4 +100,8 @@ export type Actions =
 	| NewSignUp
 	| SignUpSuccess
 	| SignUpFailure
-	| SignUpRedirect;
+	| SignUpRedirect
+	| SubmitForgotPassword
+	| ForgotPasswordSuccess
+	| ForgotPasswordFailure
+	| ForgotPasswordRedirect;

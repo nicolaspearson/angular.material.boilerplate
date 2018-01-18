@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@app/auth/services/auth-guard.service';
 
 import { LayoutComponent } from './components/layout/layout.component';
-import { DashboardComponent } from '../menu-items/dashboard/dashboard.component';
+import { DashboardComponent } from '@app/internal/menu-items/dashboard/dashboard.component';
 
 const routes: Routes = [
 	{
@@ -24,7 +24,8 @@ const routes: Routes = [
 			},
 			{
 				path: 'table',
-				loadChildren: '../menu-items/tables/tables.module#TablesModule',
+				loadChildren:
+					'@app/internal/menu-items/tables/tables.module#TablesModule',
 				canActivate: [AuthGuard]
 			}
 		]

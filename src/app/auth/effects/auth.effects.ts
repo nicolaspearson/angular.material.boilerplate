@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 import { Effect, Actions } from '@ngrx/effects';
 import { of } from 'rxjs/observable/of';
 
-import { AuthService } from '../services/auth.service';
-import * as Auth from '../actions/auth.actions';
+import { AuthService } from '@app/auth/services/auth.service';
+import * as Auth from '@app/auth/actions/auth.actions';
 
-import { LocalStorageService } from '../../core/local-storage/local-storage.service';
-import { LS_USER_KEY } from '../../core/local-storage/keys';
+import { LocalStorageService } from '@app/core/local-storage/local-storage.service';
+import { LS_USER_KEY } from '@app/core/local-storage/keys';
 
 @Injectable()
 export class AuthEffects {
@@ -79,4 +79,34 @@ export class AuthEffects {
 		this.localStorageService.setItem(LS_USER_KEY, { user: null });
 		this.router.navigate(['/sign-up']);
 	});
+
+	// Forgot Password
+	@Effect()
+	forgotPassword$ = this.actions$
+		.ofType(Auth.FORGOT_PASSWORD)
+		.map((action: Auth.SubmitForgotPassword) => action.payload)
+		.exhaustMap(newUser =>
+			this.authService
+				.forgotPassword(newUser)
+				.map(user => {
+					this.localStorageService.setItem(LS_USER_KEY, {
+						user
+					});
+					return new Auth.ForgotPasswordSuccess({ user });
+				})
+				.catch(error => of(new Auth.ForgotPasswordFailure(error)))
+		);
+
+	@Effect({ dispatch: false })
+	forgotPasswordSuccess$ = this.actions$
+		.ofType(Auth.FORGOT_PASSWORD_SUCCESS)
+		.do(() => this.router.navigate(['/login']));
+
+	@Effect({ dispatch: false })
+	forgotPasswordRedirect$ = this.actions$
+		.ofType(Auth.FORGOT_PASSWORD_REDIRECT)
+		.do(authed => {
+			this.localStorageService.setItem(LS_USER_KEY, { user: null });
+			this.router.navigate(['/forgot-password']);
+		});
 }

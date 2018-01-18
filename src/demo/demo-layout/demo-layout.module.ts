@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { DemoLayoutRoutingModule } from './demo-layout-routing.module';
-import { SharedModule } from '../../app/shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 // Layout
 import { DemoLayoutComponent } from './components/demo-layout/demo-layout.component';

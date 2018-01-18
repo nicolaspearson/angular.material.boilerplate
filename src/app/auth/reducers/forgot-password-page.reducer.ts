@@ -12,7 +12,7 @@ export const initialState: State = {
 
 export function reducer(state = initialState, action: auth.Actions): State {
 	switch (action.type) {
-		case auth.LOGIN: {
+		case auth.FORGOT_PASSWORD: {
 			return {
 				...state,
 				error: null,
@@ -20,7 +20,7 @@ export function reducer(state = initialState, action: auth.Actions): State {
 			};
 		}
 
-		case auth.LOGIN_SUCCESS: {
+		case auth.FORGOT_PASSWORD_SUCCESS: {
 			return {
 				...state,
 				error: null,
@@ -28,7 +28,7 @@ export function reducer(state = initialState, action: auth.Actions): State {
 			};
 		}
 
-		case auth.LOGIN_FAILURE: {
+		case auth.FORGOT_PASSWORD_FAILURE: {
 			return {
 				...state,
 				error: action.payload,

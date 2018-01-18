@@ -13,7 +13,7 @@ import {
 	NavigationCancel,
 	NavigationError
 } from '@angular/router';
-import { LayoutService } from '../services/layout.service';
+import { LayoutService } from '@app/internal/layout/services/layout.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Directive({

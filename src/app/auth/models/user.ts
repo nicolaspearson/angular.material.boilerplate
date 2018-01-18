@@ -3,6 +3,10 @@ export interface Authenticate {
 	password: string;
 }
 
+export interface ResetPassword {
+	emailAddress: string;
+}
+
 export interface User {
 	token: string;
 	user: {

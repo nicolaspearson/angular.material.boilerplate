@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as Auth from '../actions/auth.actions';
-import * as fromAuth from '../reducers';
+import * as Auth from '@app/auth/actions/auth.actions';
+import * as fromAuth from '@app/auth/reducers';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/map';
 
-import { LocalStorageService } from '../../core/local-storage/local-storage.service';
-import { LS_USER_KEY } from '../../core/local-storage/keys';
-import { User } from '../models/user';
+import { LocalStorageService } from '@app/core/local-storage/local-storage.service';
+import { LS_USER_KEY } from '@app/core/local-storage/keys';
+import { User } from '@app/auth/models/user';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

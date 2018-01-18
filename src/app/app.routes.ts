@@ -11,8 +11,8 @@ import { LandingPageComponent } from './landing/components/landing-page/landing-
 import { LayoutComponent } from './internal/layout/components/layout/layout.component';
 
 // Demo
-import { DemoLayoutComponent } from '../demo/demo-layout/components/demo-layout/demo-layout.component';
-import { PageLayoutFullscreenComponent } from '../demo/page-layouts/fullscreen/fullscreen.component';
+import { DemoLayoutComponent } from 'demo/demo-layout/components/demo-layout/demo-layout.component';
+import { PageLayoutFullscreenComponent } from 'demo/page-layouts/fullscreen/fullscreen.component';
 
 export const routes: Routes = [
 	{ path: '', component: LandingPageComponent },
@@ -20,7 +20,7 @@ export const routes: Routes = [
 	{ path: 'demo', component: DemoLayoutComponent },
 	{
 		path: 'extra',
-		loadChildren: '../demo/extra-pages/extra-pages.module#ExtraPagesModule'
+		loadChildren: 'demo/extra-pages/extra-pages.module#ExtraPagesModule'
 	},
 	{ path: 'fullscreen', component: PageLayoutFullscreenComponent },
 	{

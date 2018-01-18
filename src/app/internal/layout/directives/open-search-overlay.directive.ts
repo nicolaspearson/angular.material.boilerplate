@@ -1,5 +1,5 @@
 import { Directive, ElementRef, AfterViewInit } from '@angular/core';
-import { LayoutService } from '../services/layout.service';
+import { LayoutService } from '@app/internal/layout/services/layout.service';
 
 @Directive({ selector: '[appOpenSearchOverlay]' })
 export class OpenSearchOverlayDirective implements AfterViewInit {

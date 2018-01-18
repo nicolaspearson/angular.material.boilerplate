@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AppConfig } from '../../../../config';
-import { LayoutService } from '../../services/layout.service';
+import { AppConfig } from '@app/config';
+import { LayoutService } from '@app/internal/layout/services/layout.service';
 
 @Component({
 	selector: 'app-customizer',
