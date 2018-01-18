@@ -16,24 +16,24 @@ import {
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { CustomRouterStateSerializer } from './shared/utils';
-import { reducers, metaReducers } from './reducers';
+import { CustomRouterStateSerializer } from '@app/shared/utils';
+import { reducers, metaReducers } from '@app/reducers';
 
-import { routes } from './app.routes';
-import { environment } from 'environments/environment';
+import { routes } from '@app/app.routes';
+import { environment } from '@env/environment';
 
 // App Component
-import { AppComponent } from './app.component';
+import { AppComponent } from '@app/app.component';
 
 // Pages
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { LandingPageComponent } from './landing/components/landing-page/landing-page.component';
+import { PageNotFoundComponent } from '@app/components/page-not-found/page-not-found.component';
+import { LandingPageComponent } from '@app/features/landing/components/landing-page/landing-page.component';
 
 // Sub Modules
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from '@app/features/auth/auth.module';
 import { CoreModule } from '@app/core';
-import { SharedModule } from './shared/shared.module';
-import { LayoutModule } from './internal/layout/layout.module';
+import { SharedModule } from '@app/shared/shared.module';
+import { LayoutModule } from '@app/features/internal/layout/layout.module';
 import { DemoLayoutModule } from 'demo/demo-layout/demo-layout.module';
 
 // Hot Module Reload (HMR)

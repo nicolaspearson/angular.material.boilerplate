@@ -7,7 +7,7 @@ import { EChartsDirective } from './echarts.directive';
 import { SlimScrollDirective } from './slim-scroll.directive';
 
 // Reusable components
-import { LogoComponent } from '../logo/logo.component';
+import { LogoComponent } from '@app/components/logo/logo.component';
 
 import {
 	MatAutocompleteModule,

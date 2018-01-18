@@ -11,7 +11,7 @@ import echarts from 'echarts';
 import 'echarts/theme/macarons';
 
 // Internal
-import { LayoutService } from '@app/internal/layout/services/layout.service';
+import { LayoutService } from '@app/features/internal/layout/services/layout.service';
 
 // Demo
 import { DemoLayoutService } from 'demo/demo-layout/services/demo-layout.service';
