@@ -1,38 +1,43 @@
 @import 'variables';
 
 @import 'vendors/material2/material2';
+@import 'vendors/ngx-toastr/toastr';
 
 @import 'app/app';
-@import 'app/landing/landing-page';
-@import 'app/logo/logo';
-@import 'app/auth/forgot-password-form';
-@import 'app/auth/forgot-password-page';
-@import 'app/auth/login-form';
-@import 'app/auth/login-page';
-@import 'app/auth/sign-up-form';
-@import 'app/auth/sign-up-page';
-@import 'app/page-not-found/_page-not-found';
 
-@import 'app/layout/base';
-@import 'app/layout/header';
-@import 'app/layout/sidebar';
-@import 'app/layout/page-container';
-@import 'app/layout/footer';
-@import 'app/layout/quickview';
-@import 'app/layout/overlay';
-@import 'app/layout/boxed';
-@import 'app/layout/sidebar-removed';
-@import 'app/layout/sidebar-addons';
-@import 'app/layout/sidebar-collapsed';
-@import 'app/layout/sidebar-behind';
-@import 'app/layout/sidebar-width';
-@import 'app/layout/header-theme';
-@import 'app/layout/sidebar-theme';
-@import 'app/layout/page-container-theme';
-@import 'app/layout/overlay-theme';
-@import 'app/layout/quickview-app';
-@import 'app/layout/quickview-customizer';
-@import 'app/layout/md';
+@import 'app/components/dialogs/base-dialog';
+@import 'app/components/logo/logo';
+@import 'app/components/page-not-found/_page-not-found';
+
+@import 'app/features/auth/forgot-password-form';
+@import 'app/features/auth/forgot-password-page';
+@import 'app/features/auth/login-form';
+@import 'app/features/auth/login-page';
+@import 'app/features/auth/sign-up-form';
+@import 'app/features/auth/sign-up-page';
+
+@import 'app/features/layout/base';
+@import 'app/features/layout/header';
+@import 'app/features/layout/sidebar';
+@import 'app/features/layout/page-container';
+@import 'app/features/layout/footer';
+@import 'app/features/layout/quickview';
+@import 'app/features/layout/overlay';
+@import 'app/features/layout/boxed';
+@import 'app/features/layout/sidebar-removed';
+@import 'app/features/layout/sidebar-addons';
+@import 'app/features/layout/sidebar-collapsed';
+@import 'app/features/layout/sidebar-behind';
+@import 'app/features/layout/sidebar-width';
+@import 'app/features/layout/header-theme';
+@import 'app/features/layout/sidebar-theme';
+@import 'app/features/layout/page-container-theme';
+@import 'app/features/layout/overlay-theme';
+@import 'app/features/layout/quickview-app';
+@import 'app/features/layout/quickview-customizer';
+@import 'app/features/layout/md';
+
+@import 'app/features/layout/menu-items/data-table';
 
 @import './styles-reset';
 @import './styles-reset.scss-theme';
