@@ -33,6 +33,7 @@
 		"scrollreveal",
 		"selectable",
 		"slimscroll",
+		"toastr",
 		"tslib",
 		"webfontloader"
 	],

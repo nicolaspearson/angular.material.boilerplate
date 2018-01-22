@@ -16,6 +16,8 @@ import {
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { ToastrModule } from 'ngx-toastr';
+
 import { CustomRouterStateSerializer } from '@app/shared/utils';
 import { reducers, metaReducers } from '@app/reducers';
 
@@ -80,8 +82,23 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 		SharedModule,
 		LayoutModule,
 		DemoLayoutModule,
-		// Scroll Reveal
-		NgsRevealModule.forRoot()
+		// 3rd Party
+		NgsRevealModule.forRoot(),
+		ToastrModule.forRoot({
+			closeButton: false,
+			timeOut: 3000,
+			positionClass: 'toast-top-right',
+			preventDuplicates: true,
+			progressBar: true,
+			progressAnimation: 'decreasing',
+			newestOnTop: true,
+			iconClasses: {
+				error: 'toast-error',
+				info: 'toast-info',
+				success: 'toast-success',
+				warning: 'toast-warning'
+			}
+		})
 	],
 	providers: [
 		/**

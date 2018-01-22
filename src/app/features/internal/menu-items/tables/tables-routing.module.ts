@@ -4,7 +4,7 @@ import { AuthGuard } from '@app/features/auth/services/auth-guard.service';
 import { StockItemExistsGuard } from './services/stock-item-guard.service';
 
 import { TablesComponent } from './tables.component';
-import { DataTablePageComponent } from './components/data-table-page/data-table-page.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
 
 export const TablesRoutes: Routes = [
 	{
@@ -16,10 +16,10 @@ export const TablesRoutes: Routes = [
 		canActivate: [AuthGuard],
 		children: [
 			{ path: '', redirectTo: '/internal/dashboard', pathMatch: 'full' },
-			{ path: 'data-table', component: DataTablePageComponent },
+			{ path: 'data-table', component: DataTableComponent },
 			{
 				path: 'data-table/:id',
-				component: DataTablePageComponent,
+				component: DataTableComponent, // TODO: Should be a detail component
 				canActivate: [StockItemExistsGuard]
 			}
 		]

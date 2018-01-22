@@ -78,7 +78,7 @@ export class AddStockItemSuccess implements Action {
 export class AddStockItemFailure implements Action {
 	readonly type = ADD_STOCK_ITEM_FAILURE;
 
-	constructor(public payload: StockItem) {}
+	constructor(public payload: any) {}
 }
 
 export class UpdateStockItem implements Action {
@@ -96,7 +96,7 @@ export class UpdateStockItemSuccess implements Action {
 export class UpdateStockItemFailure implements Action {
 	readonly type = UPDATE_STOCK_ITEM_FAILURE;
 
-	constructor(public payload: StockItem) {}
+	constructor(public payload: any) {}
 }
 
 export class RemoveStockItem implements Action {
@@ -114,7 +114,7 @@ export class RemoveStockItemSuccess implements Action {
 export class RemoveStockItemFailure implements Action {
 	readonly type = REMOVE_STOCK_ITEM_FAILURE;
 
-	constructor(public payload: StockItem) {}
+	constructor(public payload: any) {}
 }
 
 /**

@@ -10,9 +10,7 @@ import { PipesModule } from '@app/shared/pipes';
 
 // Components
 import { TablesComponent } from './tables.component';
-import { DataTablePageComponent } from './components/data-table-page/data-table-page.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
-import { DataTableItemComponent } from './components/data-table-item/data-table-item.component';
 
 import { TablesRoutingModule } from './tables-routing.module';
 import { TablesService } from './services/tables.service';
@@ -21,12 +19,13 @@ import { reducers } from './reducers';
 
 import { StockItemExistsGuard } from './services/stock-item-guard.service';
 
-export const COMPONENTS = [
-	TablesComponent,
-	DataTablePageComponent,
-	DataTableComponent,
-	DataTableItemComponent
-];
+// Dialogs
+import { BaseDialogComponent } from '@app/components/dialogs/base-dialog/base-dialog.component';
+import { AddStockItemDialogComponent } from './dialogs/add-stock-item-dialog/add-stock-item-dialog.component';
+import { DeleteStockItemDialogComponent } from './dialogs/delete-stock-item-dialog/delete-stock-item-dialog.component';
+import { EditStockItemDialogComponent } from './dialogs/edit-stock-item-dialog/edit-stock-item-dialog.component';
+
+export const COMPONENTS = [TablesComponent, DataTableComponent];
 
 @NgModule({
 	imports: [
@@ -39,7 +38,21 @@ export const COMPONENTS = [
 		EffectsModule.forFeature([TablesEffects]),
 		TablesRoutingModule
 	],
-	declarations: COMPONENTS,
+	entryComponents: [
+		// Dialogs
+		BaseDialogComponent,
+		AddStockItemDialogComponent,
+		DeleteStockItemDialogComponent,
+		EditStockItemDialogComponent
+	],
+	declarations: [
+		...COMPONENTS,
+		// Dialogs
+		BaseDialogComponent,
+		AddStockItemDialogComponent,
+		DeleteStockItemDialogComponent,
+		EditStockItemDialogComponent
+	],
 	exports: COMPONENTS,
 	providers: [TablesService, StockItemExistsGuard]
 })

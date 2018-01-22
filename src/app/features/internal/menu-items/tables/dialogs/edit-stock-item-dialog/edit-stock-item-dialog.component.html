@@ -1,0 +1,86 @@
+<app-dialog-base>
+	<div class="app-dialog-base-container">
+		<header>
+			<h3 class="app-dialog-base-header" mat-dialog-title>Edit Stock Item</h3>
+		</header>
+
+
+		<form class="app-dialog-base-content" [formGroup]="form" (ngSubmit)="submit()">
+
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<input matInput type="text" placeholder="Registration Number" formControlName="registrationNumber" required>
+					<mat-error *ngIf="form.get('registrationNumber').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+				</mat-form-field>
+			</div>
+
+			<!--Textarea for demo purposes-->
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<textarea matInput type="text" placeholder="Make" formControlName="make" required></textarea>
+					<mat-error *ngIf="form.get('make').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+				</mat-form-field>
+			</div>
+
+			<!--Contains mat-hint for characters count and has maxLength set-->
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<input matInput #inputModel type="text" placeholder="Model" formControlName="model" maxlength="50" required>
+					<mat-error *ngIf="form.get('model').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+					<mat-hint align="end">{{inputModel.value?.length || 0}}/50</mat-hint>
+				</mat-form-field>
+			</div>
+
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<input matInput #inputModelYear type="number" placeholder="Model Year" formControlName="modelYear" maxlength="4" required>
+					<mat-error *ngIf="form.get('modelYear').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+					<mat-hint align="end">{{inputModelYear.value?.length || 0}}/4</mat-hint>
+				</mat-form-field>
+			</div>
+
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<input matInput type="number" placeholder="Odometer" formControlName="odometer" maxlength="10" required>
+					<mat-error *ngIf="form.get('odometer').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+				</mat-form-field>
+			</div>
+
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<input matInput type="text" placeholder="Colour" formControlName="colour" required>
+					<mat-error *ngIf="form.get('colour').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+				</mat-form-field>
+			</div>
+
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<input matInput type="text" placeholder="VIN" formControlName="vin" required>
+					<mat-error *ngIf="form.get('vin').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+				</mat-form-field>
+			</div>
+
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<input matInput type="text" placeholder="Retail Price" formControlName="retailPrice" required>
+					<mat-error *ngIf="form.get('retailPrice').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+				</mat-form-field>
+			</div>
+
+			<div class="app-dialog-base-form-item">
+				<mat-form-field color="accent">
+					<input matInput type="text" placeholder="Cost Price" formControlName="costPrice" required>
+					<mat-error *ngIf="form.get('costPrice').touched && form.invalid">{{getRequiredErrorMessage()}}</mat-error>
+				</mat-form-field>
+			</div>
+		</form>
+
+		<footer>
+			<div class="app-dialog-base-footer float-right" mat-dialog-actions>
+				<button mat-button class="btn-w-md mat-raised-button mat-primary" color="primary" [type]="submit" [disabled]="form.invalid"
+				 [mat-dialog-close]="1" (click)="onSubmitClick()">Save</button>
+				<button mat-button class="btn-w-md mat-raised-button" (click)="onCancelClick()" tabindex="-1">Cancel</button>
+			</div>
+		</footer>
+	</div>
+</app-dialog-base>

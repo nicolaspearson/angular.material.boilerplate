@@ -2,9 +2,10 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import * as Tables from '../actions/tables.actions';
 import { StockItem } from '@app/models/stock-item';
 
-export interface State extends EntityState<StockItem> {
-	selectedStockItemId: string | null;
+export interface StockItemState extends EntityState<StockItem> {
 	ids: string[];
+	entities: { [id: string]: StockItem };
+	selectedStockItemId: string | null;
 	error: string | null;
 	loaded: boolean;
 	loading: boolean;
@@ -17,16 +18,19 @@ export const adapter: EntityAdapter<StockItem> = createEntityAdapter<StockItem>(
 	}
 );
 
-export const initialState: State = adapter.getInitialState({
-	selectedStockItemId: null,
-	stockItems: [],
+export const initialState: StockItemState = adapter.getInitialState({
 	ids: [],
+	entities: {},
+	selectedStockItemId: null,
 	error: null,
 	loaded: false,
 	loading: false
 });
 
-export function reducer(state = initialState, action: Tables.Actions): State {
+export function reducer(
+	state: StockItemState = initialState,
+	action: Tables.Actions
+): StockItemState {
 	switch (action.type) {
 		case Tables.FETCH_STOCK_ITEMS: {
 			return {
@@ -64,10 +68,7 @@ export function reducer(state = initialState, action: Tables.Actions): State {
 		}
 
 		case Tables.UPDATE_STOCK_ITEM_SUCCESS: {
-			return {
-				...adapter.removeOne(action.payload.stockItemId, state),
-				ids: state.ids.filter(id => id !== action.payload.stockItemId)
-			};
+			return addOrUpdateStockItem(action, state);
 		}
 
 		case Tables.ADD_STOCK_ITEM_SUCCESS:
@@ -97,15 +98,68 @@ export function reducer(state = initialState, action: Tables.Actions): State {
 	}
 }
 
-export const getSelectedId = (state: State) => state.selectedStockItemId;
+function addOrUpdateStockItem(action, state) {
+	const newStockItem: StockItem = action.payload;
 
-export const getIds = (state: State) => state.ids;
+	// Map the entities to an array
+	const entityStockItems = Object.keys(state.entities).map(function(key) {
+		return state.entities[key];
+	});
 
-export const getError = (state: State) => state.error;
+	// Try to find a match using the id
+	let stockItemIndex = entityStockItems
+		.map(stockItem => stockItem.stockItemId)
+		.indexOf(newStockItem.stockItemId);
+	if (stockItemIndex < 0) {
+		stockItemIndex = -1;
+	}
 
-export const getLoaded = (state: State) => state.loaded;
+	let stockItems: StockItem[] = [];
+	if (stockItemIndex >= 0) {
+		if (entityStockItems.length > 1) {
+			// Replace the existing stock item
+			stockItems = entityStockItems
+				.slice(0, stockItemIndex)
+				.concat([newStockItem])
+				.concat(entityStockItems.slice(stockItemIndex + 1));
+		} else {
+			// We only have a single stock item
+			stockItems = [newStockItem];
+		}
+	} else {
+		// The stock item is not currently in our state, append it
+		stockItems = [...entityStockItems, newStockItem];
+	}
 
-export const getLoading = (state: State) => state.loading;
+	const entities = stockItems.map(stockItem => {
+		return {
+			id: stockItem.stockItemId,
+			changes: stockItem
+		};
+	});
+
+	return {
+		...state,
+		...adapter.updateMany(entities, state),
+		error: null,
+		loaded: true,
+		loading: false,
+		ids: stockItems.map(stockItem => stockItem.stockItemId)
+	};
+}
+
+export const getIds = (state: StockItemState) => state.ids;
+
+export const getEntities = (state: StockItemState) => state.entities;
+
+export const getSelectedId = (state: StockItemState) =>
+	state.selectedStockItemId;
+
+export const getError = (state: StockItemState) => state.error;
+
+export const getLoaded = (state: StockItemState) => state.loaded;
+
+export const getLoading = (state: StockItemState) => state.loading;
 
 export const getNewStockItem = () => {
 	return {

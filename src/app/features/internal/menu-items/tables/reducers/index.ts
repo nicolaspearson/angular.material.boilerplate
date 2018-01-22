@@ -3,7 +3,7 @@ import * as fromRoot from '@app/reducers';
 import * as fromTables from './tables.reducer';
 
 export interface TablesState {
-	tables: fromTables.State;
+	tables: fromTables.StockItemState;
 }
 
 export interface State extends fromRoot.State {
@@ -76,6 +76,7 @@ export const getCollectionLoaded = createSelector(
 	getStockItemEntitiesState,
 	fromTables.getLoaded
 );
+
 export const getCollectionLoading = createSelector(
 	getStockItemEntitiesState,
 	fromTables.getLoading

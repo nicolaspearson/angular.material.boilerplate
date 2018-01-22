@@ -1,49 +1,91 @@
-<!-- <app-data-table-item *ngFor="let stockItem of stockItems" [stockItem]="stockItem">
-</app-data-table-item> -->
+<section class="app-data-table-container container-fluid with-maxwidth chapter">
 
-<mat-table [dataSource]="dataSource">
+	<div class="app-data-table-header">
+		<div class="title-header">
+			<h2 class="article-title">Data Table</h2>
+			<button mat-icon-button (click)="loadData()">
+				<mat-icon class="material-icons" color="primary">refresh</mat-icon>
+			</button>
+		</div>
+		<div class="sub-header">
+			<mat-form-field>
+				<input #filter matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+			</mat-form-field>
+			<button class="button-create" (click)="addItem()" mat-mini-fab color="primary">
+				<mat-icon aria-label="Add">add</mat-icon>
+			</button>
+		</div>
+	</div>
 
-	<!--- Note that these columns can be defined in any order.
-  The actual rendered columns are set as a property on the row definition" -->
+	<article class="article mat-elevation-z2">
+		<div class="box box-default table-box mdl-shadow--2dp">
 
-	<ng-container cdkColumnDef="registrationNumber">
-		<mat-header-cell *cdkHeaderCellDef> Registration Number </mat-header-cell>
-		<mat-cell *cdkCellDef="let row"> {{row.registrationNumber}} </mat-cell>
-	</ng-container>
+			<mat-table class="app-data-table-mat-table" #table [dataSource]="dataSource" matSort>
 
-	<ng-container cdkColumnDef="make">
-		<mat-header-cell *cdkHeaderCellDef> Make </mat-header-cell>
-		<mat-cell *cdkCellDef="let row"> {{row.make}}% </mat-cell>
-	</ng-container>
+				<!--- Note that these columns can be defined in any order.
+  				The actual rendered columns are set as a property on the row definition" -->
 
-	<ng-container cdkColumnDef="model">
-		<mat-header-cell *cdkHeaderCellDef> Model </mat-header-cell>
-		<mat-cell *cdkCellDef="let row"> {{row.model}} </mat-cell>
-	</ng-container>
+				<ng-container matColumnDef="registrationNumber">
+					<mat-header-cell *matHeaderCellDef mat-sort-header> Registration Number </mat-header-cell>
+					<mat-cell *matCellDef="let row"> {{row.registrationNumber}} </mat-cell>
+				</ng-container>
 
-	<ng-container cdkColumnDef="modelYear">
-		<mat-header-cell *cdkHeaderCellDef> Model Year </mat-header-cell>
-		<mat-cell *cdkCellDef="let row"> {{row.modelYear}} </mat-cell>
-	</ng-container>
+				<ng-container matColumnDef="make">
+					<mat-header-cell *matHeaderCellDef mat-sort-header> Make </mat-header-cell>
+					<mat-cell *matCellDef="let row"> {{row.make}} </mat-cell>
+				</ng-container>
 
-	<ng-container cdkColumnDef="odometer">
-		<mat-header-cell *cdkHeaderCellDef> Odometer </mat-header-cell>
-		<mat-cell *cdkCellDef="let row"> {{row.odometer}} </mat-cell>
-	</ng-container>
+				<ng-container matColumnDef="model">
+					<mat-header-cell *matHeaderCellDef mat-sort-header> Model </mat-header-cell>
+					<mat-cell *matCellDef="let row"> {{row.model}} </mat-cell>
+				</ng-container>
 
-	<ng-container cdkColumnDef="colour">
-		<mat-header-cell *cdkHeaderCellDef> Colour </mat-header-cell>
-		<mat-cell *cdkCellDef="let row" [style.color]="row.colour"> {{row.colour}} </mat-cell>
-	</ng-container>
+				<ng-container matColumnDef="modelYear">
+					<mat-header-cell *matHeaderCellDef mat-sort-header> Model Year </mat-header-cell>
+					<mat-cell *matCellDef="let row"> {{row.modelYear}} </mat-cell>
+				</ng-container>
 
-	<ng-container cdkColumnDef="retailPrice">
-		<mat-header-cell *cdkHeaderCellDef> Retail Price </mat-header-cell>
-		<mat-cell *cdkCellDef="let row"> {{row.retailPrice}} </mat-cell>
-	</ng-container>
+				<ng-container matColumnDef="odometer">
+					<mat-header-cell *matHeaderCellDef mat-sort-header> Odometer </mat-header-cell>
+					<mat-cell *matCellDef="let row"> {{row.odometer}} </mat-cell>
+				</ng-container>
 
-	<mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
-	<mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+				<ng-container matColumnDef="colour">
+					<mat-header-cell *matHeaderCellDef mat-sort-header> Colour </mat-header-cell>
+					<mat-cell *matCellDef="let row" [style.color]="row.colour"> {{row.colour}} </mat-cell>
+				</ng-container>
 
-<mat-paginator #paginator [length]="stockItems.length" [pageIndex]="0" [pageSize]="25" [pageSizeOptions]="[5, 10, 25, 100]">
-</mat-paginator>
+				<ng-container matColumnDef="retailPrice">
+					<mat-header-cell *matHeaderCellDef mat-sort-header> Retail Price </mat-header-cell>
+					<mat-cell *matCellDef="let row"> {{row.retailPrice}} </mat-cell>
+				</ng-container>
+
+				<!-- actions -->
+				<ng-container matColumnDef="actions">
+					<mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+
+					<mat-cell *matCellDef="let row; let i=index;">
+						<button mat-icon-button color="accent" (click)="editItem(i, row)">
+							<mat-icon aria-label="Edit">edit</mat-icon>
+						</button>
+
+						<button mat-icon-button color="accent" (click)="deleteItem(i, row)">
+							<mat-icon aria-label="Delete">delete</mat-icon>
+						</button>
+					</mat-cell>
+				</ng-container>
+
+				<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+				<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+			</mat-table>
+
+			<div class="no-results" [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
+				No results
+			</div>
+
+			<mat-paginator #paginator [length]="dataSource.renderedData.length" [pageIndex]="0" [pageSize]="25" [pageSizeOptions]="[5, 10, 25, 100]">
+			</mat-paginator>
+		</div>
+	</article>
+
+</section>

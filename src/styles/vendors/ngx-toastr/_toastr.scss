@@ -1,0 +1,189 @@
+@import '~ngx-toastr/toastr';
+
+/* position */
+.toast-center-center {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.toast-top-center {
+	top: 0;
+	right: 0;
+	width: 100%;
+}
+.toast-bottom-center {
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+.toast-top-full-width {
+	top: 0;
+	right: 0;
+	width: 100%;
+}
+.toast-bottom-full-width {
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+.toast-top-left {
+	top: 12px;
+	left: 12px;
+}
+.toast-top-right {
+	top: 12px;
+	right: 12px;
+}
+.toast-bottom-right {
+	right: 12px;
+	bottom: 12px;
+}
+.toast-bottom-left {
+	bottom: 12px;
+	left: 12px;
+}
+
+/* toast styles */
+.toast-title {
+	font-weight: bold;
+	font-family: 'Roboto-Regular';
+}
+.toast-message {
+	word-wrap: break-word;
+	font-family: 'Roboto-Regular';
+}
+.toast-message a,
+.toast-message label {
+	color: #ffffff;
+}
+.toast-message a:hover {
+	color: #cccccc;
+	text-decoration: none;
+}
+.toast-close-button {
+	position: relative;
+	right: -0.3em;
+	top: -0.3em;
+	float: right;
+	font-size: 18px;
+	color: #ffffff;
+	text-shadow: 0 1px 0 #ffffff;
+	/* opacity: 0.8; */
+}
+.toast-close-button:hover,
+.toast-close-button:focus {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: 0.4;
+}
+/*Additional properties for button version
+   iOS requires the button element instead of an anchor tag.
+   If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+}
+.toast-container {
+	pointer-events: none;
+	position: fixed;
+	z-index: 999999;
+}
+.toast-container * {
+	box-sizing: border-box;
+}
+.toast-container .toast {
+	position: relative;
+	overflow: hidden;
+	margin: 0 0 6px;
+	padding: 15px 15px 15px 50px;
+	width: 300px;
+	border-radius: 3px 3px 3px 3px;
+	background-position: 15px center;
+	background-repeat: no-repeat;
+	background-size: 24px;
+	box-shadow: 0 0 12px #999999;
+	color: #ffffff;
+}
+.toast-container .toast:hover {
+	box-shadow: 0 0 12px #000000;
+	opacity: 1;
+	cursor: pointer;
+}
+.toast-info {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="rgb(255,255,255)" d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" /></svg>');
+}
+.toast-error {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="rgb(255,255,255)" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" /></svg>');
+}
+.toast-success {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="rgb(255,255,255)" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z" /></svg>');
+}
+.toast-warning {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="rgb(255,255,255)" d="M11,15H13V17H11V15M11,7H13V13H11V7M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z" /></svg>');
+}
+.toast-container.toast-top-center .toast,
+.toast-container.toast-bottom-center .toast {
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.toast-container.toast-top-full-width .toast,
+.toast-container.toast-bottom-full-width .toast {
+	width: 96%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.toast {
+	background-color: #fff;
+	pointer-events: auto;
+}
+.toast-success {
+	background-color: $success;
+}
+.toast-error {
+	background-color: $danger;
+}
+.toast-info {
+	background-color: $info;
+}
+.toast-warning {
+	background-color: $warning;
+}
+.toast-progress {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 4px;
+	background-color: #fff;
+	opacity: 0.4;
+}
+/* Responsive Design */
+@media all and (max-width: 240px) {
+	.toast-container .toast.div {
+		padding: 8px 8px 8px 50px;
+		width: 11em;
+	}
+	.toast-container .toast-close-button {
+		right: -0.2em;
+		top: -0.2em;
+	}
+}
+@media all and (min-width: 241px) and (max-width: 480px) {
+	.toast-container .toast.div {
+		padding: 8px 8px 8px 50px;
+		width: 18em;
+	}
+	.toast-container .toast-close-button {
+		right: -0.2em;
+		top: -0.2em;
+	}
+}
+@media all and (min-width: 481px) and (max-width: 768px) {
+	.toast-container .toast.div {
+		padding: 15px 15px 15px 50px;
+		width: 25em;
+	}
+}

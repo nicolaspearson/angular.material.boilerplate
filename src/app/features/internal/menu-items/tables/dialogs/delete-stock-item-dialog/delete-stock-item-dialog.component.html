@@ -1,0 +1,64 @@
+<app-dialog-base>
+	<div class="app-dialog-base-container">
+		<header>
+			<h3 class="app-dialog-base-header" mat-dialog-title>Are you sure?</h3>
+		</header>
+
+		<form class="app-dialog-base-content" (ngSubmit)="submit()">
+			<div mat-dialog-content>
+				<div class="box box-default table-box mdl-shadow--2dp">
+					<table class="mdl-data-table table-striped">
+						<thead>
+							<tr>
+								<th class="mdl-data-table__cell--non-numeric">Column</th>
+								<th class="mdl-data-table__cell--non-numeric">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">Id</td>
+								<td class="mdl-data-table__cell--non-numeric">{{item.stockItemId}}</td>
+							</tr>
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">Registration Number</td>
+								<td class="mdl-data-table__cell--non-numeric">{{item.registrationNumber}}</td>
+							</tr>
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">Model</td>
+								<td class="mdl-data-table__cell--non-numeric">{{item.model}}</td>
+							</tr>
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">Model Year</td>
+								<td class="mdl-data-table__cell--non-numeric">{{item.modelYear}}</td>
+							</tr>
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">Make</td>
+								<td class="mdl-data-table__cell--non-numeric">{{item.make}}</td>
+							</tr>
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">Odometer</td>
+								<td class="mdl-data-table__cell--non-numeric">{{item.odometer}}</td>
+							</tr>
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">Colour</td>
+								<td class="mdl-data-table__cell--non-numeric">{{item.colour}}</td>
+							</tr>
+							<tr>
+								<td class="mdl-data-table__cell--non-numeric">Retail Price</td>
+								<td class="mdl-data-table__cell--non-numeric">{{item.retailPrice}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</form>
+
+		<footer>
+			<div class="app-dialog-base-footer float-right" mat-dialog-actions>
+				<button mat-button class="btn-w-md mat-raised-button mat-primary" color="primary" [type]="submit" [disabled]="false" [mat-dialog-close]="1"
+				 (click)="onSubmitClick()">Delete</button>
+				<button mat-button class="btn-w-md mat-raised-button" (click)="onCancelClick()" tabindex="-1">Cancel</button>
+			</div>
+		</footer>
+	</div>
+</app-dialog-base>

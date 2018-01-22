@@ -51,24 +51,24 @@
 }
 @keyframes changebar {
 	0% {
-		background-color: #9ccc65; // light green, 400
+		background-color: theme-color('accent');
 	}
 	33.3% {
-		background-color: #9ccc65;
+		background-color: theme-color('accent');
 	}
 	33.33% {
-		background-color: theme-color('warning');
+		background-color: theme-color('secondary');
 	}
 	66.6% {
-		background-color: theme-color('warning');
+		background-color: theme-color('secondary');
 	}
 	66.66% {
-		background-color: theme-color('danger');
+		background-color: theme-color('accent');
 	}
 	99.9% {
-		background-color: theme-color('danger');
+		background-color: theme-color('accent');
 	}
 	100% {
-		background-color: #9ccc65;
+		background-color: theme-color('accent');
 	}
 }

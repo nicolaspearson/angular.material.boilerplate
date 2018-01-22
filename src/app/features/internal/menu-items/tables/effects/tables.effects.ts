@@ -83,15 +83,30 @@ export class TablesEffects {
 	@Effect({ dispatch: false })
 	addSuccess$ = this.actions$
 		.ofType(Tables.ADD_STOCK_ITEM_SUCCESS)
-		.do(() => this.router.navigate(['/']));
+		.do(stockItem => {});
+
+	@Effect({ dispatch: false })
+	addFailure$ = this.actions$
+		.ofType(Tables.ADD_STOCK_ITEM_FAILURE)
+		.do(error => {});
 
 	@Effect({ dispatch: false })
 	updateSuccess$ = this.actions$
 		.ofType(Tables.UPDATE_STOCK_ITEM_SUCCESS)
-		.do(() => this.router.navigate(['/']));
+		.do(stockItem => {});
+
+	@Effect({ dispatch: false })
+	updateFailure$ = this.actions$
+		.ofType(Tables.UPDATE_STOCK_ITEM_FAILURE)
+		.do(error => {});
 
 	@Effect({ dispatch: false })
 	removeSuccess$ = this.actions$
 		.ofType(Tables.REMOVE_STOCK_ITEM_SUCCESS)
-		.do(() => this.router.navigate(['/']));
+		.do(stockItem => {});
+
+	@Effect({ dispatch: false })
+	removeFailure$ = this.actions$
+		.ofType(Tables.REMOVE_STOCK_ITEM_FAILURE)
+		.do(error => {});
 }
