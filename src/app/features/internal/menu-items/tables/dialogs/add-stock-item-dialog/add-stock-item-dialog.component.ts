@@ -19,6 +19,7 @@ export class AddStockItemDialogComponent<T> extends BaseDialogComponent<
 		@Inject(MAT_DIALOG_DATA) public item: StockItem
 	) {
 		super(dialogRef, item);
+		this.formName = 'form-add-stock-item';
 	}
 
 	ngOnInit() {
@@ -33,10 +34,13 @@ export class AddStockItemDialogComponent<T> extends BaseDialogComponent<
 			retailPrice: [this.retailPrice, Validators.required],
 			costPrice: [this.costPrice, Validators.required]
 		});
+		this.applyFormChanges();
+		this.saveFormChanges();
 	}
 
 	public onSubmitClick(): void {
 		if (this.form.valid) {
+			this.destroyFormChanges();
 			const stockItem: StockItem = this.form.value;
 			stockItem.accessories = [];
 			stockItem.images = ['59f462d9f14bef54278d6369']; // Hard-coded for testing

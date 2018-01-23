@@ -3,15 +3,13 @@
 	<div class="app-data-table-header">
 		<div class="title-header">
 			<h2 class="article-title">Data Table</h2>
-			<button mat-icon-button (click)="loadData()">
-				<mat-icon class="material-icons" color="primary">refresh</mat-icon>
-			</button>
-		</div>
-		<div class="sub-header">
 			<mat-form-field>
 				<input #filter matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 			</mat-form-field>
-			<button class="button-create" (click)="addItem()" mat-mini-fab color="primary">
+			<button class="header-action-button" (click)="loadData()" mat-mini-fab color="primary">
+				<mat-icon aria-label="Refresh">refresh</mat-icon>
+			</button>
+			<button class="header-action-button" (click)="addItem()" mat-mini-fab color="accent">
 				<mat-icon aria-label="Add">add</mat-icon>
 			</button>
 		</div>

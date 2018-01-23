@@ -32,35 +32,26 @@
 			padding-top: 10px;
 
 			.article-title {
-				flex-grow: 1;
 				border-top: none;
-				margin: 6px;
-				padding: 4px;
+				margin: 6px 6px 6px 0px;
+				padding: 4px 4px 4px 0px;
 				color: $primary;
 			}
-		}
-
-		.sub-header {
-			width: 100%;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: center;
-			height: auto;
 
 			.mat-form-field-underline {
 				background-color: $gray-400;
 			}
 
 			.mat-form-field {
+				align-self: center bottom;
 				font-size: 14px;
 				flex-grow: 1;
-				margin: 8px 8px 8px 10px;
-				padding: 8px 8px 8px 0px;
+				margin: 10px;
+				padding: 10px;
 			}
 
-			.button-create {
-				margin: 8px 0px 8px 8px;
+			.header-action-button {
+				margin: 8px 0px 8px 20px;
 			}
 		}
 	}
@@ -82,7 +73,7 @@
 	.no-results {
 		display: flex;
 		justify-content: center;
-		padding: 14px;
+		padding: 72px;
 		font-size: 14px;
 		font-style: italic;
 	}
