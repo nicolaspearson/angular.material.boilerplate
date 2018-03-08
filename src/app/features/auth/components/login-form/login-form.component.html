@@ -10,10 +10,10 @@
 		<mat-card-content class="app-login-card-content">
 			<form class="app-login-form" [formGroup]="form" (ngSubmit)="submit()">
 				<mat-form-field class="app-login-input">
-					<input matInput formControlName="username" placeholder="Username">
+					<input matInput formControlName="username" placeholder="Username / Email Address" required>
 				</mat-form-field>
 				<mat-form-field class="app-login-input">
-					<input matInput formControlName="password" placeholder="Password" type="password">
+					<input matInput formControlName="password" placeholder="Password" type="password" required>
 				</mat-form-field>
 
 				<p *ngIf="errorMessage" class="app-login-error">

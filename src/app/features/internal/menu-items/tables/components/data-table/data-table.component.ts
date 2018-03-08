@@ -162,22 +162,6 @@ export class DataTableComponent implements OnInit {
 		this.store.dispatch(new Tables.FetchStockItems());
 	}
 
-	refreshTable() {
-		if (this.dataSource._paginator.hasNextPage()) {
-			// Use the paginator to force a refresh
-			this.dataSource._paginator.nextPage();
-			this.dataSource._paginator.previousPage();
-		} else if (this.dataSource._paginator.hasPreviousPage()) {
-			// On the last page reverse the logic to refresh
-			this.dataSource._paginator.previousPage();
-			this.dataSource._paginator.nextPage();
-		} else {
-			// In all other cases use the filter to refresh
-			this.dataSource.filter = '';
-			this.dataSource.filter = this.filter.nativeElement.value;
-		}
-	}
-
 	addItem() {
 		const dialogRef = this.dialog.open(AddStockItemDialogComponent, {
 			data: newStockItem()

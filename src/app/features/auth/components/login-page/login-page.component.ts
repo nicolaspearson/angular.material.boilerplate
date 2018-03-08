@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Authenticate } from '@app/models/user';
+
+import { ToastrService } from 'ngx-toastr';
+
+import { Authenticate } from '@app/models/auth';
 import * as fromAuth from '@app/features/auth/reducers';
 import * as Auth from '@app/features/auth/actions/auth.actions';
+import { AuthEffects } from '@app/features/auth/effects/auth.effects';
+
+import { VerifyAccountService } from '@app/features/auth/services/verify-account.service';
 
 import { routerTransition } from '@app/core';
 import { environment as env } from '@env/environment';
@@ -18,9 +24,46 @@ export class LoginPageComponent implements OnInit {
 	pending$ = this.store.select(fromAuth.getLoginPagePending);
 	error$ = this.store.select(fromAuth.getLoginPageError);
 
-	constructor(private store: Store<fromAuth.State>) {}
+	private currentRouteId;
 
-	ngOnInit() {}
+	constructor(
+		private store: Store<fromAuth.State>,
+		private authEffects: AuthEffects,
+		private toastrService: ToastrService,
+		private verifyAccountService: VerifyAccountService
+	) {
+		if (this.verifyAccountService.hasData()) {
+			this.subscribeVerificationToEffects();
+		}
+	}
+
+	ngOnInit() {
+		if (this.verifyAccountService.hasData()) {
+			const verifyAccount = this.verifyAccountService.getData();
+			if (verifyAccount.verificationToken) {
+				this.store.dispatch(
+					new Auth.SubmitVerifyAccount(verifyAccount)
+				);
+			}
+		}
+	}
+
+	subscribeVerificationToEffects() {
+		this.authEffects.verifyAccountSuccess$.subscribe(
+			(action: Auth.VerifyAccountSuccess) => {
+				this.toastrService.success('Account Verified', 'Success!');
+			}
+		);
+
+		this.authEffects.verifyAccountFailure$.subscribe(
+			(action: Auth.VerifyAccountFailure) => {
+				this.toastrService.error(
+					'Invalid Token. Account NOT Verified',
+					'Failed!'
+				);
+			}
+		);
+	}
 
 	onSubmit($event: Authenticate) {
 		this.store.dispatch(new Auth.Login($event));

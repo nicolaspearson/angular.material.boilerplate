@@ -15,8 +15,8 @@ import * as Auth from '@app/features/auth/actions/auth.actions';
 import * as fromAuth from '@app/features/auth/reducers';
 
 import { LocalStorageService } from '@app/core/local-storage/local-storage.service';
-import { LS_USER_KEY } from '@app/core/local-storage/keys';
-import { User } from '@app/models/user';
+import { LS_USER_AUTHED_KEY } from '@app/core/local-storage/keys';
+import { AuthedUser } from '@app/models/auth';
 
 import { environment } from '@env/environment';
 
@@ -30,12 +30,12 @@ export class TablesService {
 
 	fetchStockItems(): Observable<StockItem[]> {
 		// Get the current logged in user
-		const result = this.localStorageService.getItem(LS_USER_KEY);
+		const result = this.localStorageService.getItem(LS_USER_AUTHED_KEY);
 		if (result && result.user && result.user.token) {
-			const user: User = result.user;
+			const authedUser: AuthedUser = result.authedUser;
 			const options = new RequestOptions({ headers: new Headers() });
 			options.headers.set('Content-Type', 'application/json');
-			options.headers.set('Authorization', `Bearer ${user.token}`);
+			options.headers.set('Authorization', `Bearer ${authedUser.token}`);
 			return (
 				this.http
 					.get(`${environment.api.endpoint}/stockItems`, options)
@@ -65,12 +65,12 @@ export class TablesService {
 
 	retrieveStockItem(id: string): Observable<StockItem> {
 		// Get the current logged in user
-		const result = this.localStorageService.getItem(LS_USER_KEY);
+		const result = this.localStorageService.getItem(LS_USER_AUTHED_KEY);
 		if (result && result.user && result.user.token) {
-			const user: User = result.user;
+			const authedUser: AuthedUser = result.authedUser;
 			const options = new RequestOptions({ headers: new Headers() });
 			options.headers.set('Content-Type', 'application/json');
-			options.headers.set('Authorization', `Bearer ${user.token}`);
+			options.headers.set('Authorization', `Bearer ${authedUser.token}`);
 			return (
 				this.http
 					.get(
@@ -100,12 +100,12 @@ export class TablesService {
 
 	addStockItem(stockItem: StockItem): Observable<StockItem> {
 		// Get the current logged in user
-		const result = this.localStorageService.getItem(LS_USER_KEY);
+		const result = this.localStorageService.getItem(LS_USER_AUTHED_KEY);
 		if (result && result.user && result.user.token) {
-			const user: User = result.user;
+			const authedUser: AuthedUser = result.authedUser;
 			const options = new RequestOptions({ headers: new Headers() });
 			options.headers.set('Content-Type', 'application/json');
-			options.headers.set('Authorization', `Bearer ${user.token}`);
+			options.headers.set('Authorization', `Bearer ${authedUser.token}`);
 			return (
 				this.http
 					.post(
@@ -139,12 +139,12 @@ export class TablesService {
 
 	updateStockItem(stockItem: StockItem): Observable<StockItem> {
 		// Get the current logged in user
-		const result = this.localStorageService.getItem(LS_USER_KEY);
+		const result = this.localStorageService.getItem(LS_USER_AUTHED_KEY);
 		if (result && result.user && result.user.token) {
-			const user: User = result.user;
+			const authedUser: AuthedUser = result.authedUser;
 			const options = new RequestOptions({ headers: new Headers() });
 			options.headers.set('Content-Type', 'application/json');
-			options.headers.set('Authorization', `Bearer ${user.token}`);
+			options.headers.set('Authorization', `Bearer ${authedUser.token}`);
 			return (
 				this.http
 					.put(
@@ -180,12 +180,12 @@ export class TablesService {
 
 	removeStockItem(stockItem: StockItem): Observable<StockItem> {
 		// Get the current logged in user
-		const result = this.localStorageService.getItem(LS_USER_KEY);
+		const result = this.localStorageService.getItem(LS_USER_AUTHED_KEY);
 		if (result && result.user && result.user.token) {
-			const user: User = result.user;
+			const authedUser: AuthedUser = result.authedUser;
 			const options = new RequestOptions({ headers: new Headers() });
 			options.headers.set('Content-Type', 'application/json');
-			options.headers.set('Authorization', `Bearer ${user.token}`);
+			options.headers.set('Authorization', `Bearer ${authedUser.token}`);
 			return (
 				this.http
 					.delete(

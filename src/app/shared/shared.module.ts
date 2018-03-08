@@ -3,11 +3,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { EChartsDirective } from './echarts.directive';
-import { SlimScrollDirective } from './slim-scroll.directive';
+import { EChartsDirective } from './directives/echarts.directive';
+import { FileSelectDirective } from './directives/file-select.directive';
+import { OnlyNumbersDirective } from './directives/only-numbers.directive';
+import { SlimScrollDirective } from './directives/slim-scroll.directive';
 
 // Reusable components
 import { LogoComponent } from '@app/components/logo/logo.component';
+
+// Base Components
+import { BaseDialogFormComponent } from '@app/components/dialogs/base-dialog-form/base-dialog-form.component';
+import { BaseDataTableComponent } from '@app/components/tables/base-data-table/base-data-table.component';
+
+// Material Time Picker
+import { MaterialTimeControlModule } from '@app/controls/material-time-control/material-time-control.module';
 
 import {
 	MatAutocompleteModule,
@@ -81,7 +90,8 @@ export const COMPONENTS = [
 	MatTabsModule,
 	MatToolbarModule,
 	MatTooltipModule,
-	MatStepperModule
+	MatStepperModule,
+	MaterialTimeControlModule
 ];
 
 @NgModule({
@@ -89,15 +99,27 @@ export const COMPONENTS = [
 	declarations: [
 		// Reusable Components
 		LogoComponent,
+		// Directives
 		EChartsDirective,
-		SlimScrollDirective
+		FileSelectDirective,
+		OnlyNumbersDirective,
+		SlimScrollDirective,
+		// Base Components
+		BaseDialogFormComponent,
+		BaseDataTableComponent
 	],
 	exports: [
 		...COMPONENTS,
 		// Reusable Components
 		LogoComponent,
+		// Directives
 		EChartsDirective,
-		SlimScrollDirective
+		FileSelectDirective,
+		OnlyNumbersDirective,
+		SlimScrollDirective,
+		// Base Components
+		BaseDialogFormComponent,
+		BaseDataTableComponent
 	]
 })
 export class SharedModule {}

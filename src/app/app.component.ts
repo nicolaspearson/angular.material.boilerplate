@@ -23,12 +23,11 @@ import 'styles/material2-theme.scss';
 
 // Demo Styles
 import 'styles/demo/pages.scss';
-import 'styles/demo/layout.scss';
-import 'styles/demo/ui.scss';
 
 // Custom Styles
 import 'styles/app.scss';
 import 'styles/theme.scss';
+import 'styles/ui.scss';
 
 @Component({
 	selector: 'app-root',

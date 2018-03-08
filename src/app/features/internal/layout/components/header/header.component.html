@@ -26,42 +26,32 @@
 
 		<div class="top-nav-right">
 			<ul class="list-unstyled list-inline">
-				<li class="list-inline-item">
+				<li hidden class="list-inline-item">
 					<button mat-button class="md-button header-btn" appOpenSearchOverlay>
 						<i class="material-icons">search</i>
 					</button>
 				</li>
-				<li class="list-inline-item">
+				<li hidden class="list-inline-item">
 					<button mat-button class="md-button header-btn" [matMenuTriggerFor]="appNotification">
 						<i class="material-icons">notifications_none</i>
-						<span class="mdl-badge mdl-badge--overlap" data-badge="3"></span>
+						<span class="mdl-badge mdl-badge--overlap" data-badge="1"></span>
 					</button>
 					<mat-menu #appNotification="matMenu" x-position="after" y-position="below" overlapTrigger="false">
 						<mat-list dense>
 							<mat-list-item>
-								<mat-icon mat-list-avatar>mail_outline</mat-icon>
-								<h4 mat-line>New mail from David</h4>
+								<mat-icon mat-list-avatar>schedule</mat-icon>
+								<h4 mat-line>New Schedule Added</h4>
 								<p mat-line class="text-muted">5 minutes ago</p>
-							</mat-list-item>
-							<mat-list-item>
-								<mat-icon mat-list-avatar>chat_bubble_outline</mat-icon>
-								<h4 mat-line>Message from Jane</h4>
-								<p mat-line class="text-muted">15 minutes ago</p>
-							</mat-list-item>
-							<mat-list-item>
-								<mat-icon mat-list-avatar>person_outline</mat-icon>
-								<h4 mat-line>New member John joined</h4>
-								<p mat-line class="text-muted">1 hour ago</p>
 							</mat-list-item>
 						</mat-list>
 					</mat-menu>
 				</li>
 				<li>
-					<button mat-button class="md-button header-btn" [matMenuTriggerFor]="appProfile">
+					<button mat-button class="md-button header-btn" [matMenuTriggerFor]="appUser">
 						<i class="material-icons">perm_identity</i>
 					</button>
-					<mat-menu #appProfile="matMenu" x-position="after" y-position="below" overlapTrigger="false">
-						<button mat-menu-item>Profile</button>
+					<mat-menu #appUser="matMenu" x-position="after" y-position="below" overlapTrigger="false">
+						<button mat-menu-item (click)="onChangePasswordClick()">Change Password</button>
 						<button mat-menu-item (click)="onLogoutClick()">Logout</button>
 					</mat-menu>
 				</li>

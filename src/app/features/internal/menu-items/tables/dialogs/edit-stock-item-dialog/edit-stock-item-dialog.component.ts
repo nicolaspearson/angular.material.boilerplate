@@ -2,7 +2,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { BaseDialogComponent } from '@app/components/dialogs/base-dialog/base-dialog.component';
+import { BaseDialogFormComponent } from '@app/components/dialogs/base-dialog-form/base-dialog-form.component';
 
 import { StockItem } from '@app/models/stock-item';
 
@@ -11,9 +11,9 @@ import { StockItem } from '@app/models/stock-item';
 	templateUrl: './edit-stock-item-dialog.component.html',
 	styleUrls: []
 })
-export class EditStockItemDialogComponent<T> extends BaseDialogComponent<
-	StockItem
-> implements OnInit {
+export class EditStockItemDialogComponent<T>
+	extends BaseDialogFormComponent<StockItem>
+	implements OnInit {
 	constructor(
 		public dialogRef: MatDialogRef<EditStockItemDialogComponent<StockItem>>,
 		@Inject(MAT_DIALOG_DATA) public item: StockItem

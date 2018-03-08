@@ -68,23 +68,22 @@
 		}
 
 		.app-sign-up-button {
-			margin-top: 1em;
-			margin-bottom: 1em;
+			margin-top: 1.2em;
+			margin-bottom: 1.2em;
 			padding: 0.625em;
 			width: 300px;
 			align-items: center;
 		}
 
-		.app-sign-up-form-forgot-password {
-			padding-bottom: 28px;
-
-			a {
-				cursor: pointer;
-				font-size: 14px;
-				font-family: 'Roboto-Regular';
-				color: $primary;
-			}
-		}
+		// .app-sign-up-form-forgot-password {
+		// 	padding-bottom: 28px;
+		// 	a {
+		// 		cursor: pointer;
+		// 		font-size: 14px;
+		// 		font-family: 'Roboto-Regular';
+		// 		color: $primary;
+		// 	}
+		// }
 	}
 
 	.app-sign-up-additional-info {

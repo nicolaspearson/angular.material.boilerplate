@@ -1,11 +1,11 @@
 import { MatPaginator, MatSort } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 
-import { BaseTableDataSource } from '@app/core/data-source/base-table.data-source';
+import { BaseDataTableDataSource } from '@app/core/data-source/base-table.data-source';
 
 import { StockItem } from '@app/models/stock-item';
 
-export class StockItemDataSource extends BaseTableDataSource<StockItem> {
+export class StockItemDataSource extends BaseDataTableDataSource<StockItem> {
 	constructor(
 		public stockItems$: Observable<StockItem[]>,
 		public paginator: MatPaginator,
@@ -34,7 +34,7 @@ export class StockItemDataSource extends BaseTableDataSource<StockItem> {
 	 */
 	getSortedData(items: StockItem[]): StockItem[] {
 		const data = items;
-		if (!this._sort.active || this._sort.direction === '') {
+		if (!this.sort.active || this.sort.direction === '') {
 			return data;
 		}
 
@@ -42,7 +42,7 @@ export class StockItemDataSource extends BaseTableDataSource<StockItem> {
 			let propertyA: number | string = '';
 			let propertyB: number | string = '';
 
-			switch (this._sort.active) {
+			switch (this.sort.active) {
 				case 'registrationNumber':
 					[propertyA, propertyB] = [
 						a.registrationNumber,
@@ -80,7 +80,7 @@ export class StockItemDataSource extends BaseTableDataSource<StockItem> {
 
 			return (
 				(valueA < valueB ? -1 : 1) *
-				(this._sort.direction === 'asc' ? 1 : -1)
+				(this.sort.direction === 'asc' ? 1 : -1)
 			);
 		});
 	}

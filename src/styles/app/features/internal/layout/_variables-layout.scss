@@ -22,6 +22,7 @@ $l_zindex_overlay: $zindex-modal-backdrop;
 // Layout
 $l_header_height: 60px;
 $l_mobile_header_height: 48px;
+$l_header_padding_top: 40px;
 
 $l_sidebar_width_collapsed: 64px; // Desktop only: collpased sidebar
 $l_sidebar_width: 250px; // Desktop: sidebar; Mobile: off-canvas sidebar
@@ -68,7 +69,6 @@ $nav_sub_link_active_color: $nav_link_hover_color;
 $nav_sub2_bg: rgba(0, 0, 0, 0.1);
 $nav_sub3_bg: rgba(0, 0, 0, 0.1);
 
-// sidebar width, just for demo
-// in real project, simply change '$l_sidebar_width' to any value u want
+// sidebar width
 $l_sidebar_width_sm: 220px;
 $l_sidebar_width_lg: 280px;

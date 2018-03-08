@@ -9,8 +9,8 @@ import * as Auth from '@app/features/auth/actions/auth.actions';
 import * as fromAuth from '@app/features/auth/reducers';
 
 import { LocalStorageService } from '@app/core/local-storage/local-storage.service';
-import { LS_USER_KEY } from '@app/core/local-storage/keys';
-import { User } from '@app/models/user';
+import { LS_USER_AUTHED_KEY } from '@app/core/local-storage/keys';
+import { AuthedUser } from '@app/models/auth';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -24,9 +24,15 @@ export class AuthGuard implements CanActivate {
 			.select(fromAuth.getLoggedIn)
 			.map(authed => {
 				// Check local storage
-				const result = this.localStorageService.getItem(LS_USER_KEY);
-				if (!authed || !result || !result.user) {
-					if (result && result.user && result.user.token) {
+				const result = this.localStorageService.getItem(
+					LS_USER_AUTHED_KEY
+				);
+				if (!authed || !result || !result.authedUser) {
+					if (
+						result &&
+						result.authedUser &&
+						result.authedUser.token
+					) {
 						return true;
 					}
 					this.store.dispatch(new Auth.LoginRedirect());

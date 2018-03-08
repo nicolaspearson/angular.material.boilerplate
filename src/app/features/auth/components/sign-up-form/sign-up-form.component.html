@@ -9,14 +9,23 @@
 
 		<mat-card-content class="app-sign-up-card-content">
 			<form class="app-sign-up-form" [formGroup]="form" (ngSubmit)="submit()">
+
 				<mat-form-field class="app-sign-up-input">
-					<input matInput formControlName="username" placeholder="Username">
+					<input matInput type="text" [minlength]="1" [maxlength]="50" formControlName="username" placeholder="Username" required>
+					<mat-hint align="end">{{form.get('username').value.length}} / 50</mat-hint>
 				</mat-form-field>
+
 				<mat-form-field class="app-sign-up-input">
-					<input matInput formControlName="password" placeholder="Password" type="password">
+					<input matInput [minlength]="6" [maxlength]="50" formControlName="password" placeholder="Password" type="password" required>
+					<mat-hint align="end">{{form.get('password').value.length}} / 50</mat-hint>
+					<mat-error *ngIf="form.get('password').hasError('minlength')">Minimum length is 6</mat-error>
 				</mat-form-field>
+
 				<mat-form-field class="app-sign-up-input">
-					<input matInput formControlName="emailAddress" placeholder="Email Address" type="email">
+					<input matInput [minlength]="1" [maxlength]="100" formControlName="emailAddress" placeholder="Email Address" type="email"
+					 email required>
+					<mat-hint align="end">{{form.get('emailAddress').value.length}} / 100</mat-hint>
+					<mat-error *ngIf="form.get('emailAddress').hasError('email')">Invalid email address</mat-error>
 				</mat-form-field>
 
 				<p *ngIf="errorMessage" class="app-sign-up-error">
@@ -29,9 +38,9 @@
 					</button>
 				</p>
 
-				<div class="app-sign-up-form-forgot-password">
+				<!-- <div class="app-sign-up-form-forgot-password">
 					<a [routerLink]="['/forgot-password']">Forgot your password?</a>
-				</div>
+				</div> -->
 			</form>
 		</mat-card-content>
 

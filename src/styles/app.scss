@@ -6,16 +6,21 @@
 @import 'app/app';
 @import 'app/landing/landing-page';
 
-@import 'app/components/dialogs/base-dialog';
+@import 'app/components/dialogs/base-dialog-form';
 @import 'app/components/logo/logo';
 @import 'app/components/page-not-found/_page-not-found';
+@import 'app/components/tables/base-data-table';
 
 @import 'app/features/auth/forgot-password-form';
 @import 'app/features/auth/forgot-password-page';
 @import 'app/features/auth/login-form';
 @import 'app/features/auth/login-page';
+@import 'app/features/auth/new-password-form';
+@import 'app/features/auth/new-password-page';
+@import 'app/features/auth/reset-password';
 @import 'app/features/auth/sign-up-form';
 @import 'app/features/auth/sign-up-page';
+@import 'app/features/auth/verify-account-page';
 
 @import 'app/features/internal/layout/base';
 @import 'app/features/internal/layout/header';
@@ -37,8 +42,6 @@
 @import 'app/features/internal/layout/quickview-app';
 @import 'app/features/internal/layout/quickview-customizer';
 @import 'app/features/internal/layout/md';
-
-@import 'app/features/internal/menu-items/data-table';
 
 @import './styles-reset';
 @import './styles-reset.scss-theme';

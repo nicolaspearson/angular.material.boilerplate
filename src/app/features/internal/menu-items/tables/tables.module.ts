@@ -20,7 +20,6 @@ import { reducers } from './reducers';
 import { StockItemExistsGuard } from './services/stock-item-guard.service';
 
 // Dialogs
-import { BaseDialogComponent } from '@app/components/dialogs/base-dialog/base-dialog.component';
 import { AddStockItemDialogComponent } from './dialogs/add-stock-item-dialog/add-stock-item-dialog.component';
 import { DeleteStockItemDialogComponent } from './dialogs/delete-stock-item-dialog/delete-stock-item-dialog.component';
 import { EditStockItemDialogComponent } from './dialogs/edit-stock-item-dialog/edit-stock-item-dialog.component';
@@ -40,7 +39,6 @@ export const COMPONENTS = [TablesComponent, DataTableComponent];
 	],
 	entryComponents: [
 		// Dialogs
-		BaseDialogComponent,
 		AddStockItemDialogComponent,
 		DeleteStockItemDialogComponent,
 		EditStockItemDialogComponent
@@ -48,7 +46,6 @@ export const COMPONENTS = [TablesComponent, DataTableComponent];
 	declarations: [
 		...COMPONENTS,
 		// Dialogs
-		BaseDialogComponent,
 		AddStockItemDialogComponent,
 		DeleteStockItemDialogComponent,
 		EditStockItemDialogComponent

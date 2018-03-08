@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SignUp } from '@app/models/sign-up';
 import { routerTransition } from '@app/core';
 
@@ -24,9 +24,21 @@ export class SignUpFormComponent implements OnInit {
 	@Output() submitted = new EventEmitter<SignUp>();
 
 	form: FormGroup = new FormGroup({
-		username: new FormControl(''),
-		password: new FormControl(''),
-		emailAddress: new FormControl('')
+		username: new FormControl('', [
+			Validators.required,
+			Validators.minLength(1),
+			Validators.maxLength(50)
+		]),
+		password: new FormControl('', [
+			Validators.required,
+			Validators.minLength(6),
+			Validators.maxLength(50)
+		]),
+		emailAddress: new FormControl('', [
+			Validators.required,
+			Validators.minLength(1),
+			Validators.maxLength(100)
+		])
 	});
 
 	constructor() {}

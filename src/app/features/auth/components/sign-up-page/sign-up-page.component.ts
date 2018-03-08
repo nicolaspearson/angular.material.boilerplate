@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { SignUp } from '@app/models/sign-up';
+import { ToastrService } from 'ngx-toastr';
+
 import * as fromAuth from '@app/features/auth/reducers';
 import * as Auth from '@app/features/auth/actions/auth.actions';
+import { AuthEffects } from '@app/features/auth/effects/auth.effects';
+
+import { SignUp } from '@app/models/sign-up';
 
 import { routerTransition } from '@app/core';
 import { environment as env } from '@env/environment';
@@ -19,9 +23,26 @@ export class SignUpPageComponent implements OnInit {
 	pending$ = this.store.select(fromAuth.getSignUpPagePending);
 	error$ = this.store.select(fromAuth.getSignUpPageError);
 
-	constructor(private store: Store<fromAuth.State>) {}
+	constructor(
+		private store: Store<fromAuth.State>,
+		private authEffects: AuthEffects,
+		private toastrService: ToastrService
+	) {
+		this.subscribeToEffects();
+	}
 
 	ngOnInit() {}
+
+	subscribeToEffects() {
+		this.authEffects.signUpSuccess$.subscribe(
+			(action: Auth.SignUpSuccess) => {
+				this.toastrService.success(
+					'Check your inbox to verify your account',
+					'Success!'
+				);
+			}
+		);
+	}
 
 	onSubmit($event: SignUp) {
 		this.store.dispatch(new Auth.NewSignUp($event));

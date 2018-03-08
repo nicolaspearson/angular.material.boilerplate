@@ -1,13 +1,13 @@
 <nav class="app-sidebar" appAutoCloseMobileNav [ngClass]="{'bg-color-light': ['31','32','33','34','35','36'].indexOf(AppConfig.colorOption) >= 0,
-               'bg-color-dark': ['31','32','33','34','35','36'].indexOf(AppConfig.colorOption) < 0 }">
+	'bg-color-dark': ['31','32','33','34','35','36'].indexOf(AppConfig.colorOption) < 0 }">
 
 	<section class="sidebar-header" [ngClass]="{'bg-color-dark': ['11','31'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-light': AppConfig.colorOption === '21',
-                   'bg-color-primary': ['12','22','32'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-success': ['13','23','33'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-info': ['14','24','34'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-warning': ['15','25','35'].indexOf(AppConfig.colorOption) >= 0,
-                   'bg-color-danger': ['16','26','36'].indexOf(AppConfig.colorOption) >= 0}">
+		'bg-color-light': AppConfig.colorOption === '21',
+		'bg-color-primary': ['12','22','32'].indexOf(AppConfig.colorOption) >= 0,
+		'bg-color-success': ['13','23','33'].indexOf(AppConfig.colorOption) >= 0,
+		'bg-color-info': ['14','24','34'].indexOf(AppConfig.colorOption) >= 0,
+		'bg-color-warning': ['15','25','35'].indexOf(AppConfig.colorOption) >= 0,
+		'bg-color-danger': ['16','26','36'].indexOf(AppConfig.colorOption) >= 0}">
 
 		<app-logo></app-logo>
 		<a [routerLink]="['/']" class="brand">{{AppConfig.brand}}</a>
@@ -24,7 +24,7 @@
 	<section class="sidebar-footer">
 		<ul class="nav">
 			<li>
-				<a mat-button aria-label="menu" target="_blank" [href]="AppConfig.productLink">
+				<a mat-button aria-label="menu" target="_blank" href="">
 					<i class="nav-icon material-icons">help</i>
 					<span class="nav-text">
 						<span>Help</span> &

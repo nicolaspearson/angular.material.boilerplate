@@ -5,7 +5,6 @@ function makeAppConfig() {
 	const config = {
 		isAuthenticated: false,
 		brand: 'Material',
-		user: 'Tester',
 		year,
 		layoutBoxed: false, // true, false
 		navCollapsed: false, // true, false

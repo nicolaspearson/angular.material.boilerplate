@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-page-not-found',
 	templateUrl: './page-not-found.component.html',
 	styleUrls: []
 })
-export class PageNotFoundComponent implements OnInit {
-	constructor() {}
+export class PageNotFoundComponent {
+	constructor(private location: Location) {}
 
-	ngOnInit() {}
+	onBackClick() {
+		this.location.back();
+	}
 }

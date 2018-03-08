@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Authenticate } from '@app/models/user';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { Authenticate } from '@app/models/auth';
+
 import { routerTransition } from '@app/core';
 
 @Component({
@@ -24,8 +26,14 @@ export class LoginFormComponent implements OnInit {
 	@Output() submitted = new EventEmitter<Authenticate>();
 
 	form: FormGroup = new FormGroup({
-		username: new FormControl(''),
-		password: new FormControl('')
+		username: new FormControl('', [
+			Validators.required,
+			Validators.minLength(1)
+		]),
+		password: new FormControl('', [
+			Validators.required,
+			Validators.minLength(1)
+		])
 	});
 
 	constructor() {}

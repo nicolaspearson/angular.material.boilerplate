@@ -1,0 +1,184 @@
+.app-base-data-table-container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	margin-bottom: 30px;
+
+	.article {
+		padding-bottom: 0px;
+	}
+
+	.box {
+		margin-bottom: 0px;
+		padding: 10px;
+		background-color: white;
+	}
+
+	.header {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		background: $transparent;
+		margin-bottom: 10px;
+
+		.title-header {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			height: auto;
+
+			.article-title {
+				border-top: none;
+				margin: 6px 6px 6px 0px;
+				padding: 4px 4px 4px 0px;
+				color: $primary;
+			}
+
+			.mat-form-field-underline {
+				background-color: $gray-400;
+			}
+
+			.mat-form-field {
+				align-self: center bottom;
+				font-size: 14px;
+				flex-grow: 1;
+				margin: 10px;
+				padding: 10px;
+			}
+
+			.header-action-button {
+				margin: 8px 0px 8px 20px;
+			}
+		}
+
+		.sub-header {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: left;
+			justify-content: left;
+			height: auto;
+			margin: 0px 6px;
+			padding: 0px 4px;
+
+			.article-description {
+				font-size: 12px;
+				opacity: 0.7;
+			}
+		}
+	}
+
+	.scroll-mat-table {
+		width: 100%;
+		overflow: auto;
+		table-layout: fixed;
+
+		> .mat-header-row,
+		> .mat-row {
+			display: table-row;
+			border: none;
+
+			> .mat-header-cell,
+			> .mat-cell {
+				display: table-cell;
+				vertical-align: middle;
+				min-width: 180px;
+				width: 100%;
+				padding: 2px 24px;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+			}
+		}
+	}
+
+	> .mat-header-cell,
+	> .mat-cell {
+		padding-top: 2px;
+		padding-bottom: 2px;
+	}
+
+	.mat-sort-header-button {
+		text-align: left;
+	}
+
+	.mat-column-actions {
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+	}
+
+	.mat-header-cell.mat-sort-header-sorted {
+		color: black;
+	}
+
+	.mat-header-cell.header-cell-checkbox {
+		display: flex;
+		flex: 1;
+		justify-content: left;
+	}
+
+	.mat-checkbox {
+		display: flex;
+		justify-content: left;
+	}
+
+	.no-results {
+		display: flex;
+		justify-content: center;
+		padding: 50px;
+		font-size: 14px;
+		font-style: italic;
+		z-index: 9;
+	}
+
+	.spinner-container {
+		display: flex;
+		justify-content: center;
+		padding: 50px;
+		z-index: 10;
+	}
+
+	.audio-files-table-actions-header,
+	.audio-files-table-actions-cell,
+	.avm-configurations-table-actions-header,
+	.avm-configurations-table-actions-cell,
+	.avm-results-table-actions-header,
+	.avm-results-table-actions-cell,
+	.avm-types-table-actions-header,
+	.avm-types-table-actions-cell,
+	.avm-voices-table-actions-header,
+	.avm-voices-table-actions-cell,
+	.campaigns-table-actions-header,
+	.campaigns-table-actions-cell,
+	.campaign-results-table-actions-header,
+	.campaign-results-table-actions-cell,
+	.campaign-types-table-actions-header,
+	.campaign-types-table-actions-cell,
+	.countries-table-actions-header,
+	.countries-table-actions-cell,
+	.dtmf-configurations-table-actions-header,
+	.dtmf-configurations-table-actions-cell,
+	.do-not-contacts-table-actions-header,
+	.do-not-contacts-table-actions-cell,
+	.msisdns-table-actions-header,
+	.msisdns-table-actions-cell,
+	.msisdn-segments-table-actions-header,
+	.msisdn-segments-table-actions-cell,
+	.notification-configurations-table-actions-header,
+	.notification-configurations-table-actions-cell,
+	.schedules-table-actions-header,
+	.schedules-table-actions-cell,
+	.segments-table-actions-header,
+	.segments-table-actions-cell,
+	.segment-types-table-actions-header,
+	.segment-types-table-actions-cell {
+		text-align: center;
+		justify-content: center;
+		flex: 0 0 10%;
+	}
+}

@@ -8,8 +8,12 @@ import { merge } from 'rxjs/observable/merge';
 import { map } from 'rxjs/operators/map';
 import { combineLatest } from 'rxjs/observable/combineLatest';
 
-export class BaseTableDataSource<T> extends DataSource<T> {
+export class BaseDataTableDataSource<T> extends DataSource<T> {
 	filterChange = new BehaviorSubject('');
+
+	public loadingSubject = new BehaviorSubject<boolean>(false);
+
+	public loading$ = this.loadingSubject.asObservable();
 
 	public filteredData: T[] = [];
 	public sortedData: T[] = [];
@@ -21,6 +25,8 @@ export class BaseTableDataSource<T> extends DataSource<T> {
 		public _sort: MatSort
 	) {
 		super();
+		// Activate the loader
+		this.loadingSubject.next(true);
 		// Reset to the first page when the user changes the filter.
 		this.filterChange.subscribe(() => (this._paginator.pageIndex = 0));
 	}
@@ -58,7 +64,8 @@ export class BaseTableDataSource<T> extends DataSource<T> {
 	}
 
 	disconnect(): void {
-		// No op
+		this.filterChange.complete();
+		this.loadingSubject.complete();
 	}
 
 	/**
@@ -68,13 +75,15 @@ export class BaseTableDataSource<T> extends DataSource<T> {
 	 */
 	getFilteredData(items: T[]): T[] {
 		return items.filter((item: T) => {
-			const searchString = 'Override in child';
-			/* Example:
-				const searchString = (
-					item.make
-				).toLowerCase();
-			 */
-			return searchString.indexOf(this.filter) !== -1;
+			if (item) {
+				const searchString = 'Override in child';
+				/* Example:
+					const searchString = (
+						item.make
+					).toLowerCase();
+			 	*/
+				return searchString.indexOf(this.filter) !== -1;
+			}
 		});
 	}
 

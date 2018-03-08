@@ -18,7 +18,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { CustomRouterStateSerializer } from '@app/shared/utils';
+import { CustomRouterStateSerializer } from '@app/utils/router-utils';
 import { reducers, metaReducers } from '@app/reducers';
 
 import { routes } from '@app/app.routes';

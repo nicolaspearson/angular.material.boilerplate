@@ -1,5 +1,5 @@
 export const ChartConfig = {
-	primary: 'rgba(33,150,243,.85)', // #2196F3
+	primary: 'rgba(237, 91, 57, 0)',
 	success: 'rgba(102,187,106,.85)', // #66BB6A
 	info: 'rgba(0,188,212,.85)', // #00BCD4
 	infoAlt: 'rgba(126,87,194,.85)', // #7E57C2

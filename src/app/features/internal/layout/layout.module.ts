@@ -21,6 +21,8 @@ import { HighlightActiveItemsDirective } from './directives/highlight-active-ite
 
 // Customizer
 import { CustomizerComponent } from './components/customizer/customizer.component';
+
+// Quickview
 import { ToggleQuickviewDirective } from './directives/toggle-quickview.directive';
 
 // Pages
@@ -33,6 +35,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchOverlayComponent } from './components/search-overlay/search-overlay.component';
 import { SearchOverlayDirective } from './directives/search-overlay.directive';
 import { OpenSearchOverlayDirective } from './directives/open-search-overlay.directive';
+
+// Dialogs
+import { ChangePasswordDialogComponent } from '@app/features/auth/dialogs/change-password-dialog/change-password-dialog.component';
 
 export const COMPONENTS = [
 	// Layout
@@ -50,6 +55,7 @@ export const COMPONENTS = [
 	HighlightActiveItemsDirective,
 	// Customizer
 	CustomizerComponent,
+	// Quickview
 	ToggleQuickviewDirective,
 	// Pages
 	DashboardComponent,
@@ -63,7 +69,15 @@ export const COMPONENTS = [
 
 @NgModule({
 	imports: [LayoutRoutingModule, SharedModule],
-	declarations: COMPONENTS,
+	declarations: [
+		...COMPONENTS,
+		// Dialogs
+		ChangePasswordDialogComponent
+	],
+	entryComponents: [
+		// Dialogs
+		ChangePasswordDialogComponent
+	],
 	exports: COMPONENTS
 })
 export class LayoutModule {}

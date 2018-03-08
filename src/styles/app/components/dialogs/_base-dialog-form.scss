@@ -1,0 +1,59 @@
+app-base-dialog-form {
+	.app-base-dialog-form-container {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		min-width: 450px;
+	}
+
+	.app-base-dialog-form-container > * {
+		width: 100%;
+	}
+
+	header {
+		flex-shrink: 0;
+	}
+
+	.app-base-dialog-form-content {
+		flex-grow: 1;
+		width: 100%;
+		max-height: 510px;
+		min-height: 2em;
+		overflow: scroll;
+		overflow-y: scroll;
+		padding-left: 8px;
+		padding-right: 8px;
+
+		.app-base-dialog-form-form-item {
+			display: flex;
+			padding-top: 6px;
+			width: 100%;
+
+			.mat-form-field {
+				font-size: 14px;
+				flex-grow: 1;
+			}
+		}
+	}
+
+	footer {
+		flex-shrink: 0;
+		padding: 10px;
+	}
+
+	.mat-form-field--no-underline .mat-input-underline {
+		background-color: transparent;
+	}
+
+	.mat-icon svg {
+		margin: 0px;
+		height: 16px;
+		width: 16px;
+	}
+
+	.dialog-error-message {
+		margin-top: 1em;
+		width: 300px;
+		color: $danger;
+	}
+}

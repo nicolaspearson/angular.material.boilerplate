@@ -15,6 +15,10 @@ export class LayoutService {
 
 	echartsState$ = this.echartsSource.asObservable();
 
+	constructor() {
+		// Empty constructor
+	}
+
 	updateSearchOverlayState(state: string) {
 		this.searchOverlaySource.next(state);
 	}

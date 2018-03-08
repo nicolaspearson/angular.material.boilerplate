@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { ResetPassword } from '@app/models/user';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ForgotPassword } from '@app/models/auth';
 import { routerTransition } from '@app/core';
 
 @Component({
@@ -21,10 +21,14 @@ export class ForgotPasswordFormComponent implements OnInit {
 
 	@Input() errorMessage: string | null;
 
-	@Output() submitted = new EventEmitter<ResetPassword>();
+	@Output() submitted = new EventEmitter<ForgotPassword>();
 
 	form: FormGroup = new FormGroup({
-		emailAddress: new FormControl('')
+		emailAddress: new FormControl('', [
+			Validators.required,
+			Validators.minLength(1),
+			Validators.maxLength(100)
+		])
 	});
 
 	constructor() {}
